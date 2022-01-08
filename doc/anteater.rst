@@ -45,6 +45,7 @@ Forsyth-Edwards Notation (FEN).
    git checkout -b test-run
    python3 chess_ant.py --help
    python3 chess_ant.py --auto --fen "7k/1Q6/8/8/5N2/1B6/8/3K4 w - - 0 1"
+   python3 chess_ant.py -a -c -p my-pgn -l1 -n100 -g10 -f "7k/1Q6/8/8/5N2/1B6/8/3K4 w - - 0 1"
 
 
 Chess-Classification
@@ -100,7 +101,7 @@ With :file:`chess-ant.py`:
 
 - `Simple Transformers <https://github.com/ThilinaRajapakse/simpletransformers>`__
 - `pandas <https://pandas.pydata.org/>`__
-
+- `Chess-Classification <https://github.com/akuroiwa/chess-classification>`__
 
 .. todo::
 

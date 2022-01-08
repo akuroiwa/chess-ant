@@ -369,13 +369,15 @@ def run(fen=None, population=500, generation=15, dl=False):
         print(board)
         n += 1
 
-def selfPlay(fen=None, population=500, generation=15, dl=False, path="train-pgn", loop=1, gen_pgn=False):
+def selfPlay(fen=None, population=500, generation=15, dl=False, path="train-pgn", loop=1, create_pgn=False):
+    if create_pgn:
+        os.makedirs(path, exist_ok=True)
     for i in range(loop):
         if not fen:
             board = chess.Board()
         else:
             board = chess.Board(fen)
-        if gen_pgn:
+        if create_pgn:
             game = chess.pgn.Game()
             game.headers["Event"]
             game.setup(board)
@@ -389,9 +391,9 @@ def selfPlay(fen=None, population=500, generation=15, dl=False, path="train-pgn"
             print("\n")
             print(board)
             print("\n")
-            if gen_pgn:
-                node = node.add_variation(result.move)
-        if gen_pgn:
+            if create_pgn:
+                node = node.add_variation(move)
+        if create_pgn:
             game.headers["Result"] = board.result()
             print(game)
             with open(os.path.join(path, f"train-{i}.pgn"), mode='w') as f:
@@ -407,11 +409,14 @@ if __name__ == "__main__":
     parser.add_argument("-y", "--play", dest='play', action='store_true', help="Play chess on console.")
     parser.add_argument("-a", "--auto", dest='auto', action='store_true', help="Self-play chess.")
     parser.add_argument("-d", "--deep-learning", dest='dl', action='store_true', help="With deep learning.")
+    parser.add_argument("-p", "--path", dest='path', default="train-pgn", type=str, help="Directory to save PGN files when create_pgn option is True.  Default is train-pgn.")
+    parser.add_argument("-l", "--loop", dest='loop', default=1, type=int, help="How many PGN files you want when create_pgn option is True.  Default is 1")
+    parser.add_argument("-c", "--create_pgn", dest='create_pgn', action='store_true', help="Create PGN files when self-play chess.")
     args = parser.parse_args()
 
     if args.play is True:
         run(args.fen, population=args.population, generation=args.generation, dl=args.dl)
     elif args.auto is True:
-        selfPlay(args.fen, population=args.population, generation=args.generation, dl=args.dl)
+        selfPlay(args.fen, population=args.population, generation=args.generation, dl=args.dl, path=args.path, loop=args.loop, create_pgn=args.create_pgn)
     else:
         main(args.fen, population=args.population, generation=args.generation, dl=args.dl)
