@@ -31,13 +31,6 @@ class ChessState():
         return self.board.is_game_over()
 
     def getReward(self):
-        stack_len = len(self.board.move_stack)
-
-        if stack_len <= 8:
-            score = 1
-        else:
-            score = 0
-
         if self.color == chess.WHITE:
             if self.board.result() == "1-0":
                 return 1

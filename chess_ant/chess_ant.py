@@ -229,14 +229,17 @@ class AntMcts(mcts):
                 if self.dl:
                     prediction, raw_outputs = self.classification.predict_fen(bestChild.state.board.fen())
                     if prediction == 2:
-                        self.dl_prediction = 1
+                        dl_prediction = 1
                     elif prediction == 1:
-                        self.dl_prediction = -1
+                        dl_prediction = -1
                     else:
-                        self.dl_prediction = 0
-                    reward = bestChild.state.getCurrentPlayer() * -self.dl_prediction
+                        dl_prediction = 0
+                    if bestChild.state.color:
+                        reward = bestChild.state.getCurrentPlayer() * -dl_prediction
+                    else:
+                        reward = bestChild.state.getCurrentPlayer() * dl_prediction
                 else:
-                    reward = -self.rollout(bestChild.state)
+                    reward = bestChild.state.getCurrentPlayer() * -self.rollout(bestChild.state)
                 return reward
             else:
                 reward = -self.mctsSolver(bestChild)
