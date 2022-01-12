@@ -49,14 +49,18 @@ class ChessState():
         return False
 
 
-if __name__ == "__main__":
+def console_script():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("-f", "--fen", dest='fen', default=None, type=str, help="Initial FEN.")
     args = parser.parse_args()
 
     initialState = ChessState(args.fen)
     # mcts = mcts(timeLimit=1000)
-    mcts = mcts(iterationLimit=500)
-    action = mcts.search(initialState=initialState)
+    mymcts = mcts(iterationLimit=500)
+    action = mymcts.search(initialState=initialState)
 
     print(action)
+
+
+if __name__ == "__main__":
+    console_script()

@@ -1,18 +1,3 @@
-#    This file is part of DEAP.
-#
-#    DEAP is free software: you can redistribute it and/or modify
-#    it under the terms of the GNU Lesser General Public License as
-#    published by the Free Software Foundation, either version 3 of
-#    the License, or (at your option) any later version.
-#
-#    DEAP is distributed in the hope that it will be useful,
-#    but WITHOUT ANY WARRANTY; without even the implied warranty of
-#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-#    GNU Lesser General Public License for more details.
-#
-#    You should have received a copy of the GNU Lesser General Public
-#    License along with DEAP. If not, see <http://www.gnu.org/licenses/>.
-
 """
 This is based on the code of
 `deap/examples/gp/ant.py <https://github.com/DEAP/deap/blob/master/examples/gp/ant.py>`__.
@@ -36,7 +21,10 @@ import chess.pgn
 
 from copy import deepcopy
 from mcts import mcts, treeNode
-from chess_mcts import ChessState
+try:
+    from .chess_mcts import ChessState
+except ImportError:
+    from chess_mcts import ChessState
 import math
 import time
 import os
@@ -44,7 +32,7 @@ import os
 import argparse
 import pandas as pd
 from collections import deque
-import sys
+# import sys
 # from concurrent.futures.process import ProcessPoolExecutor
 
 
@@ -234,10 +222,11 @@ class AntMcts(mcts):
                         dl_prediction = -1
                     else:
                         dl_prediction = 0
-                    if bestChild.state.color:
-                        reward = bestChild.state.getCurrentPlayer() * -dl_prediction
-                    else:
-                        reward = bestChild.state.getCurrentPlayer() * dl_prediction
+                    reward = bestChild.state.getCurrentPlayer() * -dl_prediction
+                    # if bestChild.state.color:
+                    #     reward = bestChild.state.getCurrentPlayer() * -dl_prediction
+                    # else:
+                    #     reward = bestChild.state.getCurrentPlayer() * dl_prediction
                 else:
                     reward = bestChild.state.getCurrentPlayer() * -self.rollout(bestChild.state)
                 return reward
@@ -404,7 +393,7 @@ def selfPlay(fen=None, population=500, generation=15, dl=False, path="train-pgn"
                 game.accept(exporter)
         print("Result is: ", board.result())
 
-if __name__ == "__main__":
+def console_script():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("-f", "--fen", dest='fen', default=None, type=str, help="Initial FEN.")
     parser.add_argument("-n", "--population", dest='population', default=500, type=int, help="Population size.  Default is 500.")
@@ -423,3 +412,6 @@ if __name__ == "__main__":
         selfPlay(args.fen, population=args.population, generation=args.generation, dl=args.dl, path=args.path, loop=args.loop, create_pgn=args.create_pgn)
     else:
         main(args.fen, population=args.population, generation=args.generation, dl=args.dl)
+
+if __name__ == "__main__":
+    console_script()

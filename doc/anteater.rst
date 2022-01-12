@@ -100,6 +100,7 @@ With :file:`chess-ant.py`:
    python3 chess_ant.py -d -n100 -g5 -f "6rk/4pppp/8/8/3Q4/8/RB2PPPP/R6K w - - 0 1"
 
 - `Simple Transformers <https://github.com/ThilinaRajapakse/simpletransformers>`__
+- `Start Locally | PyTorch <https://pytorch.org/get-started/locally/>`__
 - `pandas <https://pandas.pydata.org/>`__
 - `Chess-Classification <https://github.com/akuroiwa/chess-classification>`__
 
