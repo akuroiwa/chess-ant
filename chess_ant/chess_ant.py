@@ -97,7 +97,10 @@ class ChessAntSimulator(object):
 
     def set_dl(self):
         self.mcts_instance.dl = True
-        from chess_classification import ChessClassification
+        try:
+            from chess_classification.chess_classification import ChessClassification
+        except ImportError:
+            from chess_classification import ChessClassification
         self.mcts_instance.classification = ChessClassification()
         self.dl = True
 

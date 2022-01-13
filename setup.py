@@ -19,19 +19,19 @@ setup(
     zip_safe=False,
     python_requires=">=3.7",
     classifiers=[
-        'Development Status :: 3 - Alpha'
+        'Development Status :: 3 - Alpha',
         'Environment :: Console',
         "Intended Audience :: Developers",
         "Intended Audience :: Science/Research",
         'Intended Audience :: Education',
         'Intended Audience :: Science/Research',
         "Operating System :: OS Independent",
-        'License :: OSI Approved :: GNU Lesser General Public License v3 (LGPLv3)'
-        'Programming Language :: Python :: 3 :: Only'
+        'License :: OSI Approved :: GNU Lesser General Public License v3 (LGPLv3)',
+        'Programming Language :: Python :: 3 :: Only',
         'Topic :: Scientific/Engineering',
         'Topic :: Software Development',
         "Topic :: Games/Entertainment :: Board Games",
-        "Topic :: Software Development :: Libraries :: Python Modules",
+        "Topic :: Software Development :: Libraries :: Python Modules"
     ],
     platforms='any',
     keywords=['evolutionary algorithms', 'genetic programming', 'gp', 'chess', 'fen', 'pgn'],
