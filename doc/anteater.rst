@@ -27,6 +27,12 @@ Or:
    pip3 install deap
    pip3 install mcts
 
+Or:
+
+.. code:: bash
+
+   pip3 install chess-ant
+
 -  `python-chess: a chess library for
    Python <https://github.com/niklasf/python-chess>`__
 -  `DEAP <https://github.com/DEAP/deap>`__
@@ -45,13 +51,27 @@ Forsyth-Edwards Notation (FEN).
    git checkout -b test-run
    python3 chess_ant.py --help
    python3 chess_ant.py --auto --fen "7k/1Q6/8/8/5N2/1B6/8/3K4 w - - 0 1"
-   python3 chess_ant.py -a -c -p my-pgn -l1 -n100 -g10 -f "7k/1Q6/8/8/5N2/1B6/8/3K4 w - - 0 1"
+   python3 chess_ant.py -a -c -p "my-pgn" -l1 -n100 -g10 -f "7k/1Q6/8/8/5N2/1B6/8/3K4 w - - 0 1"
 
+If you installed :file:`chess-ant` from PyPI:
+
+.. code:: bash
+
+   chess-ant --help
+   chess-ant -a -n100 -g5 -f "7r/8/8/8/7k/2q5/6P1/6NK b - - 0 1"
+
+This command will output the wrong answer.
+It will take some time, but the following command will output correctly.
+
+.. code:: bash
+
+   chess-ant -a -n1000 -g5 -f "7r/8/8/8/7k/2q5/6P1/6NK b - - 0 1"
 
 Chess-Classification
 --------------------
 
-:file:`genPgn.py` contains the Walrus operator, so it only works with Python 3.8 or higher.
+Version 0.0.1 of :file:`genPgn.py` contains the Walrus operator, so it only works with Python 3.8 or higher.
+Please install Pytorch before installing Simple Transformers.
 
 .. code:: bash
 
@@ -59,14 +79,33 @@ Chess-Classification
    pip3 install pandas
    pip3 install simpletransformers
    apt install stockfish
+   pip3 install chess-classification
    exit
-   python3 genPgn.py --help
-   python3 genPgn.py -p train-pgn -l 30 -t 20
-   python3 genPgn.py -p eval-pgn -l 30 -t 20
+   genPgn --help
+   genPgn -l 10 -t 1 -p "train-pgn" -f "3qkbnr/8/8/8/8/8/PPPPPPPP/RNBQKBNR w - - 0 1"
+   cat train-pgn/train-*.pgn >> train-pgn/1.pgn
+   rm train-pgn/train-*.pgn
+   genPgn -l 10 -t 1 -p "train-pgn" -f "rnbqkbnr/pppppppp/8/8/8/8/8/3QKBNR w - - 0 1"
+   cat train-pgn/train-*.pgn >> train-pgn/2.pgn
+   rm train-pgn/train-*.pgn
+   genPgn -l 10 -t 1 -p "train-pgn" -f "4k3/pppppppp/8/8/8/8/PPPPPPPP/4K3 w - - 0 1"
+   cat train-pgn/train-*.pgn >> train-pgn/3.pgn
+   rm train-pgn/train-*.pgn
+   importPgn -p "train-pgn"
+   genPgn -l 10 -t 1 -p "eval-pgn" -f "3qkbnr/8/8/8/8/8/PPPPPPPP/RNBQKBNR w - - 0 1"
+   cat eval-pgn/train-*.pgn >> eval-pgn/1.pgn
+   rm eval-pgn/train-*.pgn
+   genPgn -l 10 -t 1 -p "eval-pgn" -f "rnbqkbnr/pppppppp/8/8/8/8/8/3QKBNR w - - 0 1"
+   cat eval-pgn/train-*.pgn >> eval-pgn/2.pgn
+   rm eval-pgn/train-*.pgn
+   genPgn -l 10 -t 1 -p "eval-pgn" -f "4k3/pppppppp/8/8/8/8/PPPPPPPP/4K3 w - - 0 1"
+   cat eval-pgn/train-*.pgn >> eval-pgn/3.pgn
+   rm eval-pgn/train-*.pgn
+   importPgn -p "eval-pgn"
 
 .. code:: python
 
-   from chess_classification import ChessClassification
+   from chess_classification.chess_classification import ChessClassification
    classification = ChessClassification()
 
 Train or retrain:

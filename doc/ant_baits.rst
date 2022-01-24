@@ -148,7 +148,7 @@ Development Plan
    / loss evaluation.
 
    :file:`genPgn.py` automatically plays with stockfish and outputs PGN files. By
-   the way, :file:`genPgn.py` contains the Walrus operator, so it only works with
+   the way, version 0.0.1 of :file:`genPgn.py` contains the walrus operator, so it only works with
    Python 3.8 or higher. :file:`importPgn.py` creates a dataset from PGN files.
    :file:`chess_classification.py` generates a trained model with simple
    transformers. I plan to use this trained model to replace the rollout of
