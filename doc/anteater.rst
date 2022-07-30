@@ -4,7 +4,7 @@ Chess-Ant Introduction
 Simulator to solve chess problems with MCTS Solver and Genetic
 Programming.
 
-:file:`chess-ant.py` is based on the code of
+:file:`chess_ant.py` is based on the code of
 `deap/examples/gp/ant.py <https://github.com/DEAP/deap/blob/master/examples/gp/ant.py>`__.
 
 Requirements
@@ -12,7 +12,7 @@ Requirements
 
 On Ubuntu:
 
-.. code:: bash
+.. code-block:: bash
 
    sudo -H -s
    apt install python3-pip
@@ -21,7 +21,7 @@ On Ubuntu:
 
 Or:
 
-.. code:: bash
+.. code-block:: bash
 
    pip3 install chess
    pip3 install deap
@@ -29,7 +29,7 @@ Or:
 
 Or:
 
-.. code:: bash
+.. code-block:: bash
 
    pip3 install chess-ant
 
@@ -37,6 +37,9 @@ Or:
    Python <https://github.com/niklasf/python-chess>`__
 -  `DEAP <https://github.com/DEAP/deap>`__
 -  `MCTS <https://github.com/pbsinclair42/MCTS>`__
+-  `chess-ant <https://github.com/akuroiwa/chess-ant>`__
+-  `chess-classification <https://github.com/akuroiwa/chess-classification>`__
+
 
 General Usage
 -------------
@@ -45,7 +48,7 @@ Sample chess problems are available in :file:`pgn/`.
 `Jerry <https://github.com/asdfjkl/jerry>`__ is useful for pasting
 Forsyth-Edwards Notation (FEN).
 
-.. code:: bash
+.. code-block:: bash
 
    cd chess-ant/chess-ant/
    git checkout -b test-run
@@ -53,9 +56,9 @@ Forsyth-Edwards Notation (FEN).
    python3 chess_ant.py --auto --fen "7k/1Q6/8/8/5N2/1B6/8/3K4 w - - 0 1"
    python3 chess_ant.py -a -c -p "my-pgn" -l1 -n100 -g10 -f "7k/1Q6/8/8/5N2/1B6/8/3K4 w - - 0 1"
 
-If you installed :file:`chess-ant` from PyPI:
+If you installed :mod:`chess-ant` from PyPI:
 
-.. code:: bash
+.. code-block:: bash
 
    chess-ant --help
    chess-ant -a -n100 -g5 -f "7r/8/8/8/7k/2q5/6P1/6NK b - - 0 1"
@@ -63,7 +66,7 @@ If you installed :file:`chess-ant` from PyPI:
 This command will output the wrong answer.
 It will take some time, but the following command will output correctly.
 
-.. code:: bash
+.. code-block:: bash
 
    chess-ant -a -n1000 -g5 -f "7r/8/8/8/7k/2q5/6P1/6NK b - - 0 1"
 
@@ -73,7 +76,7 @@ Chess-Classification
 Version 0.0.1 of :file:`genPgn.py` contains the Walrus operator, so it only works with Python 3.8 or higher.
 Please install Pytorch before installing Simple Transformers.
 
-.. code:: bash
+.. code-block:: bash
 
    sudo -H -s
    pip3 install pandas
@@ -103,20 +106,20 @@ Please install Pytorch before installing Simple Transformers.
    rm eval-pgn/train-*.pgn
    importPgn -p "eval-pgn"
 
-.. code:: python
+.. code-block:: python
 
    from chess_classification.chess_classification import ChessClassification
    classification = ChessClassification()
 
 Train or retrain:
 
-.. code:: python
+.. code-block:: python
 
    classification.train_and_eval("train-pgn/fen.json", "eval-pgn/fen.json")
 
 Test:
 
-.. code:: python
+.. code-block:: python
 
    my_fen = "7r/8/8/8/7k/2q5/6P1/6NK b - - 0 1"
    classification.predict_fen(my_fen)
@@ -132,9 +135,9 @@ Test:
 |1/2-1/2     |0      |
 +------------+-------+
 
-With :file:`chess-ant.py`:
+With :file:`chess_ant.py`:
 
-.. code:: bash
+.. code-block:: bash
 
    python3 chess_ant.py -d -n100 -g5 -f "6rk/4pppp/8/8/3Q4/8/RB2PPPP/R6K w - - 0 1"
 
@@ -149,7 +152,6 @@ With :file:`chess-ant.py`:
    -  Low correct answer rate.
    -  Parallelization.
    -  Support for other board games like shogi.
-   -  Cooperation with deep learning.
    -  Support for Universal Chess Interface (UCI).
-   -  Application to cheminformatics.
+   -  Docstring.
    -  Boil spaghetti code.

@@ -12,7 +12,8 @@ Welcome to Chess-Ant's documentation!
 
    anteater
    ant_baits
-
+   o_unilateralis
+   o_camponoti_balzani
 
 
 Indices and tables

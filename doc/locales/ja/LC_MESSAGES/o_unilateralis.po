@@ -1,0 +1,160 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, Akihiro Kuroiwa
+# This file is distributed under the same license as the Chess-Ant package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Chess-Ant \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-07-30 22:30+0900\n"
+"PO-Revision-Date: 2022-07-30 22:36+0900\n"
+"Last-Translator: Akihiro Kuroiwa <akuroiwa@env-reform.com>\n"
+"Language: ja\n"
+"Language-Team: Japanese\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../o_unilateralis.rst:2
+msgid "Chem-Ant Introduction"
+msgstr "Chem-Ant 紹介"
+
+#: ../../o_unilateralis.rst:4
+msgid ""
+"Select material candidates to output molecules similar to the target "
+"molecule with MCTS Solver and Genetic Programming."
+msgstr "MCTS SolverとGenetic Programmingにより、目標分子に似た分子を出力する為の材料候補を選ぶ。"
+
+#: ../../o_unilateralis.rst:6
+msgid ""
+":file:`similarity_ant.py` is based on the code of "
+"`deap/examples/gp/ant.py "
+"<https://github.com/DEAP/deap/blob/master/examples/gp/ant.py>`__."
+msgstr ""
+":file:`similarity_ant.py` は `deap/examples/gp/ant.py "
+"<https://github.com/DEAP/deap/blob/master/examples/gp/ant.py>`__ "
+"のコードを改変しています。"
+
+#: ../../o_unilateralis.rst:10
+msgid "Requirements"
+msgstr "準備"
+
+#: ../../o_unilateralis.rst:12
+msgid "On Ubuntu:"
+msgstr "Ubuntuで："
+
+#: ../../o_unilateralis.rst:21 ../../o_unilateralis.rst:30
+#: ../../o_unilateralis.rst:42
+msgid "Or:"
+msgstr "或いは："
+
+#: ../../o_unilateralis.rst:36
+msgid "If you want to use :mod:`chem-ant` with :mod:`chem-classification`:"
+msgstr ":mod:`chem-ant` を :mod:`chem-classification` と共に使いたければ："
+
+#: ../../o_unilateralis.rst:48
+msgid "`DEAP <https://github.com/DEAP/deap>`__"
+msgstr "`DEAP <https://github.com/DEAP/deap>`__"
+
+#: ../../o_unilateralis.rst:49
+msgid "`MCTS <https://github.com/pbsinclair42/MCTS>`__"
+msgstr "`MCTS <https://github.com/pbsinclair42/MCTS>`__"
+
+#: ../../o_unilateralis.rst:50
+msgid "`RDKit <https://www.rdkit.org/>`__"
+msgstr "`RDKit <https://www.rdkit.org/>`__"
+
+#: ../../o_unilateralis.rst:51
+msgid "`rdkit-pypi <https://pypi.org/project/rdkit-pypi/>`__"
+msgstr "`rdkit-pypi <https://pypi.org/project/rdkit-pypi/>`__"
+
+#: ../../o_unilateralis.rst:52
+msgid "`Global-Chem <https://github.com/Sulstice/global-chem>`__"
+msgstr "`Global-Chem <https://github.com/Sulstice/global-chem>`__"
+
+#: ../../o_unilateralis.rst:53
+msgid "`chem-ant <https://github.com/akuroiwa/chem-ant>`__"
+msgstr "`chem-ant <https://github.com/akuroiwa/chem-ant>`__"
+
+#: ../../o_unilateralis.rst:54
+msgid "`chem-classification <https://github.com/akuroiwa/chem-classification>`__"
+msgstr "`chem-classification <https://github.com/akuroiwa/chem-classification>`__"
+
+#: ../../o_unilateralis.rst:58
+msgid "General Usage"
+msgstr "使用法"
+
+#: ../../o_unilateralis.rst:60
+msgid ""
+"By default, you get a list of molecules from :file:`smiles.csv`. The "
+"target is Nirmatrelvir. From that list, the best material for the "
+"fragments is selected.  The output csv file also contains molecules "
+"created during the execution of mcts.  If you want to reuse the csv file "
+"as a smiles list, add :command:`--select` option.  If you want to run "
+"commands directly without installing the packages, execute just like "
+":command:`python3 similarity_mcts.py --help`:"
+msgstr ""
+"初期値では、 :file:`smiles.csv` から分子のリストを得る。ターゲットはNirmatrelvirだ。\n"
+"そのリストからフラグメントの材料として最適なものが選ばれる。\n"
+"出力されるcsvファイルには、mcts実行途中で出来た分子も含まれる。\n"
+"csvファイルを smiles list として再利用したければ、 :command:`--select` オプションを追加する。\n"
+"インストールせずに直接実行したければ、 :command:`python3 similarity_mcts.py --help` とする。"
+
+#: ../../o_unilateralis.rst:68
+msgid "If you want to specify a target and execute:"
+msgstr "ターゲットを指定して実行したければ："
+
+#: ../../o_unilateralis.rst:75
+msgid ""
+":command:`similarity-mcts` selects and outputs the candidates that can be"
+" the material of the fragments from the smiles list. If you just want to "
+"output target-like molecules from the smiles list without running mcts:"
+msgstr ""
+":command:`similarity-mcts` "
+"は、smilesのリストからフラグメントの材料と成り得る候補を選び出力する。mctsを実行せず、単にその smiles list "
+"からターゲットに似た分子を出力したければ："
+
+#: ../../o_unilateralis.rst:83
+msgid "Output dataset in json format for :mod:`chem-classification`:"
+msgstr ":mod:`chem-classification` 用に json format のデータセットを出力する："
+
+#: ../../o_unilateralis.rst:90
+msgid "If you want to output the dataset for regression model:"
+msgstr "regression model 用のデータセットを出力したければ："
+
+#: ../../o_unilateralis.rst:97
+msgid ""
+"Train the classification model and predict the similarity between "
+"Nirmatrelvir and YH-53:"
+msgstr "classification model を訓練し、Nirmatrelvir と YH-53 の類似性を予測する："
+
+#: ../../o_unilateralis.rst:106
+msgid ""
+"Train regression model to predict similarity between Nirmatrelvir and "
+"YH-53:"
+msgstr "regression model を訓練し、 Nirmatrelvir と YH-53 の類似性を予測する："
+
+#: ../../o_unilateralis.rst:115
+msgid ""
+"Another model trained by json files output by :command:`similarity-mcts` "
+"can predict the similarity with the target molecule from the material "
+"candidates and cooperate with :command:`similarity-ant`:"
+msgstr ":command:`similarity-mcts` により出力された json files により訓練された、もう一つのモデルは、材料候補からターゲット分子との類似性を予測する。そして、 :command:`similarity-ant` と連携できる："
+
+#: ../../o_unilateralis.rst:129
+msgid ""
+"Cooperation between :mod:`chem-classification` and :command:`similarity-"
+"ant` (currently not working):"
+msgstr ":mod:`chem-classification` と :command:`similarity-ant` の連携（現状では機能せず）："
+
+#: ../../o_unilateralis.rst:135
+msgid ""
+"Cooperation between regression model of :mod:`chem-classification` and "
+":command:`similarity-ant`:"
+msgstr ""
+"Regression model の :mod:`chem-classification` と :command:`similarity-ant`"
+" の連携："
+

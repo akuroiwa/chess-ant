@@ -1,0 +1,435 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, Akihiro Kuroiwa
+# This file is distributed under the same license as the Chess-Ant package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Chess-Ant \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-07-24 22:14+0900\n"
+"PO-Revision-Date: 2022-07-24 22:19+0900\n"
+"Last-Translator: Akihiro Kuroiwa <akuroiwa@env-reform.com>\n"
+"Language: ja\n"
+"Language-Team: Japanese\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../o_camponoti_balzani.rst:3
+msgid ""
+"I started writing :mod:`chess-ant` in 2019, but at first I was particular"
+" about minimax and the work did not proceed slowly. With the COVID-19 "
+"outbreak of the cruise ship Diamond Princess in 2020, when the pandemic "
+"was finally beginning to attract attention, I decided to use the :mod"
+":`chess-ant` algorithm for the development of therapeutic agents. After "
+"that, I read the paper of MCTS solver and the performance improved. At "
+"the same time, I learned how to use the cheminformatics software. Even "
+"after the SARS-CoV-2 pandemic has converged, the next pandemic is "
+"waiting. Let's contribute to society with our skills."
+msgstr ""
+"2019年に :mod:`chess-ant` を書き始めたのだが、最初は minimax "
+"にこだわり、遅々として作業は進まなかった。2020年にクルーズ船ダイヤモンド・プリンセス号の COVID-19 "
+"集団感染があり、いよいよパンデミックが注目され始めた頃、 :mod:`chess-ant` "
+"のアルゴリズムを治療薬の開発に役立てようと思い立った。その後、 MCTS solver の論文を読み、性能が向上した。同時に "
+"cheminformatics のソフトウェアの使い方も身についていった。SARS-CoV-2 "
+"のパンデミックが収束した後も、次なるパンデミックが待ち構えている。\n"
+"我々の技能で社会に貢献しよう。"
+
+#: ../../o_camponoti_balzani.rst:13
+msgid "Chem-Ant Article"
+msgstr "Chem-Ant 論文"
+
+#: ../../o_camponoti_balzani.rst:16
+msgid "UCSF Chimera"
+msgstr "UCSF Chimera"
+
+#: ../../o_camponoti_balzani.rst:18
+msgid ""
+"On my old laptop Fujitsu LIFEBOOK AH42/C, when I try to install `UCSF "
+"ChimeraX <https://www.cgl.ucsf.edu/chimerax/>`__, I get the following "
+"error:"
+msgstr ""
+"私の古いラップトップ Fujitsu LIFEBOOK AH42/C に `UCSF ChimeraX "
+"<https://www.cgl.ucsf.edu/chimerax/>`__ をインストールしようとしたら、次のようなエラーが表示された："
+
+#: ../../o_camponoti_balzani.rst:26
+msgid ""
+"Therefore, in this experiment, I use `UCSF Chimera "
+"<https://www.rbvi.ucsf.edu/chimera/>`__. The advantage is that you can "
+"specify the binding site with the mouse."
+msgstr ""
+"従って、この実験では、 `UCSF Chimera <https://www.rbvi.ucsf.edu/chimera/>`__ "
+"を用いる。その利点は、 binding site と呼ばれる結合部位をマウスで指定できることにある。"
+
+#: ../../o_camponoti_balzani.rst:33
+msgid "In my case, there are two installation locations:"
+msgstr "私の場合、インストールする場所は2箇所に分かれる："
+
+#: ../../o_camponoti_balzani.rst:40
+msgid ""
+"Run :command:`chimera` from the terminal on the command line, or right-"
+"click the desktop icon to give execute permission and double-click to "
+"launch UCSF Chimera."
+msgstr ""
+"ターミナルを開いてコマンドラインで :command:`chimera` "
+"を実行するか、デスクトップに出来たアイコンを右クリックし、実行権限を与え、ダブルクリックする。"
+
+#: ../../o_camponoti_balzani.rst:42
+msgid ""
+"Prior to this experiment, get the latest release of the `AutoDock Vina "
+"installer from GitHub <https://github.com/ccsb-scripps/AutoDock-Vina>`__ "
+"and install it according to the manual.  You can check the location of "
+"the binary file with the following command:"
+msgstr ""
+"実験に先立ち、最新リリースの `AutoDock Vina installer from GitHub <https://github.com"
+"/ccsb-scripps/AutoDock-Vina>`__ "
+"を入手し、マニュアルに沿いインストールする。バイナリーファイル（実行ファイル）の在り処は、次のコマンドで確認できる："
+
+#: ../../o_camponoti_balzani.rst:50
+msgid "To verify the operation, proceed with the experiment as follows:"
+msgstr "動作検証をするために、次のように実験を進める："
+
+#: ../../o_camponoti_balzani.rst:52
+msgid ""
+"Create fragments of the target molecule Nirmatrelvir and output some "
+"molecules."
+msgstr "ターゲット分子 Nirmatrelvir のみをフラグメントにし、分子を幾つか出力する。"
+
+#: ../../o_camponoti_balzani.rst:53
+msgid ""
+"Material candidates including the target molecule are selected by "
+":command:`similarity-mcts`, and some molecules are output."
+msgstr "ターゲット分子を含む材料候補を :command:`similarity-mcts` で選び、分子を幾つか出力する。"
+
+#: ../../o_camponoti_balzani.rst:54
+msgid ""
+"Get the `set difference <https://stackoverflow.com/questions/18180763"
+"/set-difference-for-pandas>`__."
+msgstr ""
+"両者の `差集合を <https://stackoverflow.com/questions/18180763/set-difference-"
+"for-pandas>`__ 得る。"
+
+#: ../../o_camponoti_balzani.rst:61
+msgid "After running, you would see something like this:"
+msgstr "実行後、次のように表示されただろう："
+
+#: ../../o_camponoti_balzani.rst:67
+msgid ""
+"There are some things to keep in mind when running :command:`similarity-"
+"genMols`.  Python doesn't distinguish between single and double quotes, "
+"but bash and dash do.  In addition, you don't need commas on the command "
+"line:"
+msgstr ""
+"`similarity-genMols` を実行する際に気をつけることがある。Python ではシングルクォートとダブルクォートを区別しないが、 "
+"bash や dash では区別する。更に、コマンドラインでカンマは不要だ："
+
+#: ../../o_camponoti_balzani.rst:85
+msgid ""
+"Create a ligand file with `Open Babel "
+"<http://openbabel.org/wiki/Main_Page>`__.  Open :file:`gen3.csv` and "
+"specify the smiles of high-scoring molecule with :command:`similarity-"
+"mcts`.  Don't forget to add hydrogen atoms and assign partial charges.  "
+"On Ubuntu:"
+msgstr ""
+"Ligand file を `Open Babel <http://openbabel.org/wiki/Main_Page>`__ "
+"で作成する。:file:`gen3.csv` を開き、 :command:`similarity-mcts` "
+"で得た高得点の分子のsmilesを指定しよう。水素原子を付加し、部分電荷を割り当てるのを忘れないように。Ubuntuで："
+
+#: ../../o_camponoti_balzani.rst:94
+msgid ""
+"Let's go back to UCSF Chimera. Open the above file and follow the menu as"
+" follows:"
+msgstr "UCSF Chimera に戻ろう。上記のファイルを開き、以下のようにメニューを辿る："
+
+#: ../../o_camponoti_balzani.rst:96
+msgid ":menuselection:`File --> Fetch Structure by ID --> PDB(mmCIF) --> 7tll`"
+msgstr ":menuselection:`File --> Fetch Structure by ID --> PDB(mmCIF) --> 7tll`"
+
+#: ../../o_camponoti_balzani.rst:97
+msgid ":menuselection:`File --> Open --> ligand.pdbqt --> file type PDB`"
+msgstr ":menuselection:`File --> Open --> ligand.pdbqt --> file type PDB`"
+
+#: ../../o_camponoti_balzani.rst:98
+msgid ":menuselection:`Tools --> Surface/Binding Analysis --> AutoDock Vina`"
+msgstr ":menuselection:`Tools --> Surface/Binding Analysis --> AutoDock Vina`"
+
+#: ../../o_camponoti_balzani.rst:100
+msgid ""
+"Our :guilabel:`Output file` is :file:`all`. Specify :guilabel:`Receptor` "
+"and :guilabel:`Ligand`. Check :guilabel:`Resize search volume using` for "
+"your mouse. Write vina path in :guilabel:`Executable location`."
+msgstr ""
+"我々の :guilabel:`Output file` は :file:`all` だ。:guilabel:`Receptor` と "
+":guilabel:`Ligand` を指定しよう。:guilabel:`Resize search volume using` "
+"をマウス操作の為にチェックする。上記のコマンドで得た vina のパスを :guilabel:`Executable location` に書く。"
+
+#: ../../o_camponoti_balzani.rst:105
+msgid ""
+"In my case, when I specified the binding site with the mouse, the frame "
+"was not displayed unless I switched it with the :guilabel:`Presets` menu."
+" When reconfirming the experimental results, open "
+":file:`all.receptor.pdb` and:"
+msgstr ""
+"私の場合、 binding site をマウスで指定すると、 :guilabel:`Presets` "
+"メニューで切り替えるまで枠が表示されない。実験結果を後程、再確認したければ :file:`all.receptor.pdb` "
+"を開き、次のようにする："
+
+#: ../../o_camponoti_balzani.rst:108
+msgid ""
+":menuselection:`Tools --> Surface/Binding Analysis --> ViewDock --> "
+"all.pdbqt`"
+msgstr ""
+":menuselection:`Tools --> Surface/Binding Analysis --> ViewDock --> "
+"all.pdbqt`"
+
+#: ../../o_camponoti_balzani.rst:109
+msgid ":menuselection:`Move --> Play`"
+msgstr ":menuselection:`Move --> Play`"
+
+#: ../../o_camponoti_balzani.rst:113
+msgid "AutoDock Vina"
+msgstr "AutoDock Vina"
+
+#: ../../o_camponoti_balzani.rst:115
+msgid ""
+"Reuse the receptor file output by UCSF Chimera and experiment on the "
+"command line. You will prepare your own ligand file. The contents of "
+":file:`conf.txt` are as follows:"
+msgstr ""
+"UCSF Chimera により出力された receptor file を再利用し、コマンドラインであなたが独自に作成した ligand file"
+" を実験したいだろう。設定ファイル :file:`conf.txt` を用意しよう："
+
+#: ../../o_camponoti_balzani.rst:134
+msgid ""
+":command:`similarity-mcts` now chose Catechin and the mysterious molecule"
+" Gnididin [#]_:"
+msgstr ":command:`similarity-mcts` は今回は Catechin と謎めいた分子 Gnididin [#]_ を選んだ："
+
+#: ../../o_camponoti_balzani.rst:144
+msgid ":file:`gen2-2.csv`:"
+msgstr ":file:`gen2-2.csv`:"
+
+#: ../../o_camponoti_balzani.rst:151
+msgid ""
+"Unfortunately, this molecule is made up of fragments produced solely by "
+"Gnididin:"
+msgstr "残念ながら、この分子は Gnididin のみで生成されたフラグメントにより出来る。"
+
+#: ../../o_camponoti_balzani.rst:157
+msgid "Execute AutoDock Vina:"
+msgstr "AutoDock Vina を実行する："
+
+#: ../../o_camponoti_balzani.rst:180
+msgid "Mold for Smiles Casting"
+msgstr "鋳型と鋳物"
+
+#: ../../o_camponoti_balzani.rst:182
+msgid ""
+"The amino acid interaction described in this paper [#]_ is based on `PDB "
+"ID: 6LU7 <https://www.rcsb.org/structure/6lu7>`__, while our experiments "
+"are based on the SARS-CoV-2 Mpro Omicron P132H contained in `PDB ID: 7TLL"
+" <https://www.rcsb.org/structure/7tll>`__. The first three letters of "
+"active site amino acid are abbreviations for amino acids, and the rest "
+"represent the positions of sequences. Let's check with UCSF Chimera:"
+msgstr "参照した論文に書かれているアミノ酸相互作用は [#]_ `PDB ID: 6LU7 <https://www.rcsb.org/structure/6lu7>`__ に基づく。一方、我々の実験は the SARS-CoV-2 Mpro Omicron P132H に基づいており、 `PDB ID: 7TLL <https://www.rcsb.org/structure/7tll>`__ を使用する。Active site amino acid の冒頭3文字はアミノ酸の略号で、残りは配列上の位置を示す。UCSF Chimera で確認しよう："
+
+#: ../../o_camponoti_balzani.rst:186
+msgid ""
+":menuselection:`Presets --> Interactive 1 (ribbons)` with "
+":command:`chimera`."
+msgstr ":menuselection:`Presets --> Interactive 1 (ribbons)` と :command:`chimera` のメニューで辿る。"
+
+#: ../../o_camponoti_balzani.rst:187
+msgid ""
+"Hover your cursor over the receptor's active site amino acid on the "
+"binding site to see its location."
+msgstr "カーソルを binding site 上の receptor の active site amino acid に合わせると、その位置が表示される。"
+
+#: ../../o_camponoti_balzani.rst:188
+msgid ""
+"Display a nucleotide or amino acid sequence alignment with "
+":command:`chimera` from :menuselection:`Tools --> Sequence --> Sequence` "
+"and save it in fast format."
+msgstr ""
+":command:`chimera` で :menuselection:`Tools --> Sequence --> Sequence` "
+"を辿り、ヌクレオチドやアミノ酸の sequence alignment を表示し、 fast format で保存する。"
+
+#: ../../o_camponoti_balzani.rst:189
+msgid ""
+"If you want to check the Active site amino acid, right-click on the "
+"relevant part of the sequence."
+msgstr "活性部位のアミノ酸を確認したいならば、配列上のその場所で右クリックする。"
+
+#: ../../o_camponoti_balzani.rst:191
+msgid ""
+"If you cast from a mold, the casting should fit the original mold. That's"
+" why I added amino acids and nucleotides to the file :file:`smiles.csv` "
+"[#]_. Whether the relationship between the binding site and the ligand in"
+" docking simulation can be said to be the same, let's experiment with the"
+" following method:"
+msgstr ""
+"鋳型から鋳物を鋳造すれば、元の鋳型に合うはずだ。私が :file:`smiles.csv` [#]_ "
+"にアミノ酸とヌクレオチドを追加した理由でもある。Docking simulation における binding site と ligand "
+"の関係も同様だと言えるかどうか、以下の方法で実験する："
+
+#: ../../o_camponoti_balzani.rst:195
+msgid ""
+"Convert the relevant part to smiles with :mod:`rdkit`.  The range is from"
+" Phe140 to Glu166 in sequence."
+msgstr "該当箇所を :mod:`rdkit` で smiles に変換する。範囲は Phe140 から Glu166 迄だ。"
+
+#: ../../o_camponoti_balzani.rst:196
+msgid ""
+"The smiles string is so long, let's break it down into fragments and "
+"outputs them to some molecules."
+msgstr "その smiles 文字列は長過ぎるので、 fragments に分解し、幾つかの分子に出力する。"
+
+#: ../../o_camponoti_balzani.rst:215
+msgid ""
+"From the output molecules, select the molecules with good results by "
+"docking simulation. Of course, it's a good result among the options."
+msgstr "出力された分子から、ドッキング・シミュレーションで好成績となった分子を選ぶ。勿論、選択肢の中での好成績だが。"
+
+#: ../../o_camponoti_balzani.rst:216
+msgid "Run :command:`similarity-mcts` targeting that molecule."
+msgstr "その分子をターゲットに :command:`similarity-mcts` を動かす。"
+
+#: ../../o_camponoti_balzani.rst:270
+msgid "Ignore short smiles:"
+msgstr "短い smiles は無視する："
+
+#: ../../o_camponoti_balzani.rst:292
+msgid "If you need the target molecule itself, the above method may be useful."
+msgstr "類似性の目標となるターゲット分子そのものが必要な場合は、上記の方法が役立つかも知れない。"
+
+#: ../../o_camponoti_balzani.rst:294
+msgid "Todo"
+msgstr "Todo"
+
+#: ../../o_camponoti_balzani.rst:296
+msgid "Separate MCTS solver as another package."
+msgstr "MCTS solver を別パッケージにする"
+
+#: ../../o_camponoti_balzani.rst:297
+msgid ""
+"Is it possible to get a high score by docking simulation without the "
+"target molecule?"
+msgstr "ターゲット分子が無くともドッキング・シミュレーションで高得点を取れるシミュレーションは出来るか？"
+
+#: ../../o_camponoti_balzani.rst:298
+msgid "Type bool is output as 1.0 or 0.0 in a csv file."
+msgstr "Type bool が 1.0 や 0.0 のように csv file に出力されてしまう。"
+
+#: ../../o_camponoti_balzani.rst:299
+msgid ":command:`similarity-ant` is so slow that it is far from practical."
+msgstr ":command:`similarity-ant` は遅すぎて実用性に程遠い。"
+
+#: ../../o_camponoti_balzani.rst:300
+msgid "Is :command:`similarity-mcts` working properly in the first place?"
+msgstr "そもそも :command:`similarity-mcts` は正しく動作しているのか？"
+
+#: ../../o_camponoti_balzani.rst:301
+msgid "Unravel the entangled spaghetti code."
+msgstr "絡み合ったスパゲッティコードを解く。"
+
+#: ../../o_camponoti_balzani.rst:305
+msgid "Reference"
+msgstr "参照"
+
+#: ../../o_camponoti_balzani.rst:307
+msgid ""
+"`Sisakht, M., Mahmoodzadeh, A., & Darabian, M. (2021). Plant-derived "
+"chemicals as potential inhibitors of SARS-CoV-2 main protease (6LU7), a "
+"virtual screening study. Phytotherapy research : PTR, 35(6), 3262–3274. "
+"https://doi.org/10.1002/ptr.7041 "
+"<https://pubmed.ncbi.nlm.nih.gov/33759279/>`__"
+msgstr ""
+"`Sisakht, M., Mahmoodzadeh, A., & Darabian, M. (2021). Plant-derived "
+"chemicals as potential inhibitors of SARS-CoV-2 main protease (6LU7), a "
+"virtual screening study. Phytotherapy research : PTR, 35(6), 3262–3274. "
+"https://doi.org/10.1002/ptr.7041 "
+"<https://pubmed.ncbi.nlm.nih.gov/33759279/>`__"
+
+#: ../../o_camponoti_balzani.rst:312
+msgid ""
+"`SAMANT, L., & Javle, V. (2020). Comparative Docking Analysis of Rational"
+" Drugs Against COVID-19 Main Protease. ChemRxiv. "
+"doi:10.26434/chemrxiv.12136002.v1 This content is a preprint and has not "
+"been peer-reviewed. <https://chemrxiv.org/engage/chemrxiv/article-"
+"details/60c749fd702a9b828b18b20c>`__"
+msgstr ""
+"`SAMANT, L., & Javle, V. (2020). Comparative Docking Analysis of Rational"
+" Drugs Against COVID-19 Main Protease. ChemRxiv. "
+"doi:10.26434/chemrxiv.12136002.v1 This content is a preprint and has not "
+"been peer-reviewed. <https://chemrxiv.org/engage/chemrxiv/article-"
+"details/60c749fd702a9b828b18b20c>`__"
+
+#: ../../o_camponoti_balzani.rst:317
+msgid "`PubChem <https://pubchem.ncbi.nlm.nih.gov/>`__"
+msgstr "`PubChem <https://pubchem.ncbi.nlm.nih.gov/>`__"
+
+#: ../../o_camponoti_balzani.rst:320
+msgid "Bibliography"
+msgstr "参考文献"
+
+#: ../../o_camponoti_balzani.rst:322
+msgid "`化学の新しいカタチ <https://future-chem.com/>`__"
+msgstr "`化学の新しいカタチ <https://future-chem.com/>`__"
+
+#: ../../o_camponoti_balzani.rst:323
+msgid ""
+"`Python for chemoinformatics <https://github.com/Mishima-"
+"syk/py4chemoinformatics>`__"
+msgstr ""
+"`Python for chemoinformatics <https://github.com/Mishima-"
+"syk/py4chemoinformatics>`__"
+
+#: ../../o_camponoti_balzani.rst:324
+msgid ""
+"`English version of Python for Chemoinformatics (pdf) "
+"<https://github.com/joofio/py4chemoinformatics>`__"
+msgstr ""
+"`English version of Python for Chemoinformatics (pdf) "
+"<https://github.com/joofio/py4chemoinformatics>`__"
+
+#: ../../o_camponoti_balzani.rst:325
+msgid ""
+"`Sharif, Suliman. Understanding drug-likeness filters with RDKit and "
+"exploring the WITHDRAWN database. (2020). "
+"<https://sharifsuliman1.medium.com/understanding-drug-likeness-filters-"
+"with-rdkit-and-exploring-the-withdrawn-database-ebd6b8b2921e>`__"
+msgstr ""
+"`Sharif, Suliman. Understanding drug-likeness filters with RDKit and "
+"exploring the WITHDRAWN database. (2020). "
+"<https://sharifsuliman1.medium.com/understanding-drug-likeness-filters-"
+"with-rdkit-and-exploring-the-withdrawn-database-ebd6b8b2921e>`__"
+
+#: ../../o_camponoti_balzani.rst:327
+msgid ""
+"`Panikar, S., Shoba, G., Arun, M., Sahayarayan, J. J., Usha Raja "
+"Nanthini, A., Chinnathambi, A., Alharbi, S. A., Nasif, O., & Kim, H. J. "
+"(2021). Essential oils as an effective alternative for the treatment of "
+"COVID-19: Molecular interaction analysis of protease (Mpro) with "
+"pharmacokinetics and toxicological properties. Journal of infection and "
+"public health, 14(5), 601–610. https://doi.org/10.1016/j.jiph.2020.12.037"
+" <https://pubmed.ncbi.nlm.nih.gov/33848890/>`__"
+msgstr ""
+"`Panikar, S., Shoba, G., Arun, M., Sahayarayan, J. J., Usha Raja "
+"Nanthini, A., Chinnathambi, A., Alharbi, S. A., Nasif, O., & Kim, H. J. "
+"(2021). Essential oils as an effective alternative for the treatment of "
+"COVID-19: Molecular interaction analysis of protease (Mpro) with "
+"pharmacokinetics and toxicological properties. Journal of infection and "
+"public health, 14(5), 601–610. https://doi.org/10.1016/j.jiph.2020.12.037"
+" <https://pubmed.ncbi.nlm.nih.gov/33848890/>`__"
+
+#: ../../o_camponoti_balzani.rst:331
+msgid ""
+"`@cat_lover. 構造生成メモ. (2021). "
+"<https://qiita.com/cat_lover/items/9540a2d00daba3584a22>`__"
+msgstr ""
+"`@cat_lover. 構造生成メモ. (2021). "
+"<https://qiita.com/cat_lover/items/9540a2d00daba3584a22>`__"
+
