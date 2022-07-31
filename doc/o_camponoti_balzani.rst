@@ -329,3 +329,7 @@ Bibliography
    Essential oils as an effective alternative for the treatment of COVID-19: Molecular interaction analysis of protease (Mpro) with pharmacokinetics and toxicological properties. Journal of infection and public health, 14(5), 601–610. https://doi.org/10.1016/j.jiph.2020.12.037
    <https://pubmed.ncbi.nlm.nih.gov/33848890/>`__
 -  `@cat_lover. 構造生成メモ. (2021). <https://qiita.com/cat_lover/items/9540a2d00daba3584a22>`__
+-  `GB-GM <https://github.com/jensengroup/GB-GM>`__
+-  `Jensen, J. (2019). Graph-based Genetic Algorithm and Generative Model/Monte Carlo Tree Search for the Exploration of Chemical Space.
+   ChemRxiv. doi:10.26434/chemrxiv.7240751.v2 This content is a preprint and has not been peer-reviewed.
+   <https://chemrxiv.org/engage/chemrxiv/article-details/60c7405af96a000e09286278>`__
