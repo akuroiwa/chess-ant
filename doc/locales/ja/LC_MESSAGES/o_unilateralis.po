@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Chess-Ant \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-30 22:30+0900\n"
-"PO-Revision-Date: 2022-07-30 22:36+0900\n"
+"POT-Creation-Date: 2022-08-11 22:11+0900\n"
+"PO-Revision-Date: 2022-08-11 22:14+0900\n"
 "Last-Translator: Akihiro Kuroiwa <akuroiwa@env-reform.com>\n"
 "Language: ja\n"
 "Language-Team: Japanese\n"
@@ -46,48 +46,52 @@ msgstr "準備"
 msgid "On Ubuntu:"
 msgstr "Ubuntuで："
 
-#: ../../o_unilateralis.rst:21 ../../o_unilateralis.rst:30
-#: ../../o_unilateralis.rst:42
+#: ../../o_unilateralis.rst:21 ../../o_unilateralis.rst:31
+#: ../../o_unilateralis.rst:43
 msgid "Or:"
 msgstr "或いは："
 
-#: ../../o_unilateralis.rst:36
+#: ../../o_unilateralis.rst:37
 msgid "If you want to use :mod:`chem-ant` with :mod:`chem-classification`:"
 msgstr ":mod:`chem-ant` を :mod:`chem-classification` と共に使いたければ："
 
-#: ../../o_unilateralis.rst:48
+#: ../../o_unilateralis.rst:49
 msgid "`DEAP <https://github.com/DEAP/deap>`__"
 msgstr "`DEAP <https://github.com/DEAP/deap>`__"
 
-#: ../../o_unilateralis.rst:49
+#: ../../o_unilateralis.rst:50
 msgid "`MCTS <https://github.com/pbsinclair42/MCTS>`__"
 msgstr "`MCTS <https://github.com/pbsinclair42/MCTS>`__"
 
-#: ../../o_unilateralis.rst:50
+#: ../../o_unilateralis.rst:51
 msgid "`RDKit <https://www.rdkit.org/>`__"
 msgstr "`RDKit <https://www.rdkit.org/>`__"
 
-#: ../../o_unilateralis.rst:51
+#: ../../o_unilateralis.rst:52
 msgid "`rdkit-pypi <https://pypi.org/project/rdkit-pypi/>`__"
 msgstr "`rdkit-pypi <https://pypi.org/project/rdkit-pypi/>`__"
 
-#: ../../o_unilateralis.rst:52
+#: ../../o_unilateralis.rst:53
 msgid "`Global-Chem <https://github.com/Sulstice/global-chem>`__"
 msgstr "`Global-Chem <https://github.com/Sulstice/global-chem>`__"
 
-#: ../../o_unilateralis.rst:53
+#: ../../o_unilateralis.rst:54
 msgid "`chem-ant <https://github.com/akuroiwa/chem-ant>`__"
 msgstr "`chem-ant <https://github.com/akuroiwa/chem-ant>`__"
 
-#: ../../o_unilateralis.rst:54
+#: ../../o_unilateralis.rst:55
 msgid "`chem-classification <https://github.com/akuroiwa/chem-classification>`__"
 msgstr "`chem-classification <https://github.com/akuroiwa/chem-classification>`__"
 
-#: ../../o_unilateralis.rst:58
+#: ../../o_unilateralis.rst:56
+msgid "`mcts-solver <https://github.com/akuroiwa/mcts-solver>`__"
+msgstr "`mcts-solver <https://github.com/akuroiwa/mcts-solver>`__"
+
+#: ../../o_unilateralis.rst:60
 msgid "General Usage"
 msgstr "使用法"
 
-#: ../../o_unilateralis.rst:60
+#: ../../o_unilateralis.rst:62
 msgid ""
 "By default, you get a list of molecules from :file:`smiles.csv`. The "
 "target is Nirmatrelvir. From that list, the best material for the "
@@ -103,11 +107,11 @@ msgstr ""
 "csvファイルを smiles list として再利用したければ、 :command:`--select` オプションを追加する。\n"
 "インストールせずに直接実行したければ、 :command:`python3 similarity_mcts.py --help` とする。"
 
-#: ../../o_unilateralis.rst:68
+#: ../../o_unilateralis.rst:70
 msgid "If you want to specify a target and execute:"
 msgstr "ターゲットを指定して実行したければ："
 
-#: ../../o_unilateralis.rst:75
+#: ../../o_unilateralis.rst:77
 msgid ""
 ":command:`similarity-mcts` selects and outputs the candidates that can be"
 " the material of the fragments from the smiles list. If you just want to "
@@ -117,40 +121,43 @@ msgstr ""
 "は、smilesのリストからフラグメントの材料と成り得る候補を選び出力する。mctsを実行せず、単にその smiles list "
 "からターゲットに似た分子を出力したければ："
 
-#: ../../o_unilateralis.rst:83
+#: ../../o_unilateralis.rst:85
 msgid "Output dataset in json format for :mod:`chem-classification`:"
 msgstr ":mod:`chem-classification` 用に json format のデータセットを出力する："
 
-#: ../../o_unilateralis.rst:90
+#: ../../o_unilateralis.rst:92
 msgid "If you want to output the dataset for regression model:"
 msgstr "regression model 用のデータセットを出力したければ："
 
-#: ../../o_unilateralis.rst:97
+#: ../../o_unilateralis.rst:99
 msgid ""
 "Train the classification model and predict the similarity between "
 "Nirmatrelvir and YH-53:"
 msgstr "classification model を訓練し、Nirmatrelvir と YH-53 の類似性を予測する："
 
-#: ../../o_unilateralis.rst:106
+#: ../../o_unilateralis.rst:108
 msgid ""
 "Train regression model to predict similarity between Nirmatrelvir and "
 "YH-53:"
 msgstr "regression model を訓練し、 Nirmatrelvir と YH-53 の類似性を予測する："
 
-#: ../../o_unilateralis.rst:115
+#: ../../o_unilateralis.rst:117
 msgid ""
 "Another model trained by json files output by :command:`similarity-mcts` "
 "can predict the similarity with the target molecule from the material "
 "candidates and cooperate with :command:`similarity-ant`:"
-msgstr ":command:`similarity-mcts` により出力された json files により訓練された、もう一つのモデルは、材料候補からターゲット分子との類似性を予測する。そして、 :command:`similarity-ant` と連携できる："
+msgstr ""
+":command:`similarity-mcts` により出力された json files "
+"により訓練された、もう一つのモデルは、材料候補からターゲット分子との類似性を予測する。そして、 :command:`similarity-ant`"
+" と連携できる："
 
-#: ../../o_unilateralis.rst:129
+#: ../../o_unilateralis.rst:131
 msgid ""
 "Cooperation between :mod:`chem-classification` and :command:`similarity-"
 "ant` (currently not working):"
 msgstr ":mod:`chem-classification` と :command:`similarity-ant` の連携（現状では機能せず）："
 
-#: ../../o_unilateralis.rst:135
+#: ../../o_unilateralis.rst:137
 msgid ""
 "Cooperation between regression model of :mod:`chem-classification` and "
 ":command:`similarity-ant`:"

@@ -26,6 +26,7 @@ Or:
    pip3 install chess
    pip3 install deap
    pip3 install mcts
+   pip3 install mcts-solver
 
 Or:
 
@@ -39,6 +40,7 @@ Or:
 -  `MCTS <https://github.com/pbsinclair42/MCTS>`__
 -  `chess-ant <https://github.com/akuroiwa/chess-ant>`__
 -  `chess-classification <https://github.com/akuroiwa/chess-classification>`__
+-  `mcts-solver <https://github.com/akuroiwa/mcts-solver>`__
 
 
 General Usage

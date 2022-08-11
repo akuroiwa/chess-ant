@@ -26,6 +26,7 @@ Or:
    pip3 install mcts
    pip3 install rdkit
    pip3 install global_chem_extensions
+   pip3 install mcts-solver
 
 Or:
 
@@ -52,6 +53,7 @@ Or:
 -  `Global-Chem <https://github.com/Sulstice/global-chem>`__
 -  `chem-ant <https://github.com/akuroiwa/chem-ant>`__
 -  `chem-classification <https://github.com/akuroiwa/chem-classification>`__
+-  `mcts-solver <https://github.com/akuroiwa/mcts-solver>`__
 
 
 General Usage
@@ -116,8 +118,8 @@ Another model trained by json files output by :command:`similarity-mcts` can pre
 
 .. code-block:: bash
 
-   similarity-mcts -i -l2 -e3 -r10 -b100 -p "train_smiles" -f "smiles.json" -d
-   similarity-mcts -i -l2 -e3 -r10 -b100 -p "eval_smiles" -f "smiles.json" -d
+   similarity-mcts -i -l2 -e3 -r10 -b100 -p "train_smiles" -f "smiles.json" -j
+   similarity-mcts -i -l2 -e3 -r10 -b100 -p "eval_smiles" -f "smiles.json" -j
 
 .. code-block:: python
 

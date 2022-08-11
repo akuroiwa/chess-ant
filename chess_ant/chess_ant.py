@@ -20,7 +20,12 @@ import chess
 import chess.pgn
 
 from copy import deepcopy
-from mcts import mcts, treeNode
+# from mcts import mcts, treeNode
+try:
+    from mcts_solver.mcts_solver import AntLionTreeNode, AntLionMcts
+except ImportError:
+    from mcts_solver import AntLionTreeNode, AntLionMcts
+
 try:
     from .chess_mcts import ChessState
 except ImportError:
@@ -70,7 +75,6 @@ class ChessAntSimulator(object):
         self.shortcut = 0
         self.result = 0
         self.pruning = 0
-        self.dl = False
 
     def _reset(self):
         self.previous_eaten = 0
@@ -93,7 +97,8 @@ class ChessAntSimulator(object):
         self.fen = fen
         self.initialState = ChessState(self.fen)
         self.mcts_instance = AntMcts(iterationLimit=10)
-        self.root = AntTreeNode(self.initialState, None)
+        # self.root = AntTreeNode(self.initialState, None)
+        self.root = AntLionTreeNode(self.initialState, None)
 
     def set_dl(self):
         self.mcts_instance.dl = True
@@ -102,7 +107,6 @@ class ChessAntSimulator(object):
         except ImportError:
             from chess_classification import ChessClassification
         self.mcts_instance.classification = ChessClassification()
-        self.dl = True
 
     def selectNode_1(self):
         node = self.mcts_instance.selectNode_num(self.root, 1 / math.sqrt(1))
@@ -192,86 +196,17 @@ class ChessAntSimulator(object):
         routine()
 
 
-class AntTreeNode(treeNode):
+class AntMcts(AntLionMcts):
 
-    def __init__(self, state, parent):
-        super().__init__(state, parent)
-        self.value = None
-
-class AntMcts(mcts):
-
-    def __init__(self, timeLimit=None, iterationLimit=None):
-        super().__init__(timeLimit, iterationLimit)
-        self.dl = False
-
-    def mctsSolver(self, node):
-        if node.isTerminal:
-            if  node.state.getReward() == 1:
-                node.value = float("inf")
-            elif node.state.getReward() == -1:
-                node.value = float("-inf")
-            else:
-                return 0
-
-        bestChild = node
-
-        if bestChild.value != float("-inf") and bestChild.value != float("inf"):
-            if bestChild.numVisits == 0:
-                if self.dl:
-                    prediction, raw_outputs = self.classification.predict_fen(bestChild.state.board.fen())
-                    if prediction == 2:
-                        dl_prediction = 1
-                    elif prediction == 1:
-                        dl_prediction = -1
-                    else:
-                        dl_prediction = 0
-                    reward = bestChild.state.getCurrentPlayer() * -dl_prediction
-                    # if bestChild.state.color:
-                    #     reward = bestChild.state.getCurrentPlayer() * -dl_prediction
-                    # else:
-                    #     reward = bestChild.state.getCurrentPlayer() * dl_prediction
-                else:
-                    reward = bestChild.state.getCurrentPlayer() * -self.rollout(bestChild.state)
-                return reward
-            else:
-                reward = -self.mctsSolver(bestChild)
+    def dl_method(self, bestChild):
+        prediction, raw_outputs = self.classification.predict_fen(bestChild.state.board.fen())
+        if prediction == 2:
+            dl_prediction = 1
+        elif prediction == 1:
+            dl_prediction = -1
         else:
-            reward = bestChild.value
-
-        if reward == float("inf"):
-            node.parent.value = float("-inf")
-            return reward
-        else:
-            if reward == float("-inf"):
-                for child in node.parent.children.values():
-                    try:
-                        if child.value != reward:
-                            reward = -1
-                            return reward
-                    except:
-                        node.parent.value = float("inf")
-                        return reward
-        return reward
-
-    def selectNode_num(self, node, explorationConstant):
-        while not node.isTerminal:
-            if node.isFullyExpanded:
-                node = self.getBestChild(node, explorationConstant)
-            else:
-                return self.expand(node)
-        return node
-
-    def expand(self, node):
-        actions = node.state.getPossibleActions()
-        for action in actions:
-            if action not in node.children:
-                newNode = AntTreeNode(node.state.takeAction(action), node)
-                node.children[action] = newNode
-                if len(actions) == len(node.children):
-                    node.isFullyExpanded = True
-                return newNode
-
-        raise Exception("Should never reach here")
+            dl_prediction = 0
+        reward = bestChild.state.getCurrentPlayer() * -dl_prediction
 
 
 ant = ChessAntSimulator()
@@ -335,7 +270,7 @@ def main(fen=None, population=500, generation=15, dl=False):
         algorithms.eaSimple(pop, toolbox, 0.5, 0.2, generation, stats, halloffame=hof)
 
     move = ant.get_prediction
-    print('\nBest choice:\n', ant.get_prediction)
+    print('\nBest choice:\n', move)
 
     best_ind = tools.selBest(pop, 1)[0]
     print("\nBest individual is %s, %s" % (best_ind, best_ind.fitness.values))

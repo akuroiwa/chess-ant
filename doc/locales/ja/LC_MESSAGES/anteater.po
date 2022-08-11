@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Chess-Ant \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-11 21:23+0900\n"
-"PO-Revision-Date: 2022-07-25 17:52+0900\n"
+"POT-Creation-Date: 2022-08-11 22:11+0900\n"
+"PO-Revision-Date: 2022-08-11 22:13+0900\n"
 "Last-Translator: Akihiro Kuroiwa <akuroiwa@env-reform.com>\n"
 "Language: ja\n"
 "Language-Team: Japanese\n"
@@ -45,11 +45,11 @@ msgstr "準備"
 msgid "On Ubuntu:"
 msgstr "Ubuntuで："
 
-#: ../../anteater.rst:22 ../../anteater.rst:30
+#: ../../anteater.rst:22 ../../anteater.rst:31
 msgid "Or:"
 msgstr "或いは："
 
-#: ../../anteater.rst:36
+#: ../../anteater.rst:37
 msgid ""
 "`python-chess: a chess library for Python <https://github.com/niklasf"
 "/python-chess>`__"
@@ -57,29 +57,35 @@ msgstr ""
 "`python-chess: a chess library for Python <https://github.com/niklasf"
 "/python-chess>`__"
 
-#: ../../anteater.rst:38
+#: ../../anteater.rst:39
 msgid "`DEAP <https://github.com/DEAP/deap>`__"
 msgstr "`DEAP <https://github.com/DEAP/deap>`__"
 
-#: ../../anteater.rst:39
+#: ../../anteater.rst:40
 msgid "`MCTS <https://github.com/pbsinclair42/MCTS>`__"
 msgstr "`MCTS <https://github.com/pbsinclair42/MCTS>`__"
 
-#: ../../anteater.rst:40
+#: ../../anteater.rst:41
 msgid "`chess-ant <https://github.com/akuroiwa/chess-ant>`__"
 msgstr "`chess-ant <https://github.com/akuroiwa/chess-ant>`__"
 
-#: ../../anteater.rst:41
+#: ../../anteater.rst:42
 msgid ""
 "`chess-classification <https://github.com/akuroiwa/chess-"
 "classification>`__"
-msgstr "`chess-classification <https://github.com/akuroiwa/chess-classification>`__"
+msgstr ""
+"`chess-classification <https://github.com/akuroiwa/chess-"
+"classification>`__"
 
-#: ../../anteater.rst:45
+#: ../../anteater.rst:43
+msgid "`mcts-solver <https://github.com/akuroiwa/mcts-solver>`__"
+msgstr "`mcts-solver <https://github.com/akuroiwa/mcts-solver>`__"
+
+#: ../../anteater.rst:47
 msgid "General Usage"
 msgstr "使用法"
 
-#: ../../anteater.rst:47
+#: ../../anteater.rst:49
 msgid ""
 "Sample chess problems are available in :file:`pgn/`. `Jerry "
 "<https://github.com/asdfjkl/jerry>`__ is useful for pasting Forsyth-"
@@ -89,21 +95,21 @@ msgstr ""
 "<https://github.com/asdfjkl/jerry>`__ はForsyth-Edwards Notation "
 "(FEN)を貼り付けるのに便利です。"
 
-#: ../../anteater.rst:59
+#: ../../anteater.rst:61
 msgid "If you installed :mod:`chess-ant` from PyPI:"
 msgstr ":mod:`chess-ant` をPyPIからインストールした場合："
 
-#: ../../anteater.rst:66
+#: ../../anteater.rst:68
 msgid ""
 "This command will output the wrong answer. It will take some time, but "
 "the following command will output correctly."
 msgstr "このコマンドは誤答を出力するでしょう。時間はかかりますが、以下のコマンドは正しく出力するでしょう。"
 
-#: ../../anteater.rst:74
+#: ../../anteater.rst:76
 msgid "Chess-Classification"
 msgstr "Chess-Classification"
 
-#: ../../anteater.rst:76
+#: ../../anteater.rst:78
 msgid ""
 "Version 0.0.1 of :file:`genPgn.py` contains the Walrus operator, so it "
 "only works with Python 3.8 or higher. Please install Pytorch before "
@@ -113,51 +119,51 @@ msgstr ""
 "はウォルラス演算子を含むので、Python>=3.8でしか動作しません。Simple "
 "Transformersをインストールする前にPytorchをインストールして下さい。"
 
-#: ../../anteater.rst:114
+#: ../../anteater.rst:116
 msgid "Train or retrain:"
 msgstr "学習か再学習："
 
-#: ../../anteater.rst:120
+#: ../../anteater.rst:122
 msgid "Test:"
 msgstr "動作確認："
 
-#: ../../anteater.rst:129
+#: ../../anteater.rst:131
 msgid "predictions"
 msgstr "予測"
 
-#: ../../anteater.rst:129
+#: ../../anteater.rst:131
 msgid "labels"
 msgstr "ラベル"
 
-#: ../../anteater.rst:131
+#: ../../anteater.rst:133
 msgid "1-0"
 msgstr "1-0"
 
-#: ../../anteater.rst:131
+#: ../../anteater.rst:133
 msgid "2"
 msgstr "2"
 
-#: ../../anteater.rst:133
+#: ../../anteater.rst:135
 msgid "0-1"
 msgstr "0-1"
 
-#: ../../anteater.rst:133
+#: ../../anteater.rst:135
 msgid "1"
 msgstr "1"
 
-#: ../../anteater.rst:135
+#: ../../anteater.rst:137
 msgid "1/2-1/2"
 msgstr "1/2-1/2"
 
-#: ../../anteater.rst:135
+#: ../../anteater.rst:137
 msgid "0"
 msgstr "0"
 
-#: ../../anteater.rst:138
+#: ../../anteater.rst:140
 msgid "With :file:`chess_ant.py`:"
 msgstr ":file:`chess_ant.py` との併用："
 
-#: ../../anteater.rst:144
+#: ../../anteater.rst:146
 msgid ""
 "`Simple Transformers "
 "<https://github.com/ThilinaRajapakse/simpletransformers>`__"
@@ -165,15 +171,15 @@ msgstr ""
 "`Simple Transformers "
 "<https://github.com/ThilinaRajapakse/simpletransformers>`__"
 
-#: ../../anteater.rst:145
+#: ../../anteater.rst:147
 msgid "`Start Locally | PyTorch <https://pytorch.org/get-started/locally/>`__"
 msgstr "`Start Locally | PyTorch <https://pytorch.org/get-started/locally/>`__"
 
-#: ../../anteater.rst:146
+#: ../../anteater.rst:148
 msgid "`pandas <https://pandas.pydata.org/>`__"
 msgstr "`pandas <https://pandas.pydata.org/>`__"
 
-#: ../../anteater.rst:147
+#: ../../anteater.rst:149
 msgid ""
 "`Chess-Classification <https://github.com/akuroiwa/chess-"
 "classification>`__"
@@ -181,35 +187,35 @@ msgstr ""
 "`Chess-Classification <https://github.com/akuroiwa/chess-"
 "classification>`__"
 
-#: ../../anteater.rst:149
+#: ../../anteater.rst:151
 msgid "Todo"
 msgstr "Todo"
 
-#: ../../anteater.rst:151
+#: ../../anteater.rst:153
 msgid "It’s too slow."
 msgstr "遅い。"
 
-#: ../../anteater.rst:152
+#: ../../anteater.rst:154
 msgid "Low correct answer rate."
 msgstr "低い正答率。"
 
-#: ../../anteater.rst:153
+#: ../../anteater.rst:155
 msgid "Parallelization."
 msgstr "並列化。"
 
-#: ../../anteater.rst:154
+#: ../../anteater.rst:156
 msgid "Support for other board games like shogi."
 msgstr "将棋のような他のボードゲームへの対応。"
 
-#: ../../anteater.rst:155
+#: ../../anteater.rst:157
 msgid "Support for Universal Chess Interface (UCI)."
 msgstr "Universal Chess Interface (UCI)への対応。"
 
-#: ../../anteater.rst:156
+#: ../../anteater.rst:158
 msgid "Docstring."
 msgstr "Docstring."
 
-#: ../../anteater.rst:157
+#: ../../anteater.rst:159
 msgid "Boil spaghetti code."
 msgstr "スパゲティ・コードを茹でる。"
 
