@@ -1,5 +1,10 @@
 from copy import deepcopy
-from mcts import mcts, treeNode
+# from mcts import mcts, treeNode
+try:
+    from mcts_solver.mcts_solver import AntLionTreeNode, AntLionMcts
+except ImportError:
+    from mcts_solver import AntLionTreeNode, AntLionMcts
+
 import chess
 import argparse
 import numpy as np
@@ -49,14 +54,45 @@ class ChessState():
         return False
 
 
+class AntMcts(AntLionMcts):
+    def search(self, initialState, needDetails=False):
+        self.root = AntLionTreeNode(initialState, None)
+
+        if self.limitType == 'time':
+            timeLimit = time.time() + self.timeLimit / 1000
+            while time.time() < timeLimit:
+                self.executeRound()
+        else:
+            for i in range(self.searchLimit):
+                self.executeRound()
+
+        bestChild = self.getBestChild(self.root, 0)
+        action=(action for action, node in self.root.children.items() if node is bestChild).__next__()
+        if needDetails:
+            return {"action": action, "expectedReward": bestChild.totalReward / bestChild.numVisits}
+        else:
+            return action
+
+    def executeRound(self):
+        """
+            execute a selection-expansion-simulation-backpropagation round
+        """
+        node = self.selectNode(self.root)
+        # reward = self.rollout(node.state)
+        reward = self.mcts_instance.mctsSolver(node)
+        self.backpropogate(node, reward)
+
+
 def console_script():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("-f", "--fen", dest='fen', default=None, type=str, help="Initial FEN.")
+    parser.add_argument("-r", "--iterationLimit", dest='iterationLimit', default=500, type=int, help="MCTS iterationLimit.  Default is 500.")
     args = parser.parse_args()
 
     initialState = ChessState(args.fen)
-    # mcts = mcts(timeLimit=1000)
-    mymcts = mcts(iterationLimit=500)
+    # mymcts = mcts(timeLimit=1000)
+    # mymcts = mcts(iterationLimit=500)
+    mymcts = AntLionMcts(iterationLimit=args.iterationLimit)
     action = mymcts.search(initialState=initialState)
 
     print(action)
