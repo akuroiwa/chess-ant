@@ -79,7 +79,7 @@ class AntMcts(AntLionMcts):
         """
         node = self.selectNode(self.root)
         # reward = self.rollout(node.state)
-        reward = self.mcts_instance.mctsSolver(node)
+        reward = self.mctsSolver(node)
         self.backpropogate(node, reward)
 
 
@@ -92,7 +92,7 @@ def console_script():
     initialState = ChessState(args.fen)
     # mymcts = mcts(timeLimit=1000)
     # mymcts = mcts(iterationLimit=500)
-    mymcts = AntLionMcts(iterationLimit=args.iterationLimit)
+    mymcts = AntMcts(iterationLimit=args.iterationLimit)
     action = mymcts.search(initialState=initialState)
 
     print(action)
