@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Chess-Ant \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-31 18:04+0900\n"
-"PO-Revision-Date: 2022-07-31 18:04+0900\n"
+"POT-Creation-Date: 2022-08-23 21:06+0900\n"
+"PO-Revision-Date: 2022-08-23 21:10+0900\n"
 "Last-Translator: Akihiro Kuroiwa <akuroiwa@env-reform.com>\n"
 "Language: ja\n"
 "Language-Team: Japanese\n"
@@ -339,14 +339,20 @@ msgid "Is :command:`similarity-mcts` working properly in the first place?"
 msgstr "そもそも :command:`similarity-mcts` は正しく動作しているのか？"
 
 #: ../../o_camponoti_balzani.rst:301
+msgid ""
+"Version 0.0.3 of :command:`similarity-mcts` now imports MCTS solver, so "
+"the output is slightly different from this document."
+msgstr "Version 0.0.3 の :command:`similarity-mcts` は MCTS solverをインポートするので、この文書と出力が若干異なる。"
+
+#: ../../o_camponoti_balzani.rst:302
 msgid "Unravel the entangled spaghetti code."
 msgstr "絡み合ったスパゲッティコードを解く。"
 
-#: ../../o_camponoti_balzani.rst:305
+#: ../../o_camponoti_balzani.rst:306
 msgid "Reference"
 msgstr "参照"
 
-#: ../../o_camponoti_balzani.rst:307
+#: ../../o_camponoti_balzani.rst:308
 msgid ""
 "`Sisakht, M., Mahmoodzadeh, A., & Darabian, M. (2021). Plant-derived "
 "chemicals as potential inhibitors of SARS-CoV-2 main protease (6LU7), a "
@@ -360,7 +366,7 @@ msgstr ""
 "https://doi.org/10.1002/ptr.7041 "
 "<https://pubmed.ncbi.nlm.nih.gov/33759279/>`__"
 
-#: ../../o_camponoti_balzani.rst:312
+#: ../../o_camponoti_balzani.rst:313
 msgid ""
 "`SAMANT, L., & Javle, V. (2020). Comparative Docking Analysis of Rational"
 " Drugs Against COVID-19 Main Protease. ChemRxiv. "
@@ -374,36 +380,36 @@ msgstr ""
 "been peer-reviewed. <https://chemrxiv.org/engage/chemrxiv/article-"
 "details/60c749fd702a9b828b18b20c>`__"
 
-#: ../../o_camponoti_balzani.rst:317
+#: ../../o_camponoti_balzani.rst:318
 msgid "`PubChem <https://pubchem.ncbi.nlm.nih.gov/>`__"
 msgstr "`PubChem <https://pubchem.ncbi.nlm.nih.gov/>`__"
 
-#: ../../o_camponoti_balzani.rst:320
+#: ../../o_camponoti_balzani.rst:321
 msgid "Bibliography"
 msgstr "参考文献"
 
-#: ../../o_camponoti_balzani.rst:322
+#: ../../o_camponoti_balzani.rst:323
 msgid "`化学の新しいカタチ <https://future-chem.com/>`__"
 msgstr "`化学の新しいカタチ <https://future-chem.com/>`__"
 
-#: ../../o_camponoti_balzani.rst:323
-msgid ""
-"`Python for chemoinformatics <https://github.com/Mishima-"
-"syk/py4chemoinformatics>`__"
-msgstr ""
-"`Python for chemoinformatics <https://github.com/Mishima-"
-"syk/py4chemoinformatics>`__"
-
 #: ../../o_camponoti_balzani.rst:324
 msgid ""
-"`English version of Python for Chemoinformatics (pdf) "
-"<https://github.com/joofio/py4chemoinformatics>`__"
+"`Python for chemoinformatics <https://github.com/Mishima-"
+"syk/py4chemoinformatics>`__"
 msgstr ""
-"`English version of Python for Chemoinformatics (pdf) "
-"<https://github.com/joofio/py4chemoinformatics>`__"
+"`Python for chemoinformatics <https://github.com/Mishima-"
+"syk/py4chemoinformatics>`__"
 
 #: ../../o_camponoti_balzani.rst:325
 msgid ""
+"`English version of Python for Chemoinformatics (pdf) "
+"<https://github.com/joofio/py4chemoinformatics>`__"
+msgstr ""
+"`English version of Python for Chemoinformatics (pdf) "
+"<https://github.com/joofio/py4chemoinformatics>`__"
+
+#: ../../o_camponoti_balzani.rst:326
+msgid ""
 "`Sharif, Suliman. Understanding drug-likeness filters with RDKit and "
 "exploring the WITHDRAWN database. (2020). "
 "<https://sharifsuliman1.medium.com/understanding-drug-likeness-filters-"
@@ -414,7 +420,7 @@ msgstr ""
 "<https://sharifsuliman1.medium.com/understanding-drug-likeness-filters-"
 "with-rdkit-and-exploring-the-withdrawn-database-ebd6b8b2921e>`__"
 
-#: ../../o_camponoti_balzani.rst:327
+#: ../../o_camponoti_balzani.rst:328
 msgid ""
 "`Panikar, S., Shoba, G., Arun, M., Sahayarayan, J. J., Usha Raja "
 "Nanthini, A., Chinnathambi, A., Alharbi, S. A., Nasif, O., & Kim, H. J. "
@@ -431,25 +437,30 @@ msgstr ""
 "pharmacokinetics and toxicological properties. Journal of infection and "
 "public health, 14(5), 601–610. https://doi.org/10.1016/j.jiph.2020.12.037"
 " <https://pubmed.ncbi.nlm.nih.gov/33848890/>`__"
-
-#: ../../o_camponoti_balzani.rst:331
-msgid ""
-"`@cat_lover. 構造生成メモ. (2021). "
-"<https://qiita.com/cat_lover/items/9540a2d00daba3584a22>`__"
-msgstr ""
-"`@cat_lover. 構造生成メモ. (2021). "
-"<https://qiita.com/cat_lover/items/9540a2d00daba3584a22>`__"
 
 #: ../../o_camponoti_balzani.rst:332
+msgid ""
+"`@cat_lover. 構造生成メモ. (2021). "
+"<https://qiita.com/cat_lover/items/9540a2d00daba3584a22>`__"
+msgstr ""
+"`@cat_lover. 構造生成メモ. (2021). "
+"<https://qiita.com/cat_lover/items/9540a2d00daba3584a22>`__"
+
+#: ../../o_camponoti_balzani.rst:333
 msgid "`GB-GM <https://github.com/jensengroup/GB-GM>`__"
 msgstr "`GB-GM <https://github.com/jensengroup/GB-GM>`__"
 
-#: ../../o_camponoti_balzani.rst:333
+#: ../../o_camponoti_balzani.rst:334
 msgid ""
 "`Jensen, J. (2019). Graph-based Genetic Algorithm and Generative "
 "Model/Monte Carlo Tree Search for the Exploration of Chemical Space. "
 "ChemRxiv. doi:10.26434/chemrxiv.7240751.v2 This content is a preprint and"
 " has not been peer-reviewed. <https://chemrxiv.org/engage/chemrxiv"
 "/article-details/60c7405af96a000e09286278>`__"
-msgstr "`Jensen, J. (2019). Graph-based Genetic Algorithm and Generative Model/Monte Carlo Tree Search for the Exploration of Chemical Space. ChemRxiv. doi:10.26434/chemrxiv.7240751.v2 This content is a preprint and has not been peer-reviewed. <https://chemrxiv.org/engage/chemrxiv/article-details/60c7405af96a000e09286278>`__"
+msgstr ""
+"`Jensen, J. (2019). Graph-based Genetic Algorithm and Generative "
+"Model/Monte Carlo Tree Search for the Exploration of Chemical Space. "
+"ChemRxiv. doi:10.26434/chemrxiv.7240751.v2 This content is a preprint and"
+" has not been peer-reviewed. <https://chemrxiv.org/engage/chemrxiv"
+"/article-details/60c7405af96a000e09286278>`__"
 

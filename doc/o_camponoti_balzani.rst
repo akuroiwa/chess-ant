@@ -298,6 +298,7 @@ If you need the target molecule itself, the above method may be useful.
    -  Type bool is output as 1.0 or 0.0 in a csv file.
    -  :command:`similarity-ant` is so slow that it is far from practical.
    -  Is :command:`similarity-mcts` working properly in the first place?
+   -  Version 0.0.3 of :command:`similarity-mcts` now imports MCTS solver, so the output is slightly different from this document.
    -  Unravel the entangled spaghetti code.
 
 
