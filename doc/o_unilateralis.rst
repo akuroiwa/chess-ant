@@ -100,7 +100,7 @@ Train the classification model and predict the similarity between Nirmatrelvir a
 
 .. code-block:: python
 
-   from similarity_classification import SimilarityClassification
+   from chem_classification.similarity_classification import SimilarityClassification
    s = SimilarityClassification()
    s.train_and_eval("train_smiles/smiles.json", "eval_smiles/smiles.json")
    s.predict_smiles_pair(["CC1(C2C1C(N(C2)C(=O)C(C(C)(C)C)NC(=O)C(F)(F)F)C(=O)NC(CC3CCNC3=O)C#N)C", "CC(C)CC(C(=O)NC(CC1CCNC1=O)C(=O)C2=NC3=CC=CC=C3S2)NC(=O)C4=CC5=C(N4)C=CC=C5OC"])
@@ -109,7 +109,7 @@ Train regression model to predict similarity between Nirmatrelvir and YH-53:
 
 .. code-block:: python
 
-   from similarity_classification import SimilarityRegression
+   from chem_classification.similarity_classification import SimilarityRegression
    s = SimilarityRegression()
    s.train_and_eval("train_smiles/smiles.json", "eval_smiles/smiles.json")
    s.predict_smiles_pair(["CC1(C2C1C(N(C2)C(=O)C(C(C)(C)C)NC(=O)C(F)(F)F)C(=O)NC(CC3CCNC3=O)C#N)C", "CC(C)CC(C(=O)NC(CC1CCNC1=O)C(=O)C2=NC3=CC=CC=C3S2)NC(=O)C4=CC5=C(N4)C=CC=C5OC"])
@@ -123,7 +123,7 @@ Another model trained by json files output by :command:`similarity-mcts` can pre
 
 .. code-block:: python
 
-   from similarity_classification import SimilarityRegression
+   from chem_classification.similarity_classification import SimilarityRegression
    s = SimilarityRegression()
    s.train_and_eval("train_smiles/smiles.json", "eval_smiles/smiles.json")
 
