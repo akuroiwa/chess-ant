@@ -106,7 +106,7 @@ class ChessAntSimulator(object):
             from chess_classification.chess_classification import ChessClassification
         except ImportError:
             from chess_classification import ChessClassification
-        self.mcts_instance.classification = ChessClassification()
+        self.mcts_instance.model = ChessClassification()
 
     def selectNode_1(self):
         node = self.mcts_instance.selectNode_num(self.root, 1 / math.sqrt(1))
@@ -198,15 +198,15 @@ class ChessAntSimulator(object):
 
 class AntMcts(AntLionMcts):
 
-    def dl_method(self, bestChild):
-        prediction, raw_outputs = self.classification.predict_fen(bestChild.state.board.fen())
+    def dl_method(self, state):
+        prediction, raw_outputs = self.model.predict_fen(state.board.fen())
         if prediction == 2:
             dl_prediction = 1
         elif prediction == 1:
             dl_prediction = -1
         else:
             dl_prediction = 0
-        reward = bestChild.state.getCurrentPlayer() * -dl_prediction
+        return state.getCurrentPlayer() * -dl_prediction
 
 
 ant = ChessAntSimulator()
