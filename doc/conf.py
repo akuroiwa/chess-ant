@@ -60,3 +60,4 @@ todo_include_todos = True
 # locale_dirs = ['locale/']
 gettext_compact = False
 # language= 'en'
+# language= 'ja'
