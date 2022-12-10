@@ -84,7 +84,7 @@ Chess-Ant's UCT [#]_ [#]_ [#]_ [#]_ [#]_:
 
 .. math::
 
-   a_{t} = arg\, max_{a}(Q(s_{t}, a) + C_{gp}\sqrt\frac{lnN(s_{t})}{N(s_{t},a)})
+   a_{t} = arg\, max_{a}(Q(s_{t}, a) + C_{gp}\sqrt\frac{2lnN(s_{t})}{N(s_{t},a)})
 
    C_{gp} = \begin{cases}
    1/\sqrt{1}, \\
@@ -137,6 +137,16 @@ rollout in ``mctsSolver()``, perform processing such as pruning, output
 reward like rollout, and input it to ``backpropogate()``.
 
 Like negamax, the MCTS solver is a recursive function and requires a stop condition.
+
+
+Change History
+--------------
+
+In :mod:`chess-classification` 0.0.5, fen is separated into tokens to create a dataset. The fen is separated by columns instead of letter by letter.
+
+Corrected by adding ``math.sqrt(2)`` since there was an error in the UCB1 algorithm until :mod:`chess-ant` 0.0.5 manual.
+It seems that the author of :mod:`mcts` initially set ``explorationConstant = 1 / math.sqrt(2)`` in :file:`mcts.py` to cancel out ``math.sqrt(2)``.
+I added a new terminal called ``selectNodeEphemeralConstant`` to replace the ephemeral constant in :mod:`chess-ant` 0.0.6.
 
 
 Development Plan

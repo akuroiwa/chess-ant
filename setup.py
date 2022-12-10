@@ -5,7 +5,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='chess_ant',
-    version='0.0.5',
+    version='0.0.6',
     url='https://github.com/akuroiwa/chess-ant',
     # # PyPI url
     # download_url='',
