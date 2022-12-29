@@ -17,7 +17,7 @@ setup(
     long_description=open("README.md", "r").read(),
     long_description_content_type='text/markdown',
     zip_safe=False,
-    python_requires=">=3.7",
+    python_requires=">=3.7, !=3.10.*",
     classifiers=[
         'Development Status :: 3 - Alpha',
         'Environment :: Console',
@@ -37,7 +37,7 @@ setup(
     packages=find_packages(),
     # py_modules=['chess_ant.chess_ant', 'chess_ant.chess_mcts'],
     include_package_data=True,
-    install_requires=['chess', 'mcts', 'deap', 'mcts-solver'],
+    install_requires=['chess', 'mcts', 'deap', 'mcts-solver', 'scipy', 'pandas'],
     extras_require={
         "classification": ["transformers", "chess_classification"]},
     entry_points={

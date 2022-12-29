@@ -148,6 +148,38 @@ Corrected by adding ``math.sqrt(2)`` since there was an error in the UCB1 algori
 It seems that the author of :mod:`mcts` initially set ``explorationConstant = 1 / math.sqrt(2)`` in :file:`mcts.py` to cancel out ``math.sqrt(2)``.
 I added a new terminal called ``selectNodeEphemeralConstant`` to replace the ephemeral constant in :mod:`chess-ant` 0.0.6.
 
+According to `Issues #658 <https://github.com/DEAP/deap/issues/658>`_, Deap does not work with Python 3.10, but with version 3.11.
+
+In :file:`~/.bashrc` or :file:`~/.bash_aliases`:
+
+.. code-block:: bash
+
+   # Python version
+   alias python3='/usr/bin/python3.11'
+
+and execute :command:`source` command:
+
+.. code-block:: bash
+
+   source ~/.bash_aliases
+
+Another method is :command:`update-alternatives`.
+
+.. code-block:: bash
+
+   update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.10 2
+   update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.11 1
+   update-alternatives --config python3
+   python3 --version
+
+To revert to the original version that was set as top priority:
+
+.. code-block:: bash
+
+   update-alternatives --auto python3
+
+Please note that as of December 2022, gnome-terminal does not start with Python 3.11 on Ubuntu 22.04.1 LTS.
+
 
 Development Plan
 ----------------

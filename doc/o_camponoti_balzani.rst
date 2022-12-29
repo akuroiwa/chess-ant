@@ -30,6 +30,14 @@ Therefore, in this experiment, I use `UCSF Chimera <https://www.rbvi.ucsf.edu/ch
    chmod u+x chimera-alpha-linux_x86_64.bin
    ./chimera-alpha-linux_x86_64.bin
 
+In :file:`~/.profile` on Ubuntu:
+
+.. code-block:: bash
+
+   if [ -d "$HOME/.local/bin" ] ; then
+       PATH="$HOME/.local/bin:$PATH"
+   fi
+
 In my case, there are two installation locations:
 
 .. code-block:: bash
