@@ -100,13 +100,15 @@ class ChessAntSimulator(object):
         # self.root = AntTreeNode(self.initialState, None)
         self.root = AntLionTreeNode(self.initialState, None)
 
-    def set_dl(self):
+    def set_dl(self, output_dir='outputs/'):
         self.mcts_instance.dl = True
         try:
             from chess_classification.chess_classification import ChessClassification
         except ImportError:
+        # except ImportError or ModuleNotFoundError:
+        # except:
             from chess_classification import ChessClassification
-        self.mcts_instance.model = ChessClassification()
+        self.mcts_instance.model = ChessClassification(output_dir)
 
     def selectNode_1(self):
         node = self.mcts_instance.selectNode_num(self.root, 1 / math.sqrt(1))
@@ -259,11 +261,11 @@ toolbox.register("mate", gp.cxOnePoint)
 toolbox.register("expr_mut", gp.genFull, min_=0, max_=2)
 toolbox.register("mutate", gp.mutUniform, expr=toolbox.expr_mut, pset=pset)
 
-def main(fen=None, population=500, generation=15, dl=False):
+def main(fen=None, population=500, generation=15, dl=False, output_dir='outputs/'):
     random.seed(69)
     ant.set_fen(fen)
     if dl:
-        ant.set_dl()
+        ant.set_dl(output_dir=output_dir)
     pop = toolbox.population(n=population)
     hof = tools.HallOfFame(100)
     stats = tools.Statistics(lambda ind: ind.fitness.values)
@@ -284,7 +286,7 @@ def main(fen=None, population=500, generation=15, dl=False):
     # return pop, hof, stats
     return pop, hof, stats, move
 
-def run(fen=None, population=500, generation=15, dl=False):
+def run(fen=None, population=500, generation=15, dl=False, output_dir='outputs/'):
     if not fen:
         board = chess.Board()
     else:
@@ -299,13 +301,13 @@ def run(fen=None, population=500, generation=15, dl=False):
             board.push(move)
         else:
             print("Computers Turn:")
-            pop, hof, stats, move = main(board.fen(), population, generation, dl)
+            pop, hof, stats, move = main(board.fen(), population, generation, dl, output_dir)
             board.push(move)
         print("\n")
         print(board)
         n += 1
 
-def selfPlay(fen=None, population=500, generation=15, dl=False, path="train-pgn", loop=1, create_pgn=False):
+def selfPlay(fen=None, population=500, generation=15, dl=False, path="train-pgn", loop=1, create_pgn=False, output_dir='outputs/'):
     if create_pgn:
         os.makedirs(path, exist_ok=True)
     for i in range(loop):
@@ -322,7 +324,7 @@ def selfPlay(fen=None, population=500, generation=15, dl=False, path="train-pgn"
         print(board)
         print("\n")
         while not board.is_game_over():
-            pop, hof, stats, move = main(board.fen(), population, generation, dl)
+            pop, hof, stats, move = main(board.fen(), population, generation, dl, output_dir)
             board.push(move)
             print("\n")
             print(board)
@@ -345,6 +347,7 @@ def console_script():
     parser.add_argument("-y", "--play", dest='play', action='store_true', help="Play chess on console.")
     parser.add_argument("-a", "--auto", dest='auto', action='store_true', help="Self-play chess.")
     parser.add_argument("-d", "--deep-learning", dest='dl', action='store_true', help="With deep learning.")
+    parser.add_argument("-o", "--model-outputs", dest='output_dir', default='outputs/', type=str, help="The directory where all deep-learning outputs will be stored.")
     parser.add_argument("-p", "--path", dest='path', default="train-pgn", type=str, help="Directory to save PGN files when create_pgn option is True.  Default is train-pgn.")
     parser.add_argument("-l", "--loop", dest='loop', default=1, type=int, help="How many PGN files you want when create_pgn option is True.  Default is 1")
     parser.add_argument("-c", "--create_pgn", dest='create_pgn', action='store_true', help="Create PGN files when self-play chess.")
@@ -355,7 +358,7 @@ def console_script():
     elif args.auto is True:
         selfPlay(args.fen, population=args.population, generation=args.generation, dl=args.dl, path=args.path, loop=args.loop, create_pgn=args.create_pgn)
     else:
-        main(args.fen, population=args.population, generation=args.generation, dl=args.dl)
+        main(args.fen, population=args.population, generation=args.generation, dl=args.dl, output_dir=args.output_dir)
 
 if __name__ == "__main__":
     console_script()
