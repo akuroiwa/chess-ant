@@ -7,16 +7,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Chess-Ant \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-08-11 22:11+0900\n"
-"PO-Revision-Date: 2022-08-11 22:14+0900\n"
+"POT-Creation-Date: 2023-02-26 18:05+0900\n"
+"PO-Revision-Date: 2023-02-26 18:46+0900\n"
 "Last-Translator: Akihiro Kuroiwa <akuroiwa@env-reform.com>\n"
 "Language: ja\n"
 "Language-Team: Japanese\n"
-"Plural-Forms: nplurals=1; plural=0\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.9.1\n"
+"Generated-By: Babel 2.11.0\n"
 
 #: ../../o_unilateralis.rst:2
 msgid "Chem-Ant Introduction"
@@ -121,43 +121,56 @@ msgstr ""
 "は、smilesのリストからフラグメントの材料と成り得る候補を選び出力する。mctsを実行せず、単にその smiles list "
 "からターゲットに似た分子を出力したければ："
 
-#: ../../o_unilateralis.rst:85
+#: ../../o_unilateralis.rst:87
+msgid "Chem-Classification"
+msgstr "Chem-Classification"
+
+#: ../../o_unilateralis.rst:89
 msgid "Output dataset in json format for :mod:`chem-classification`:"
 msgstr ":mod:`chem-classification` 用に json format のデータセットを出力する："
 
-#: ../../o_unilateralis.rst:92
+#: ../../o_unilateralis.rst:96
 msgid "If you want to output the dataset for regression model:"
 msgstr "regression model 用のデータセットを出力したければ："
 
-#: ../../o_unilateralis.rst:99
+#: ../../o_unilateralis.rst:103
 msgid ""
 "Train the classification model and predict the similarity between "
 "Nirmatrelvir and YH-53:"
 msgstr "classification model を訓練し、Nirmatrelvir と YH-53 の類似性を予測する："
 
-#: ../../o_unilateralis.rst:108
+#: ../../o_unilateralis.rst:112
+msgid "Loading a local save:"
+msgstr "保存したモデルの読み込み："
+
+#: ../../o_unilateralis.rst:118
 msgid ""
 "Train regression model to predict similarity between Nirmatrelvir and "
 "YH-53:"
 msgstr "regression model を訓練し、 Nirmatrelvir と YH-53 の類似性を予測する："
 
-#: ../../o_unilateralis.rst:117
+#: ../../o_unilateralis.rst:127
 msgid ""
-"Another model trained by json files output by :command:`similarity-mcts` "
-"can predict the similarity with the target molecule from the material "
-"candidates and cooperate with :command:`similarity-ant`:"
-msgstr ""
-":command:`similarity-mcts` により出力された json files "
-"により訓練された、もう一つのモデルは、材料候補からターゲット分子との類似性を予測する。そして、 :command:`similarity-ant`"
-" と連携できる："
+"Another regression model trained by json files output by :command"
+":`similarity-mcts` can predict the similarity with the target molecule "
+"from the material candidates and cooperate with :command:`similarity-"
+"ant`:"
+msgstr ":command:`similarity-mcts` により出力された json files により訓練された、もう一つの regression model は、材料候補からターゲット分子との類似性を予測する。そして、 :command:`similarity-ant` と連携できる："
 
-#: ../../o_unilateralis.rst:131
+#: ../../o_unilateralis.rst:136
+msgid ""
+"From :mod:`chem-ant` 0.0.7, I changed it to create datasets with "
+"molecular fragments as tokens, so the difference between the two "
+"regression models is gone."
+msgstr ":mod:`chem-ant` 0.0.7 から、分子のフラグメントをトークンとしてデータセットを作成するように変更したので、2つの regression models の差は無くなった。"
+
+#: ../../o_unilateralis.rst:139
 msgid ""
 "Cooperation between :mod:`chem-classification` and :command:`similarity-"
 "ant` (currently not working):"
 msgstr ":mod:`chem-classification` と :command:`similarity-ant` の連携（現状では機能せず）："
 
-#: ../../o_unilateralis.rst:137
+#: ../../o_unilateralis.rst:145
 msgid ""
 "Cooperation between regression model of :mod:`chem-classification` and "
 ":command:`similarity-ant`:"

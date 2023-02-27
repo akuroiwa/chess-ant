@@ -82,6 +82,10 @@ If you just want to output target-like molecules from the smiles list without ru
    similarity-genMols --help
    similarity-genMols -t "CC1(C2C1C(N(C2)C(=O)C(C(C)(C)C)NC(=O)C(F)(F)F)C(=O)NC(CC3CCNC3=O)C#N)C" -m "CC1=CC=CC=C1C(C)C" "Cc1ccccc1CC(C#N)NC1CCNC1=O" -f "gen2.csv"
 
+
+Chem-Classification
+--------------------
+
 Output dataset in json format for :mod:`chem-classification`:
 
 .. code-block:: bash
@@ -105,6 +109,12 @@ Train the classification model and predict the similarity between Nirmatrelvir a
    s.train_and_eval("train_smiles/smiles.json", "eval_smiles/smiles.json")
    s.predict_smiles_pair(["CC1(C2C1C(N(C2)C(=O)C(C(C)(C)C)NC(=O)C(F)(F)F)C(=O)NC(CC3CCNC3=O)C#N)C", "CC(C)CC(C(=O)NC(CC1CCNC1=O)C(=O)C2=NC3=CC=CC=C3S2)NC(=O)C4=CC5=C(N4)C=CC=C5OC"])
 
+Loading a local save:
+
+.. code-block:: python
+
+   s = SimilarityClassification("local-path/your-outputs")
+
 Train regression model to predict similarity between Nirmatrelvir and YH-53:
 
 .. code-block:: python
@@ -114,28 +124,26 @@ Train regression model to predict similarity between Nirmatrelvir and YH-53:
    s.train_and_eval("train_smiles/smiles.json", "eval_smiles/smiles.json")
    s.predict_smiles_pair(["CC1(C2C1C(N(C2)C(=O)C(C(C)(C)C)NC(=O)C(F)(F)F)C(=O)NC(CC3CCNC3=O)C#N)C", "CC(C)CC(C(=O)NC(CC1CCNC1=O)C(=O)C2=NC3=CC=CC=C3S2)NC(=O)C4=CC5=C(N4)C=CC=C5OC"])
 
-Another model trained by json files output by :command:`similarity-mcts` can predict the similarity with the target molecule from the material candidates and cooperate with :command:`similarity-ant`:
+Another regression model trained by json files output by :command:`similarity-mcts` can predict the similarity with the target molecule from the material candidates and cooperate with :command:`similarity-ant`:
 
 .. code-block:: bash
 
    similarity-mcts -i -l2 -e3 -r10 -b100 -p "train_smiles" -f "smiles.json" -j
    similarity-mcts -i -l2 -e3 -r10 -b100 -p "eval_smiles" -f "smiles.json" -j
 
-.. code-block:: python
+.. note::
 
-   from chem_classification.similarity_classification import SimilarityRegression
-   s = SimilarityRegression()
-   s.train_and_eval("train_smiles/smiles.json", "eval_smiles/smiles.json")
-
+   From :mod:`chem-ant` 0.0.7,
+   I changed it to create datasets with molecular fragments as tokens, so the difference between the two regression models is gone.
 
 Cooperation between :mod:`chem-classification` and :command:`similarity-ant` (currently not working):
 
 .. code-block:: bash
 
-   similarity-ant -n20 -g5 -b 1 -p gen_smiles -d
+   similarity-ant -n20 -g5 -b 1 -p gen_smiles -d -o "local-path/your-outputs"
 
 Cooperation between regression model of :mod:`chem-classification` and :command:`similarity-ant`:
 
 .. code-block:: bash
 
-   similarity-ant -n20 -g5 -b 1 -p gen_smiles -d -r
+   similarity-ant -n20 -g5 -b 1 -p gen_smiles -r -o "local-path/your-outputs"

@@ -113,6 +113,12 @@ Please install Pytorch before installing Simple Transformers.
    from chess_classification.chess_classification import ChessClassification
    classification = ChessClassification()
 
+Loading a local save:
+
+.. code-block:: python
+
+   classification = ChessClassification("local-path/your-outputs")
+
 Train or retrain:
 
 .. code-block:: python
@@ -141,7 +147,13 @@ With :file:`chess_ant.py`:
 
 .. code-block:: bash
 
-   python3 chess_ant.py -d -n100 -g5 -f "6rk/4pppp/8/8/3Q4/8/RB2PPPP/R6K w - - 0 1"
+   chess-ant -d -n100 -g5 -f "6rk/4pppp/8/8/3Q4/8/RB2PPPP/R6K w - - 0 1"
+
+Loading a local save:
+
+.. code-block:: bash
+
+   chess-ant -d -n100 -g5 -f "6rk/4pppp/8/8/3Q4/8/RB2PPPP/R6K w - - 0 1" --model-outputs "local-path/your-outputs"
 
 - `Simple Transformers <https://github.com/ThilinaRajapakse/simpletransformers>`__
 - `Start Locally | PyTorch <https://pytorch.org/get-started/locally/>`__

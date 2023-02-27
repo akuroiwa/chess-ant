@@ -142,7 +142,10 @@ Like negamax, the MCTS solver is a recursive function and requires a stop condit
 Change History
 --------------
 
-In :mod:`chess-classification` 0.0.5, fen is separated into tokens to create a dataset. The fen is separated by columns instead of letter by letter.
+Since both :mod:`chess-classification` and :mod:`chem-classification` use the same algorithm, I made similar changes at the same time.
+
+
+In :mod:`chess-classification` 0.0.4, fen is separated into tokens to create a dataset. The fen is separated by columns instead of letter by letter.
 
 Corrected by adding ``math.sqrt(2)`` since there was an error in the UCB1 algorithm until :mod:`chess-ant` 0.0.5 manual.
 It seems that the author of :mod:`mcts` initially set ``explorationConstant = 1 / math.sqrt(2)`` in :file:`mcts.py` to cancel out ``math.sqrt(2)``.
@@ -179,6 +182,12 @@ To revert to the original version that was set as top priority:
    update-alternatives --auto python3
 
 Please note that as of December 2022, gnome-terminal does not start with Python 3.11 on Ubuntu 22.04.1 LTS.
+
+In :mod:`chess-classification` 0.0.5, you can load a local save.
+
+In order to shorten the training time, [#]_ the conventional model was changed to the checkpoint google/electra-small-discriminator [#]_ of the electra model.
+
+My pgn files are more like tactics [#]_  [#]_ than chess problems, so it's more efficient to create a dataset from tactics. More than 300 rows of pgn data are required for model training and model evaluation in order to increase the accuracy rate.
 
 
 Development Plan
@@ -237,6 +246,16 @@ Reference
 
 .. [#] `Baier, Hendrik & Winands, Mark. (2015). MCTS-Minimax Hybrids. IEEE Transactions on Computational Intelligence and AI in Games. 7. 167-179. 10.1109/TCIAIG.2014.2366555.
    <https://dke.maastrichtuniversity.nl/m.winands/documents/mcts-minimax_hybrids_final.pdf>`__
+
+.. [#] `Rajapakse, Thilina. (2020). Battle of the Transformers: ELECTRA, BERT, RoBERTa, or XLNet
+       <https://towardsdatascience.com/battle-of-the-transformers-electra-bert-roberta-or-xlnet-40607e97aba3>`__
+
+.. [#] `ELECTRA: Pre-training Text Encoders as Discriminators Rather Than Generators
+       <https://huggingface.co/google/electra-small-discriminator>`__
+
+.. [#] `Download tactics database <https://lichess.org/forum/lichess-feedback/download-tactics-database>`__
+
+.. [#] `Gorgonian's Chess Site <http://gorgonian.weebly.com/>`__
 
 .. [#] `Savransky, Dmitriy. (2020). How to Use GPT-2 for Custom Data Generation. INTERSOG Inc. <https://intersog.com/blog/the-gpt-2-usage-for-custom-data-generation-by-example-playing-chess/>`__
 
