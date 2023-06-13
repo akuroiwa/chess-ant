@@ -7,15 +7,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Chess-Ant \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-12-23 21:34+0900\n"
+"POT-Creation-Date: 2023-04-11 15:11+0900\n"
 "PO-Revision-Date: 2022-01-03 19:01+0900\n"
 "Last-Translator: Akihiro Kuroiwa <akuroiwa@env-reform.com>\n"
-"Language-Team: Japanese\n"
 "Language: ja\n"
+"Language-Team: Japanese\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.9.1\n"
+"Generated-By: Babel 2.11.0\n"
 
 #: ../../index.rst:9
 msgid "Contents:"
@@ -25,19 +26,25 @@ msgstr "目次"
 msgid "Welcome to Chess-Ant's documentation!"
 msgstr "Welcome to Chess-Ant's documentation!"
 
-#: ../../index.rst:19
+#: ../../index.rst:20
 msgid "Indices and tables"
 msgstr "索引"
 
-#: ../../index.rst:21
+#: ../../index.rst:22
 msgid ":ref:`genindex`"
 msgstr ":ref:`genindex`"
 
-#: ../../index.rst:22
+#: ../../index.rst:23
 msgid ":ref:`modindex`"
 msgstr ":ref:`modindex`"
 
-#: ../../index.rst:23
+#: ../../index.rst:24
 msgid ":ref:`search`"
 msgstr ":ref:`search`"
+
+#~ msgid "author"
+#~ msgstr ""
+
+#~ msgid "Akihiro Kuroiwa"
+#~ msgstr ""
 

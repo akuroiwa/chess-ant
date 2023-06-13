@@ -1,19 +1,20 @@
-:author: Akihiro Kuroiwa
-:date: 2022/07/08
-:abstract: I started writing :mod:`chess-ant` in 2019, but at first I was particular about minimax and the work did not proceed slowly.
-	   With the COVID-19 outbreak of the cruise ship Diamond Princess in 2020, when the pandemic was finally beginning to attract attention,
-	   I decided to use the :mod:`chess-ant` algorithm for the development of therapeutic agents.
-	   After that, I read the paper of MCTS solver and the performance improved.
-	   At the same time, I learned how to use the cheminformatics software.
-	   Even after the SARS-CoV-2 pandemic has converged, the next pandemic is waiting.
-	   Let's contribute to society with our skills.
-
-
+================
 Chem-Ant Article
 ================
 
+:author: Akihiro Kuroiwa
+:date: 2022/07/08
+:abstract:
+   I started writing :mod:`chess-ant` in 2019, but at first I was particular about minimax and the work did not proceed slowly.
+   With the COVID-19 outbreak of the cruise ship Diamond Princess in 2020, when the pandemic was finally beginning to attract attention,
+   I decided to use the :mod:`chess-ant` algorithm for the development of therapeutic agents.
+   After that, I read the paper of MCTS solver and the performance improved.
+   At the same time, I learned how to use the cheminformatics software.
+   Even after the SARS-CoV-2 pandemic has converged, the next pandemic is waiting.
+   Let's contribute to society with our skills.
+
 UCSF Chimera
-------------
+============
 
 On my old laptop Fujitsu LIFEBOOK AH42/C, when I try to install `UCSF ChimeraX <https://www.cgl.ucsf.edu/chimerax/>`__, I get the following error:
 
@@ -118,7 +119,7 @@ When reconfirming the experimental results, open :file:`all.receptor.pdb` and:
 
 
 AutoDock Vina
--------------
+=============
 
 Reuse the receptor file output by UCSF Chimera and experiment on the command line.
 You will prepare your own ligand file.
@@ -185,7 +186,7 @@ Execute AutoDock Vina:
 
 
 Mold for Smiles Casting
------------------------
+=======================
 
 The amino acid interaction described in this paper [#]_ is based on `PDB ID: 6LU7 <https://www.rcsb.org/structure/6lu7>`__, while our experiments are based on the SARS-CoV-2 Mpro Omicron P132H contained in `PDB ID: 7TLL <https://www.rcsb.org/structure/7tll>`__.
 The first three letters of active site amino acid are abbreviations for amino acids, and the rest represent the positions of sequences.
@@ -311,7 +312,7 @@ If you need the target molecule itself, the above method may be useful.
 
 
 Reference
----------
+=========
 
 .. [#] `Sisakht, M., Mahmoodzadeh, A., & Darabian, M. (2021).
    Plant-derived chemicals as potential inhibitors of SARS-CoV-2 main protease (6LU7), a virtual screening study. Phytotherapy research : PTR, 35(6), 3262–3274.
@@ -326,7 +327,7 @@ Reference
 .. [#] `PubChem <https://pubchem.ncbi.nlm.nih.gov/>`__
 
 Bibliography
-------------
+============
 
 -  `化学の新しいカタチ <https://future-chem.com/>`__
 -  `Python for chemoinformatics <https://github.com/Mishima-syk/py4chemoinformatics>`__

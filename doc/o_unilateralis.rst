@@ -1,3 +1,4 @@
+=====================
 Chem-Ant Introduction
 =====================
 
@@ -7,7 +8,7 @@ Select material candidates to output molecules similar to the target molecule wi
 `deap/examples/gp/ant.py <https://github.com/DEAP/deap/blob/master/examples/gp/ant.py>`__.
 
 Requirements
-------------
+============
 
 On Ubuntu:
 
@@ -57,7 +58,7 @@ Or:
 
 
 General Usage
--------------
+=============
 
 By default, you get a list of molecules from :file:`smiles.csv`. The target is Nirmatrelvir. From that list, the best material for the fragments is selected.  The output csv file also contains molecules created during the execution of mcts.  If you want to reuse the csv file as a smiles list, add :command:`--select` option.  If you want to run commands directly without installing the packages, execute just like :command:`python3 similarity_mcts.py --help`:
 
@@ -84,7 +85,7 @@ If you just want to output target-like molecules from the smiles list without ru
 
 
 Chem-Classification
---------------------
+====================
 
 Output dataset in json format for :mod:`chem-classification`:
 

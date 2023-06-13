@@ -1,3 +1,4 @@
+======================
 Chess-Ant Introduction
 ======================
 
@@ -8,7 +9,7 @@ Programming.
 `deap/examples/gp/ant.py <https://github.com/DEAP/deap/blob/master/examples/gp/ant.py>`__.
 
 Requirements
-------------
+============
 
 On Ubuntu:
 
@@ -44,7 +45,7 @@ Or:
 
 
 General Usage
--------------
+=============
 
 Sample chess problems are available in :file:`pgn/`.
 `Jerry <https://github.com/asdfjkl/jerry>`__ is useful for pasting
@@ -73,7 +74,7 @@ It will take some time, but the following command will output correctly.
    chess-ant -a -n1000 -g5 -f "7r/8/8/8/7k/2q5/6P1/6NK b - - 0 1"
 
 Chess-Classification
---------------------
+====================
 
 Version 0.0.1 of :file:`genPgn.py` contains the Walrus operator, so it only works with Python 3.8 or higher.
 Please install Pytorch before installing Simple Transformers.

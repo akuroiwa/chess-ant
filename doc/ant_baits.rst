@@ -1,3 +1,7 @@
+=================
+Chess-Ant Article
+=================
+
 :author: Akihiro Kuroiwa
 :date: 2021/12/25
 :abstract: Like AlphaFold developed by DeepMind, MCTS can be applied to bioinformatics and cheminformatics.
@@ -5,11 +9,8 @@
 	   I would like to show the possibility that the combination of MCTS Solver and Genetic Programming can be put to practical use.
 
 
-Chess-Ant Article
-=================
-
 Influence from AlphaZero
-------------------------
+========================
 
 A variant of the Polynomial Upper Confidence Tree (PUCT) introduced in AlphaGo Zero and AlphaZero complements the exploration rate :math:`C(s)` with the prior probability :math:`P(s,a)`.  My chess-ant uses the conventional Upper Confidence Tree (UCT)
 and replaces the adjustment of the constant :math:`C` with Genetic Programming
@@ -121,7 +122,7 @@ paper [#]_.
 
 
 MCTS Solver
------------
+===========
 
 With the introduction of MCTS Solver [#]_  [#]_, chess-ant will cut branches to speed up
 and reduce wrong answers.
@@ -139,8 +140,17 @@ reward like rollout, and input it to ``backpropogate()``.
 Like negamax, the MCTS solver is a recursive function and requires a stop condition.
 
 
+Parallelization
+===============
+
+In :mod:`mcts-solver` 0.0.5, with the help of OpenAI's ChatGPT and Google Bard, I modified the code to allow parallel processing [#]_ [#]_.
+Tree parallelization is more difficult than root parallelization because it requires the use of locks.
+I'm not sure if these changes are working correctly, so they may change significantly in the future.
+`Context managers <https://stackoverflow.com/questions/18386616/can-i-acquire-multiprocessings-lock-in-a-with-statement>`__ are useful, but they can get you into trouble if you use them incorrectly.
+
+
 Change History
---------------
+==============
 
 Since both :mod:`chess-classification` and :mod:`chem-classification` use the same algorithm, I made similar changes at the same time.
 
@@ -191,7 +201,7 @@ My pgn files are more like tactics [#]_  [#]_ than chess problems, so it's more 
 
 
 Development Plan
-----------------
+================
 
 .. todo::
 
@@ -206,7 +216,7 @@ Development Plan
    :file:`chess_ant.py`, like AlphaZero.
 
 Reference
----------
+=========
 
 .. [#] `Cazenave, Tristan. “Evolving Monte-Carlo Tree Search Algorithms.” (2007).
        <https://www.semanticscholar.org/paper/Evolving-Monte-Carlo-Tree-Search-Algorithms-Cazenave/336231ec5085098b35c573d885e18c3392e3703d>`__
@@ -247,6 +257,15 @@ Reference
 .. [#] `Baier, Hendrik & Winands, Mark. (2015). MCTS-Minimax Hybrids. IEEE Transactions on Computational Intelligence and AI in Games. 7. 167-179. 10.1109/TCIAIG.2014.2366555.
    <https://dke.maastrichtuniversity.nl/m.winands/documents/mcts-minimax_hybrids_final.pdf>`__
 
+.. [#] `Chaslot, Guillaume & Winands, Mark & Herik, H.. (2008). Parallel Monte-Carlo Tree Search. 60-71. 10.1007/978-3-540-87608-3_6.
+       <https://dke.maastrichtuniversity.nl/m.winands/documents/multithreadedMCTS2.pdf>`__
+
+.. [#] `Soejima, Yusuke &
+       Kishimoto, Akihiro &
+       Watanabe, Osamu. (2009).
+       Root Parallelization of Monte Carlo Tree Search and Its Effectiveness in Computer Go.
+       <http://id.nii.ac.jp/1001/00097696/>`__
+
 .. [#] `Rajapakse, Thilina. (2020). Battle of the Transformers: ELECTRA, BERT, RoBERTa, or XLNet
        <https://towardsdatascience.com/battle-of-the-transformers-electra-bert-roberta-or-xlnet-40607e97aba3>`__
 
@@ -264,7 +283,7 @@ Reference
 
 
 Bibliography
-------------
+============
 
 -  `Home Page of John R.
    Koza <http://www.genetic-programming.com/johnkoza.html>`__
@@ -317,4 +336,3 @@ Bibliography
    <https://pdfs.semanticscholar.org/b0bc/b2e8c96c750c8cae70ad20c675023f314191.pdf>`__
 -  `YouTube channel of David
    Beazley <https://www.youtube.com/channel/UCbNpPBMvCHr-TeJkkezog7Q>`__
-

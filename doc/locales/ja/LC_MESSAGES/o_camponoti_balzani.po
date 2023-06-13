@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Chess-Ant \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-29 19:54+0900\n"
-"PO-Revision-Date: 2022-12-29 20:02+0900\n"
+"POT-Creation-Date: 2023-04-11 15:03+0900\n"
+"PO-Revision-Date: 2023-06-12 22:14+0900\n"
 "Last-Translator: Akihiro Kuroiwa <akuroiwa@env-reform.com>\n"
 "Language: ja\n"
 "Language-Team: Japanese\n"
@@ -19,6 +19,30 @@ msgstr ""
 "Generated-By: Babel 2.11.0\n"
 
 #: ../../o_camponoti_balzani.rst:3
+msgid "Chem-Ant Article"
+msgstr "Chem-Ant 論文"
+
+#: ../../o_camponoti_balzani.rst
+msgid "author"
+msgstr "author"
+
+#: ../../o_camponoti_balzani.rst:5
+msgid "Akihiro Kuroiwa"
+msgstr "Akihiro Kuroiwa"
+
+#: ../../o_camponoti_balzani.rst
+msgid "date"
+msgstr "date"
+
+#: ../../o_camponoti_balzani.rst:6
+msgid "2022/07/08"
+msgstr "2022/07/08"
+
+#: ../../o_camponoti_balzani.rst
+msgid "abstract"
+msgstr "abstract"
+
+#: ../../o_camponoti_balzani.rst:7
 msgid ""
 "I started writing :mod:`chess-ant` in 2019, but at first I was particular"
 " about minimax and the work did not proceed slowly. With the COVID-19 "
@@ -29,11 +53,13 @@ msgid ""
 "the same time, I learned how to use the cheminformatics software. Even "
 "after the SARS-CoV-2 pandemic has converged, the next pandemic is "
 "waiting. Let's contribute to society with our skills."
-msgstr "2019年に :mod:`chess-ant` を書き始めたのだが、最初は minimax にこだわり、遅々として作業は進まなかった。2020年にクルーズ船ダイヤモンド・プリンセス号の COVID-19 集団感染があり、いよいよパンデミックが注目され始めた頃、 :mod:`chess-ant` のアルゴリズムを治療薬の開発に役立てようと思い立った。その後、 MCTS solver の論文を読み、性能が向上した。同時に cheminformatics のソフトウェアの使い方も身についていった。SARS-CoV-2 のパンデミックが収束した後も、次なるパンデミックが待ち構えている。我々の技能で社会に貢献しよう。"
-
-#: ../../o_camponoti_balzani.rst:13
-msgid "Chem-Ant Article"
-msgstr "Chem-Ant 論文"
+msgstr ""
+"2019年に :mod:`chess-ant` を書き始めたのだが、最初は minimax "
+"にこだわり、遅々として作業は進まなかった。2020年にクルーズ船ダイヤモンド・プリンセス号の COVID-19 "
+"集団感染があり、いよいよパンデミックが注目され始めた頃、 :mod:`chess-ant` "
+"のアルゴリズムを治療薬の開発に役立てようと思い立った。その後、 MCTS solver の論文を読み、性能が向上した。同時に "
+"cheminformatics のソフトウェアの使い方も身についていった。SARS-CoV-2 "
+"のパンデミックが収束した後も、次なるパンデミックが待ち構えている。我々の技能で社会に貢献しよう。"
 
 #: ../../o_camponoti_balzani.rst:16
 msgid "UCSF Chimera"

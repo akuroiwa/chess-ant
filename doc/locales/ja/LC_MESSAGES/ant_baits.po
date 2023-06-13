@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Chess-Ant \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-26 18:05+0900\n"
-"PO-Revision-Date: 2023-02-26 18:40+0900\n"
+"POT-Creation-Date: 2023-06-13 20:12+0900\n"
+"PO-Revision-Date: 2023-06-13 20:16+0900\n"
 "Last-Translator: Akihiro Kuroiwa <akuroiwa@env-reform.com>\n"
 "Language: ja\n"
 "Language-Team: Japanese\n"
@@ -19,6 +19,30 @@ msgstr ""
 "Generated-By: Babel 2.11.0\n"
 
 #: ../../ant_baits.rst:3
+msgid "Chess-Ant Article"
+msgstr "Chess-Ant 論文"
+
+#: ../../ant_baits.rst
+msgid "author"
+msgstr "author"
+
+#: ../../ant_baits.rst:5
+msgid "Akihiro Kuroiwa"
+msgstr "Akihiro Kuroiwa"
+
+#: ../../ant_baits.rst
+msgid "date"
+msgstr "date"
+
+#: ../../ant_baits.rst:6
+msgid "2021/12/25"
+msgstr "2021/12/25"
+
+#: ../../ant_baits.rst
+msgid "abstract"
+msgstr "abstract"
+
+#: ../../ant_baits.rst:7
 msgid ""
 "Like AlphaFold developed by DeepMind, MCTS can be applied to "
 "bioinformatics and cheminformatics. Chess-Ant is influenced by AlphaZero,"
@@ -30,15 +54,11 @@ msgstr ""
 "へ応用できる。Chess-Ant では AlphaZero に影響を受けつつも、それとは異なる方法を試す。MCTS Solver と "
 "Genetic Programming の組み合わせが実用に耐えうるか、その可能性を示すのが目標だ。"
 
-#: ../../ant_baits.rst:9
-msgid "Chess-Ant Article"
-msgstr "Chess-Ant 論文"
-
-#: ../../ant_baits.rst:12
+#: ../../ant_baits.rst:13
 msgid "Influence from AlphaZero"
 msgstr "AlphaZeroからの影響"
 
-#: ../../ant_baits.rst:14
+#: ../../ant_baits.rst:15
 msgid ""
 "A variant of the Polynomial Upper Confidence Tree (PUCT) introduced in "
 "AlphaGo Zero and AlphaZero complements the exploration rate :math:`C(s)` "
@@ -57,11 +77,11 @@ msgstr ""
 ":math:`1/\\sqrt{9}` までGPは状況に応じて定数 :math:`C` の値を選ぶ。定数 :math:`C` の値により、 "
 ":file:`chess_ant.py` は積極的に調べたり、消極的な調べ方をする。"
 
-#: ../../ant_baits.rst:20
+#: ../../ant_baits.rst:21
 msgid "AlphaZero's PUCT [#]_ [#]_ [#]_ [#]_:"
 msgstr "AlphaZero's PUCT [#]_ [#]_ [#]_ [#]_:"
 
-#: ../../ant_baits.rst:22
+#: ../../ant_baits.rst:23
 msgid ""
 "a_{t} = arg\\, max_{a}(Q(s_{t}, a) + U(s_{t}, a))\n"
 "\n"
@@ -75,7 +95,7 @@ msgstr ""
 "\n"
 "C(s)=log\\frac{1+N(s)+c_{base}}{c_{base}}+c_{init}"
 
-#: ../../ant_baits.rst:30
+#: ../../ant_baits.rst:31
 msgid ""
 "A deep neural network :math:`(p, v) = f_{\\theta}(s)` with parameters "
 ":math:`\\theta` evaluates the leaf node :math:`s_{L}` :"
@@ -83,15 +103,15 @@ msgstr ""
 "Deep neural network :math:`(p, v) = f_{\\theta}(s)` はパラメータ "
 ":math:`\\theta` により末端のノード :math:`s_{L}` を評価する："
 
-#: ../../ant_baits.rst:32
+#: ../../ant_baits.rst:33
 msgid "(p, v) = f_{\\theta}(s_{L})"
 msgstr "(p, v) = f_{\\theta}(s_{L})"
 
-#: ../../ant_baits.rst:37
+#: ../../ant_baits.rst:38
 msgid "Initialize:"
 msgstr "初期化："
 
-#: ../../ant_baits.rst:39
+#: ../../ant_baits.rst:40
 msgid ""
 "N(s_{L} , a) = 0\n"
 "\n"
@@ -109,11 +129,11 @@ msgstr ""
 "\n"
 "P(s_{L} , a) = p_{a}"
 
-#: ../../ant_baits.rst:49
+#: ../../ant_baits.rst:50
 msgid "Update:"
 msgstr "更新："
 
-#: ../../ant_baits.rst:51
+#: ../../ant_baits.rst:52
 msgid ""
 "t \\leq L\n"
 "\n"
@@ -131,87 +151,87 @@ msgstr ""
 "\n"
 "Q(s_{t} , a_{t}) = \\frac{W(s_{t} , a_{t})}{N(s_{t} , a_{t})}"
 
-#: ../../ant_baits.rst:62 ../../ant_baits.rst:104
+#: ../../ant_baits.rst:63 ../../ant_baits.rst:105
 msgid "Details"
 msgstr "詳細"
 
-#: ../../ant_baits.rst:64
+#: ../../ant_baits.rst:65
 msgid "(s,a)"
 msgstr "(s,a)"
 
-#: ../../ant_baits.rst:64
+#: ../../ant_baits.rst:65
 msgid "Each state-action pair."
 msgstr "それぞれのstate-actionのペア"
 
-#: ../../ant_baits.rst:66
+#: ../../ant_baits.rst:67
 msgid "N(s)"
 msgstr "N(s)"
 
-#: ../../ant_baits.rst:66
+#: ../../ant_baits.rst:67
 msgid "The parent visit count."
 msgstr "親（ノード）の訪問数"
 
-#: ../../ant_baits.rst:68
+#: ../../ant_baits.rst:69
 msgid "N(s,a)"
 msgstr "N(s,a)"
 
-#: ../../ant_baits.rst:68
+#: ../../ant_baits.rst:69
 msgid "The visit count."
 msgstr "訪問数"
 
-#: ../../ant_baits.rst:70
+#: ../../ant_baits.rst:71
 msgid "W(s,a)"
 msgstr "W(s,a)"
 
-#: ../../ant_baits.rst:70
+#: ../../ant_baits.rst:71
 msgid "The total action-value."
 msgstr "action-valueの合計"
 
-#: ../../ant_baits.rst:72
+#: ../../ant_baits.rst:73
 msgid "Q(s,a)"
 msgstr "Q(s,a)"
 
-#: ../../ant_baits.rst:72
+#: ../../ant_baits.rst:73
 msgid "The mean action-value."
 msgstr "action-valueの平均"
 
-#: ../../ant_baits.rst:74
+#: ../../ant_baits.rst:75
 msgid "P(s,a)"
 msgstr "P(s,a)"
 
-#: ../../ant_baits.rst:74
+#: ../../ant_baits.rst:75
 msgid "The prior probability of selecting a in s."
 msgstr "s での a を選択する事前確率"
 
-#: ../../ant_baits.rst:76
+#: ../../ant_baits.rst:77
 msgid "C(s)"
 msgstr "C(s)"
 
-#: ../../ant_baits.rst:76
+#: ../../ant_baits.rst:77
 msgid "The exploration rate."
 msgstr "Exploration（とExploitation）の割合"
 
-#: ../../ant_baits.rst:78
+#: ../../ant_baits.rst:79
 msgid "p"
 msgstr "p"
 
-#: ../../ant_baits.rst:78
+#: ../../ant_baits.rst:79
 msgid "A vector of Move probabilities (predicted by a deep neural network)."
 msgstr "（Deep neural networkにより予測された）手を選ぶ確率のベクトル"
 
-#: ../../ant_baits.rst:80
+#: ../../ant_baits.rst:81
 msgid "v"
 msgstr "v"
 
-#: ../../ant_baits.rst:80
+#: ../../ant_baits.rst:81
 msgid "A scalar value (predicted by a deep neural network)."
 msgstr "（Deep neural networkにより予測された）スカラー値"
 
-#: ../../ant_baits.rst:83
+#: ../../ant_baits.rst:84
 msgid "Chess-Ant's UCT [#]_ [#]_ [#]_ [#]_ [#]_:"
 msgstr "Chess-Ant's UCT [#]_ [#]_ [#]_ [#]_ [#]_:"
 
-#: ../../ant_baits.rst:85
+#: ../../ant_baits.rst:86
 msgid ""
 "a_{t} = arg\\, max_{a}(Q(s_{t}, a) + "
 "C_{gp}\\sqrt\\frac{2lnN(s_{t})}{N(s_{t},a)})\n"
@@ -245,55 +265,55 @@ msgstr ""
 "1/\\sqrt{9},\n"
 "\\end{cases}"
 
-#: ../../ant_baits.rst:101
+#: ../../ant_baits.rst:102
 msgid "The judgment conditions are as follows:"
 msgstr "判断する条件は以下の通り："
 
-#: ../../ant_baits.rst:104
+#: ../../ant_baits.rst:105
 msgid "Conditions"
 msgstr "条件"
 
-#: ../../ant_baits.rst:106
+#: ../../ant_baits.rst:107
 msgid "if_improvement"
 msgstr "if_improvement"
 
-#: ../../ant_baits.rst:106
+#: ../../ant_baits.rst:107
 msgid "If UCT increases from the previous time"
 msgstr "前回よりもUCTが増加したら"
 
-#: ../../ant_baits.rst:108
+#: ../../ant_baits.rst:109
 msgid "if_shortcut"
 msgstr "if_shortcut"
 
-#: ../../ant_baits.rst:108
+#: ../../ant_baits.rst:109
 msgid "If move_stack is shorter than last time"
 msgstr "move_stackが前回よりも短くなったら"
 
-#: ../../ant_baits.rst:110
+#: ../../ant_baits.rst:111
 msgid "if_result"
 msgstr "if_result"
 
-#: ../../ant_baits.rst:110
+#: ../../ant_baits.rst:111
 msgid "Whether the last time rollout was a win, a loss or a draw"
 msgstr "前回のrolloutが勝ちか負けか引き分けか"
 
-#: ../../ant_baits.rst:112
+#: ../../ant_baits.rst:113
 msgid "if_pruning"
 msgstr "if_pruning"
 
-#: ../../ant_baits.rst:112
+#: ../../ant_baits.rst:113
 msgid "Whether UCT was infinity, -infinity or something else"
 msgstr "UCTが無限大か無限小か、何れでもないか"
 
-#: ../../ant_baits.rst:114
+#: ../../ant_baits.rst:115
 msgid "if_is_check"
 msgstr "if_is_check"
 
-#: ../../ant_baits.rst:114
+#: ../../ant_baits.rst:115
 msgid "Is the board of the node selected last time checked?"
 msgstr "前回選ばれたnodeでcheckだったか"
 
-#: ../../ant_baits.rst:117
+#: ../../ant_baits.rst:118
 msgid ""
 "Also, since GP can be redone in each generation, it is possible to "
 "prevent the UCT from being highly evaluated at the beginning of the "
@@ -303,17 +323,17 @@ msgstr ""
 "また、GPは各generationにおいて、やり直すことができるので、訪問回数による検索初期のUCTの高評価を防げる。この論文のような効果を得られるかも知れない"
 " [#]_。"
 
-#: ../../ant_baits.rst:124
+#: ../../ant_baits.rst:125
 msgid "MCTS Solver"
 msgstr "MCTS Solver"
 
-#: ../../ant_baits.rst:126
+#: ../../ant_baits.rst:127
 msgid ""
 "With the introduction of MCTS Solver [#]_  [#]_, chess-ant will cut "
 "branches to speed up and reduce wrong answers."
 msgstr "MCTS Solver [#]_  [#]_ の導入により、高速化と誤答を減らす為の枝切りを行う。"
 
-#: ../../ant_baits.rst:129
+#: ../../ant_baits.rst:130
 msgid ""
 "The reason for the significant changes to the pseudocode in the paper is "
 "that the code for `the package <https://github.com/pbsinclair42/MCTS>`__ "
@@ -322,7 +342,7 @@ msgstr ""
 "論文の擬似コードを大幅に変更している理由は、継承クラスが参照する `パッケージ "
 "<https://github.com/pbsinclair42/MCTS>`__ のコードの書き方が異なるからだ。"
 
-#: ../../ant_baits.rst:133
+#: ../../ant_baits.rst:134
 msgid ""
 "In addition, there is no ``goto`` in Python, so there is extra code. In "
 "the pseudo code, everything is completed inside the MCTS Solver, but in "
@@ -335,30 +355,50 @@ msgstr ""
 "内でrolloutを実行し、枝切りなどの処理をし、rolloutと同様にrewardを出力し、 ``backpropogate()`` "
 "に入力する。"
 
-#: ../../ant_baits.rst:139
+#: ../../ant_baits.rst:140
 msgid ""
 "Like negamax, the MCTS solver is a recursive function and requires a stop"
 " condition."
 msgstr "Negamaxと同様にMCTS solverも再帰関数であり、停止条件が必要だ。"
 
-#: ../../ant_baits.rst:143
+#: ../../ant_baits.rst:144
+msgid "Parallelization"
+msgstr "並列処理"
+
+#: ../../ant_baits.rst:146
+msgid ""
+"In :mod:`mcts-solver` 0.0.5, with the help of OpenAI's ChatGPT and Google"
+" Bard, I modified the code to allow parallel processing [#]_ [#]_. Tree "
+"parallelization is more difficult than root parallelization because it "
+"requires the use of locks. I'm not sure if these changes are working "
+"correctly, so they may change significantly in the future. `Context "
+"managers <https://stackoverflow.com/questions/18386616/can-i-acquire-"
+"multiprocessings-lock-in-a-with-statement>`__ are useful, but they can "
+"get you into trouble if you use them incorrectly."
+msgstr ":mod:`mcts-solver` 0.0.5 から、OpenAIのChatGPTとGoogle Bardの助けを得てコードを変更し、並列処理 [#]_ [#]_ を行えるようにした。Tree並列化はroot並列化に比べて、locksを用いなければならないので作業が難しい。これらの変更が正しく動作しているか確証が持てないので、今後大幅に変更するかも知れない。`Context managers <https://stackoverflow.com/questions/18386616/can-i-acquire-multiprocessings-lock-in-a-with-statement>`__ は便利だけれども、使用法を誤ると大変なことになる。"
+
+#: ../../ant_baits.rst:153
 msgid "Change History"
 msgstr "変更履歴"
 
-#: ../../ant_baits.rst:145
+#: ../../ant_baits.rst:155
 msgid ""
 "Since both :mod:`chess-classification` and :mod:`chem-classification` use"
 " the same algorithm, I made similar changes at the same time."
-msgstr ":mod:`chess-classification` と :mod:`chem-classification` は同じアルゴリズムを用いているので、同時期に同じ変更を施している。"
+msgstr ""
+":mod:`chess-classification` と :mod:`chem-classification` "
+"は同じアルゴリズムを用いているので、同時期に同じ変更を施している。"
 
-#: ../../ant_baits.rst:148
+#: ../../ant_baits.rst:158
 msgid ""
 "In :mod:`chess-classification` 0.0.4, fen is separated into tokens to "
 "create a dataset. The fen is separated by columns instead of letter by "
 "letter."
-msgstr ":mod:`chess-classification` 0.0.4 で fen を token に区切ってデータセットを作成するようにした。その fen は1文字ずつではなく、一列ごとに区切ってある。"
+msgstr ""
+":mod:`chess-classification` 0.0.4 で fen を token に区切ってデータセットを作成するようにした。その "
+"fen は1文字ずつではなく、一列ごとに区切ってある。"
 
-#: ../../ant_baits.rst:150
+#: ../../ant_baits.rst:160
 msgid ""
 "Corrected by adding ``math.sqrt(2)`` since there was an error in the UCB1"
 " algorithm until :mod:`chess-ant` 0.0.5 manual. It seems that the author "
@@ -373,7 +413,7 @@ msgstr ""
 "``selectNodeEphemeralConstant`` という terminal を :mod:`chess-ant` 0.0.6 "
 "で追加し、 ephemeral constant の代替とした。"
 
-#: ../../ant_baits.rst:154
+#: ../../ant_baits.rst:164
 msgid ""
 "According to `Issues #658 <https://github.com/DEAP/deap/issues/658>`_, "
 "Deap does not work with Python 3.10, but with version 3.11."
@@ -381,23 +421,23 @@ msgstr ""
 "`Issues #658 <https://github.com/DEAP/deap/issues/658>`_ によると、Deap は "
 "Python 3.10 で動作せず、version 3.11 で動作する。"
 
-#: ../../ant_baits.rst:156
+#: ../../ant_baits.rst:166
 msgid "In :file:`~/.bashrc` or :file:`~/.bash_aliases`:"
 msgstr ":file:`~/.bashrc` 或いは :file:`~/.bash_aliases` で："
 
-#: ../../ant_baits.rst:163
+#: ../../ant_baits.rst:173
 msgid "and execute :command:`source` command:"
 msgstr "続いて  :command:`source` を実行する："
 
-#: ../../ant_baits.rst:169
+#: ../../ant_baits.rst:179
 msgid "Another method is :command:`update-alternatives`."
 msgstr "別の方法として、 :command:`update-alternatives` がある。"
 
-#: ../../ant_baits.rst:178
+#: ../../ant_baits.rst:188
 msgid "To revert to the original version that was set as top priority:"
 msgstr "最優先に設定した元のヴァージョンに戻すには："
 
-#: ../../ant_baits.rst:184
+#: ../../ant_baits.rst:194
 msgid ""
 "Please note that as of December 2022, gnome-terminal does not start with "
 "Python 3.11 on Ubuntu 22.04.1 LTS."
@@ -405,34 +445,38 @@ msgstr ""
 "2022年12月現在、gnome-terminal は Ubuntu 22.04.1 LTS の Python 3.11 "
 "では起動しないことを覚えておいて欲しい。"
 
-#: ../../ant_baits.rst:186
+#: ../../ant_baits.rst:196
 msgid "In :mod:`chess-classification` 0.0.5, you can load a local save."
 msgstr ":mod:`chess-classification` 0.0.5 から、保存したモデルの読み込みが出来る。"
 
-#: ../../ant_baits.rst:188
+#: ../../ant_baits.rst:198
 msgid ""
 "In order to shorten the training time, [#]_ the conventional model was "
 "changed to the checkpoint google/electra-small-discriminator [#]_ of the "
 "electra model."
-msgstr "学習時間を短縮するために、 [#]_ checkpoint が google/electra-small-discriminator [#]_ の electra modelに変更した。"
+msgstr ""
+"学習時間を短縮するために、 [#]_ checkpoint が google/electra-small-discriminator [#]_ の"
+" electra modelに変更した。"
 
-#: ../../ant_baits.rst:190
+#: ../../ant_baits.rst:200
 msgid ""
 "My pgn files are more like tactics [#]_  [#]_ than chess problems, so "
 "it's more efficient to create a dataset from tactics. More than 300 rows "
 "of pgn data are required for model training and model evaluation in order"
 " to increase the accuracy rate."
-msgstr "私が用意した pgn ファイルは chess problems と言うよりも寧ろ tactics [#]_  [#]_ に近いので、データセットは tactics から作成する方が効率が良い。正解率を高めるためには、モデルの学習とモデルの評価にそれぞれ300行以上の pgn データが必要だ。"
+msgstr ""
+"私が用意した pgn ファイルは chess problems と言うよりも寧ろ tactics [#]_  [#]_ に近いので、データセットは"
+" tactics から作成する方が効率が良い。正解率を高めるためには、モデルの学習とモデルの評価にそれぞれ300行以上の pgn データが必要だ。"
 
-#: ../../ant_baits.rst:194
+#: ../../ant_baits.rst:204
 msgid "Development Plan"
 msgstr "開発予定"
 
-#: ../../ant_baits.rst:196
+#: ../../ant_baits.rst:206
 msgid "Todo"
 msgstr "Todo"
 
-#: ../../ant_baits.rst:198
+#: ../../ant_baits.rst:208
 msgid ""
 "As another project, I will introduce deep learning [#]_  [#]_ for Natural"
 " Language Processing (NLP) in FEN’s win / loss evaluation."
@@ -440,7 +484,7 @@ msgstr ""
 "別のプロジェクトとしてFENの勝敗評価に Natural Language Processing (NLP) 用の deep learning "
 "[#]_  [#]_ を導入する。"
 
-#: ../../ant_baits.rst:201
+#: ../../ant_baits.rst:211
 msgid ""
 ":file:`genPgn.py` automatically plays with stockfish and outputs PGN "
 "files. By the way, version 0.0.1 of :file:`genPgn.py` contains the walrus"
@@ -457,11 +501,11 @@ msgstr ""
 "Transformersによる学習済みモデルを生成する。この学習済みモデルを用いて、AlphaZeroのように "
 ":file:`chess_ant.py` のrolloutの代用とする予定だ。"
 
-#: ../../ant_baits.rst:209
+#: ../../ant_baits.rst:219
 msgid "Reference"
 msgstr "参照"
 
-#: ../../ant_baits.rst:211
+#: ../../ant_baits.rst:221
 msgid ""
 "`Cazenave, Tristan. “Evolving Monte-Carlo Tree Search Algorithms.” "
 "(2007). <https://www.semanticscholar.org/paper/Evolving-Monte-Carlo-Tree-"
@@ -471,7 +515,7 @@ msgstr ""
 "(2007). <https://www.semanticscholar.org/paper/Evolving-Monte-Carlo-Tree-"
 "Search-Algorithms-Cazenave/336231ec5085098b35c573d885e18c3392e3703d>`__"
 
-#: ../../ant_baits.rst:214
+#: ../../ant_baits.rst:224
 msgid ""
 "`AlphaZero: Shedding new light on chess, shogi, and Go "
 "<https://deepmind.com/blog/article/alphazero-shedding-new-light-grand-"
@@ -481,7 +525,7 @@ msgstr ""
 "<https://deepmind.com/blog/article/alphazero-shedding-new-light-grand-"
 "games-chess-shogi-and-go>`__"
 
-#: ../../ant_baits.rst:217
+#: ../../ant_baits.rst:227
 msgid ""
 "`Silver, David et al. “A general reinforcement learning algorithm that "
 "masters chess, shogi, and Go through self-play.” Science 362 (2018): 1140"
@@ -495,7 +539,7 @@ msgstr ""
 "learning-algorithm-that-and-Silver-"
 "Hubert/f9717d29840f4d8f1cc19d1b1e80c5d12ec40608>`__"
 
-#: ../../ant_baits.rst:220
+#: ../../ant_baits.rst:230
 msgid ""
 "`Foster, David. (2017). AlphaGo Zero Explained In One Diagram "
 "<https://medium.com/applied-data-science/alphago-zero-explained-in-one-"
@@ -505,7 +549,7 @@ msgstr ""
 "<https://medium.com/applied-data-science/alphago-zero-explained-in-one-"
 "diagram-365f5abf67e0>`__"
 
-#: ../../ant_baits.rst:223
+#: ../../ant_baits.rst:233
 msgid ""
 "`Tadao Yamaoka’s diary "
 "<https://tadaoyamaoka.hatenablog.com/entry/2018/12/08/191619>`__"
@@ -513,7 +557,7 @@ msgstr ""
 "`Tadao Yamaoka’s diary "
 "<https://tadaoyamaoka.hatenablog.com/entry/2018/12/08/191619>`__"
 
-#: ../../ant_baits.rst:226
+#: ../../ant_baits.rst:236
 msgid ""
 "`Auer, Peter et al. “Finite-time Analysis of the Multiarmed Bandit "
 "Problem.” Machine Learning 47 (2004): 235-256. "
@@ -527,7 +571,7 @@ msgstr ""
 "Multiarmed-Bandit-Auer-Cesa-"
 "Bianchi/1e1d35136b1bf3b13ef6b53f6039f39d9ee820e3>`__"
 
-#: ../../ant_baits.rst:229
+#: ../../ant_baits.rst:239
 msgid ""
 "`Kocsis, Levente and Csaba Szepesvari. “Bandit Based Monte-Carlo "
 "Planning.” ECML (2006). <https://www.semanticscholar.org/paper/Bandit-"
@@ -539,7 +583,7 @@ msgstr ""
 "Based-Monte-Carlo-Planning-Kocsis-"
 "Szepesvari/e635d81a617d1239232a9c9a11a196c53dab8240>`__"
 
-#: ../../ant_baits.rst:232
+#: ../../ant_baits.rst:242
 msgid ""
 "`Swiechowski, Maciej et al. “Monte Carlo Tree Search: A Review of Recent "
 "Modifications and Applications.” ArXiv abs/2103.04931 (2021): n. pag. "
@@ -553,7 +597,7 @@ msgstr ""
 "-Review-of-Recent-and-Swiechowski-"
 "Godlewski/ad5fc69f2b092eab4171d1e87c59ef7992dfdc6e>`__"
 
-#: ../../ant_baits.rst:235
+#: ../../ant_baits.rst:245
 msgid ""
 "`Wikipedia contributors. \"Monte Carlo tree search.\" Wikipedia, The Free"
 " Encyclopedia. Wikipedia, The Free Encyclopedia, 18 Oct. 2021. Web. 25 "
@@ -565,7 +609,7 @@ msgstr ""
 "Dec. 2021. "
 "<https://en.wikipedia.org/w/index.php?title=Monte_Carlo_tree_search&oldid=1050627850>`__"
 
-#: ../../ant_baits.rst:238
+#: ../../ant_baits.rst:248
 #, python-format
 msgid ""
 "`Wikipedia contributors. \"モンテカルロ木探索.\" Wikipedia. Wikipedia, 8 Oct. "
@@ -576,7 +620,7 @@ msgstr ""
 "2021. Web. 25 Dec. 2021. "
 "<https://ja.wikipedia.org/w/index.php?title=%E3%83%A2%E3%83%B3%E3%83%86%E3%82%AB%E3%83%AB%E3%83%AD%E6%9C%A8%E6%8E%A2%E7%B4%A2&oldid=85943688>`__"
 
-#: ../../ant_baits.rst:241
+#: ../../ant_baits.rst:251
 #, python-format
 msgid ""
 "`Imagawa, Takahisa and Tomoyuki Kaneko. “Improvement of State’s Value "
@@ -591,7 +635,7 @@ msgstr ""
 "Value-Estimation-for-Monte-Imagawa-"
 "Kaneko/1b45c6e02944e2f4ec2dbc77083e8cc4eb7c9e8a>`__"
 
-#: ../../ant_baits.rst:244
+#: ../../ant_baits.rst:254
 msgid ""
 "`Winands, Mark & Björnsson, Yngvi & Saito, Jahn-Takeshi. (2008). Monte-"
 "Carlo Tree Search Solver. 25-36. 10.1007/978-3-540-87608-3_3. "
@@ -603,7 +647,7 @@ msgstr ""
 "<https://www.researchgate.net/publication/220962507_Monte-"
 "Carlo_Tree_Search_Solver>`__"
 
-#: ../../ant_baits.rst:247
+#: ../../ant_baits.rst:257
 msgid ""
 "`Baier, Hendrik & Winands, Mark. (2015). MCTS-Minimax Hybrids. IEEE "
 "Transactions on Computational Intelligence and AI in Games. 7. 167-179. "
@@ -617,30 +661,57 @@ msgstr ""
 "<https://dke.maastrichtuniversity.nl/m.winands/documents/mcts-"
 "minimax_hybrids_final.pdf>`__"
 
-#: ../../ant_baits.rst:250
+#: ../../ant_baits.rst:260
+msgid ""
+"`Chaslot, Guillaume & Winands, Mark & Herik, H.. (2008). Parallel Monte-"
+"Carlo Tree Search. 60-71. 10.1007/978-3-540-87608-3_6. "
+"<https://dke.maastrichtuniversity.nl/m.winands/documents/multithreadedMCTS2.pdf>`__"
+msgstr ""
+"`Chaslot, Guillaume & Winands, Mark & Herik, H.. (2008). Parallel Monte-"
+"Carlo Tree Search. 60-71. 10.1007/978-3-540-87608-3_6. "
+"<https://dke.maastrichtuniversity.nl/m.winands/documents/multithreadedMCTS2.pdf>`__"
+
+#: ../../ant_baits.rst:263
+msgid ""
+"`Soejima, Yusuke & Kishimoto, Akihiro & Watanabe, Osamu. (2009). Root "
+"Parallelization of Monte Carlo Tree Search and Its Effectiveness in "
+"Computer Go. <http://id.nii.ac.jp/1001/00097696/>`__"
+msgstr ""
+"`Soejima, Yusuke & Kishimoto, Akihiro & Watanabe, Osamu. (2009). Root "
+"Parallelization of Monte Carlo Tree Search and Its Effectiveness in "
+"Computer Go. <http://id.nii.ac.jp/1001/00097696/>`__"
+
+#: ../../ant_baits.rst:269
 msgid ""
 "`Rajapakse, Thilina. (2020). Battle of the Transformers: ELECTRA, BERT, "
 "RoBERTa, or XLNet <https://towardsdatascience.com/battle-of-the-"
 "transformers-electra-bert-roberta-or-xlnet-40607e97aba3>`__"
-msgstr "`Rajapakse, Thilina. (2020). Battle of the Transformers: ELECTRA, BERT, RoBERTa, or XLNet <https://towardsdatascience.com/battle-of-the-transformers-electra-bert-roberta-or-xlnet-40607e97aba3>`__"
+msgstr ""
+"`Rajapakse, Thilina. (2020). Battle of the Transformers: ELECTRA, BERT, "
+"RoBERTa, or XLNet <https://towardsdatascience.com/battle-of-the-"
+"transformers-electra-bert-roberta-or-xlnet-40607e97aba3>`__"
 
-#: ../../ant_baits.rst:253
+#: ../../ant_baits.rst:272
 msgid ""
 "`ELECTRA: Pre-training Text Encoders as Discriminators Rather Than "
 "Generators <https://huggingface.co/google/electra-small-discriminator>`__"
-msgstr "`ELECTRA: Pre-training Text Encoders as Discriminators Rather Than Generators <https://huggingface.co/google/electra-small-discriminator>`__"
+msgstr ""
+"`ELECTRA: Pre-training Text Encoders as Discriminators Rather Than "
+"Generators <https://huggingface.co/google/electra-small-discriminator>`__"
 
-#: ../../ant_baits.rst:256
+#: ../../ant_baits.rst:275
 msgid ""
 "`Download tactics database <https://lichess.org/forum/lichess-feedback"
 "/download-tactics-database>`__"
-msgstr "`Download tactics database <https://lichess.org/forum/lichess-feedback/download-tactics-database>`__"
+msgstr ""
+"`Download tactics database <https://lichess.org/forum/lichess-feedback"
+"/download-tactics-database>`__"
 
-#: ../../ant_baits.rst:258
+#: ../../ant_baits.rst:277
 msgid "`Gorgonian's Chess Site <http://gorgonian.weebly.com/>`__"
 msgstr "`Gorgonian's Chess Site <http://gorgonian.weebly.com/>`__"
 
-#: ../../ant_baits.rst:260
+#: ../../ant_baits.rst:279
 msgid ""
 "`Savransky, Dmitriy. (2020). How to Use GPT-2 for Custom Data Generation."
 " INTERSOG Inc. <https://intersog.com/blog/the-gpt-2-usage-for-custom-"
@@ -650,7 +721,7 @@ msgstr ""
 " INTERSOG Inc. <https://intersog.com/blog/the-gpt-2-usage-for-custom-"
 "data-generation-by-example-playing-chess/>`__"
 
-#: ../../ant_baits.rst:262
+#: ../../ant_baits.rst:281
 msgid ""
 "`Noever, David et al. “The Chess Transformer: Mastering Play using "
 "Generative Language Models.” arXiv: Artificial Intelligence (2020): n. "
@@ -660,11 +731,11 @@ msgstr ""
 "Generative Language Models.” arXiv: Artificial Intelligence (2020): n. "
 "pag. <https://arxiv.org/pdf/2008.04057.pdf>`__"
 
-#: ../../ant_baits.rst:267
+#: ../../ant_baits.rst:286
 msgid "Bibliography"
 msgstr "参考文献"
 
-#: ../../ant_baits.rst:269
+#: ../../ant_baits.rst:288
 msgid ""
 "`Home Page of John R. Koza <http://www.genetic-"
 "programming.com/johnkoza.html>`__"
@@ -672,7 +743,7 @@ msgstr ""
 "`Home Page of John R. Koza <http://www.genetic-"
 "programming.com/johnkoza.html>`__"
 
-#: ../../ant_baits.rst:271
+#: ../../ant_baits.rst:290
 msgid ""
 "`Astro Teller \\| Technical Papers "
 "<http://www.astroteller.net/work/papers>`__"
@@ -680,7 +751,7 @@ msgstr ""
 "`Astro Teller \\| Technical Papers "
 "<http://www.astroteller.net/work/papers>`__"
 
-#: ../../ant_baits.rst:273
+#: ../../ant_baits.rst:292
 msgid ""
 "`Lones, Michael. (2014). Genetic Programming: Memory, Loops and Modules. "
 "David Corne: Open Courseware. "
@@ -690,172 +761,172 @@ msgstr ""
 "David Corne: Open Courseware. "
 "<https://www.macs.hw.ac.uk/~dwcorne/Teaching/bic1415_gp2.pdf>`__"
 
-#: ../../ant_baits.rst:275
+#: ../../ant_baits.rst:294
 msgid "`Alpha“Othello” Zero <https://github.com/tkhkaeio/AlphaZero>`__"
 msgstr "`Alpha“Othello” Zero <https://github.com/tkhkaeio/AlphaZero>`__"
 
-#: ../../ant_baits.rst:277
+#: ../../ant_baits.rst:296
 msgid ""
 "`Czech, Johannes et al. “Monte-Carlo Graph Search for AlphaZero.” ArXiv "
 "abs/2012.11045 (2020): n. pag. <https://arxiv.org/abs/2012.11045>`__"
 msgstr ""
 "`Czech, Johannes et al. “Monte-Carlo Graph Search for AlphaZero.” ArXiv "
 "abs/2012.11045 (2020): n. pag. <https://arxiv.org/abs/2012.11045>`__"
-
-#: ../../ant_baits.rst:279
-msgid ""
-"`Prasad, Aditya. (2018). Lessons From Implementing AlphaZero "
-"<https://medium.com/oracledevs/lessons-from-implementing-alphazero-"
-"7e36e9054191>`__"
-msgstr ""
-"`Prasad, Aditya. (2018). Lessons From Implementing AlphaZero "
-"<https://medium.com/oracledevs/lessons-from-implementing-alphazero-"
-"7e36e9054191>`__"
-
-#: ../../ant_baits.rst:281
-msgid "`chess-alpha-zero <https://github.com/Zeta36/chess-alpha-zero>`__"
-msgstr "`chess-alpha-zero <https://github.com/Zeta36/chess-alpha-zero>`__"
-
-#: ../../ant_baits.rst:282
-msgid ""
-"`Yao, Yao. (2018). API Python Chess: Distribution of Chess Wins based on "
-"random moves <https://www.slideshare.net/YaoYao44/api-python-chess-"
-"distribution-of-chess-wins-based-on-random-moves>`__"
-msgstr ""
-"`Yao, Yao. (2018). API Python Chess: Distribution of Chess Wins based on "
-"random moves <https://www.slideshare.net/YaoYao44/api-python-chess-"
-"distribution-of-chess-wins-based-on-random-moves>`__"
-
-#: ../../ant_baits.rst:284
-msgid ""
-"`Stöckl, Andreas. (2018). Writing a chess program in one day "
-"<https://medium.com/@andreasstckl/writing-a-chess-program-in-one-day-"
-"30daff4610ec>`__"
-msgstr ""
-"`Stöckl, Andreas. (2018). Writing a chess program in one day "
-"<https://medium.com/@andreasstckl/writing-a-chess-program-in-one-day-"
-"30daff4610ec>`__"
-
-#: ../../ant_baits.rst:286
-msgid ""
-"`Stöckl, Andreas. (2019). An incremental evaluation function and a test-"
-"suite for computer chess <https://medium.com/datadriveninvestor/an-"
-"incremental-evaluation-function-and-a-testsuite-for-computer-chess-"
-"6fde22aac137>`__"
-msgstr ""
-"`Stöckl, Andreas. (2019). An incremental evaluation function and a test-"
-"suite for computer chess <https://medium.com/datadriveninvestor/an-"
-"incremental-evaluation-function-and-a-testsuite-for-computer-chess-"
-"6fde22aac137>`__"
-
-#: ../../ant_baits.rst:288
-msgid ""
-"`Stöckl, Andreas. (2019). Reconstructing chess positions "
-"<https://medium.com/datadriveninvestor/reconstructing-chess-positions-"
-"f195fd5944e>`__"
-msgstr ""
-"`Stöckl, Andreas. (2019). Reconstructing chess positions "
-"<https://medium.com/datadriveninvestor/reconstructing-chess-positions-"
-"f195fd5944e>`__"
-
-#: ../../ant_baits.rst:290
-msgid "`Python Chess <https://www.chessprogramming.net/python-chess/>`__"
-msgstr "`Python Chess <https://www.chessprogramming.net/python-chess/>`__"
-
-#: ../../ant_baits.rst:291
-msgid ""
-"`Fiekas, Niklas. (2015). An implementation of the Bratko-Kopec Test using"
-" python-chess <https://gist.github.com/niklasf/73c9565719d124af64ff>`__"
-msgstr ""
-"`Fiekas, Niklas. (2015). An implementation of the Bratko-Kopec Test using"
-" python-chess <https://gist.github.com/niklasf/73c9565719d124af64ff>`__"
-
-#: ../../ant_baits.rst:293
-msgid "`Bratko-Kopec Test <https://www.chessprogramming.org/Bratko-Kopec_Test>`__"
-msgstr "`Bratko-Kopec Test <https://www.chessprogramming.org/Bratko-Kopec_Test>`__"
-
-#: ../../ant_baits.rst:295
-msgid ""
-"`Kurt & Rolf Chess Homepage of Kurt Utzinger "
-"<http://www.utzingerk.com/test.htm>`__"
-msgstr ""
-"`Kurt & Rolf Chess Homepage of Kurt Utzinger "
-"<http://www.utzingerk.com/test.htm>`__"
-
-#: ../../ant_baits.rst:297
-msgid "`PGN Mentor <https://www.pgnmentor.com/>`__"
-msgstr "`PGN Mentor <https://www.pgnmentor.com/>`__"
 
 #: ../../ant_baits.rst:298
 msgid ""
-"`Hart, Alex. (2011). Alpha Beta pruning on a Minimax tree in Python "
-"<https://gist.github.com/exallium/1446104/5109388cfc21578f555dcac0ba54da680326af7b>`__"
+"`Prasad, Aditya. (2018). Lessons From Implementing AlphaZero "
+"<https://medium.com/oracledevs/lessons-from-implementing-alphazero-"
+"7e36e9054191>`__"
 msgstr ""
-"`Hart, Alex. (2011). Alpha Beta pruning on a Minimax tree in Python "
-"<https://gist.github.com/exallium/1446104/5109388cfc21578f555dcac0ba54da680326af7b>`__"
+"`Prasad, Aditya. (2018). Lessons From Implementing AlphaZero "
+"<https://medium.com/oracledevs/lessons-from-implementing-alphazero-"
+"7e36e9054191>`__"
 
 #: ../../ant_baits.rst:300
-msgid "`PythonChessAi <https://github.com/AnthonyASanchez/python-chess-ai>`__"
-msgstr "`PythonChessAi <https://github.com/AnthonyASanchez/python-chess-ai>`__"
+msgid "`chess-alpha-zero <https://github.com/Zeta36/chess-alpha-zero>`__"
+msgstr "`chess-alpha-zero <https://github.com/Zeta36/chess-alpha-zero>`__"
 
 #: ../../ant_baits.rst:301
-msgid "`easyAI <https://github.com/Zulko/easyAI>`__"
-msgstr "`easyAI <https://github.com/Zulko/easyAI>`__"
-
-#: ../../ant_baits.rst:302
 msgid ""
-"`Shrott, Ryan. (2017). Genetic Programming applied to AI Heuristic "
-"Optimization <https://towardsdatascience.com/genetic-programming-for-ai-"
-"heuristic-optimization-9d7fdb115ee1>`__"
+"`Yao, Yao. (2018). API Python Chess: Distribution of Chess Wins based on "
+"random moves <https://www.slideshare.net/YaoYao44/api-python-chess-"
+"distribution-of-chess-wins-based-on-random-moves>`__"
 msgstr ""
-"`Shrott, Ryan. (2017). Genetic Programming applied to AI Heuristic "
-"Optimization <https://towardsdatascience.com/genetic-programming-for-ai-"
-"heuristic-optimization-9d7fdb115ee1>`__"
+"`Yao, Yao. (2018). API Python Chess: Distribution of Chess Wins based on "
+"random moves <https://www.slideshare.net/YaoYao44/api-python-chess-"
+"distribution-of-chess-wins-based-on-random-moves>`__"
 
-#: ../../ant_baits.rst:304
-msgid "`Alpha-Beta Pruning <https://www.javatpoint.com/ai-alpha-beta-pruning>`__"
-msgstr "`Alpha-Beta Pruning <https://www.javatpoint.com/ai-alpha-beta-pruning>`__"
-
-#: ../../ant_baits.rst:306
+#: ../../ant_baits.rst:303
 msgid ""
-"`Hartikka, Lauri. (2017). A step-by-step guide to building a simple chess"
-" AI <https://www.freecodecamp.org/news/simple-chess-ai-step-by-step-"
-"1d55a9266977/>`__"
+"`Stöckl, Andreas. (2018). Writing a chess program in one day "
+"<https://medium.com/@andreasstckl/writing-a-chess-program-in-one-day-"
+"30daff4610ec>`__"
 msgstr ""
-"`Hartikka, Lauri. (2017). A step-by-step guide to building a simple chess"
-" AI <https://www.freecodecamp.org/news/simple-chess-ai-step-by-step-"
-"1d55a9266977/>`__"
+"`Stöckl, Andreas. (2018). Writing a chess program in one day "
+"<https://medium.com/@andreasstckl/writing-a-chess-program-in-one-day-"
+"30daff4610ec>`__"
 
-#: ../../ant_baits.rst:308
+#: ../../ant_baits.rst:305
 msgid ""
-"`Simplified Evaluation Function "
-"<https://www.chessprogramming.org/Simplified_Evaluation_Function>`__"
+"`Stöckl, Andreas. (2019). An incremental evaluation function and a test-"
+"suite for computer chess <https://medium.com/datadriveninvestor/an-"
+"incremental-evaluation-function-and-a-testsuite-for-computer-chess-"
+"6fde22aac137>`__"
 msgstr ""
-"`Simplified Evaluation Function "
-"<https://www.chessprogramming.org/Simplified_Evaluation_Function>`__"
+"`Stöckl, Andreas. (2019). An incremental evaluation function and a test-"
+"suite for computer chess <https://medium.com/datadriveninvestor/an-"
+"incremental-evaluation-function-and-a-testsuite-for-computer-chess-"
+"6fde22aac137>`__"
+
+#: ../../ant_baits.rst:307
+msgid ""
+"`Stöckl, Andreas. (2019). Reconstructing chess positions "
+"<https://medium.com/datadriveninvestor/reconstructing-chess-positions-"
+"f195fd5944e>`__"
+msgstr ""
+"`Stöckl, Andreas. (2019). Reconstructing chess positions "
+"<https://medium.com/datadriveninvestor/reconstructing-chess-positions-"
+"f195fd5944e>`__"
+
+#: ../../ant_baits.rst:309
+msgid "`Python Chess <https://www.chessprogramming.net/python-chess/>`__"
+msgstr "`Python Chess <https://www.chessprogramming.net/python-chess/>`__"
 
 #: ../../ant_baits.rst:310
 msgid ""
-"`Brynjulfsson, Erlingur. A Genetic Minimax Game-Playing Strategy "
-"<https://notendur.hi.is/benedikt/Courses/Erlingur.pdf>`__"
+"`Fiekas, Niklas. (2015). An implementation of the Bratko-Kopec Test using"
+" python-chess <https://gist.github.com/niklasf/73c9565719d124af64ff>`__"
 msgstr ""
-"`Brynjulfsson, Erlingur. A Genetic Minimax Game-Playing Strategy "
-"<https://notendur.hi.is/benedikt/Courses/Erlingur.pdf>`__"
+"`Fiekas, Niklas. (2015). An implementation of the Bratko-Kopec Test using"
+" python-chess <https://gist.github.com/niklasf/73c9565719d124af64ff>`__"
 
 #: ../../ant_baits.rst:312
-msgid ""
-"`Öberg, Viktor. “EVOLUTIONARY AI IN BOARD GAMES : An evaluation of the "
-"performance of an evolutionary algorithm in two perfect information board"
-" games with low branching factor.” (2015). <http://www.diva-"
-"portal.org/smash/get/diva2:823737/FULLTEXT01.pdf>`__"
-msgstr ""
-"`Öberg, Viktor. “EVOLUTIONARY AI IN BOARD GAMES : An evaluation of the "
-"performance of an evolutionary algorithm in two perfect information board"
-" games with low branching factor.” (2015). <http://www.diva-"
-"portal.org/smash/get/diva2:823737/FULLTEXT01.pdf>`__"
+msgid "`Bratko-Kopec Test <https://www.chessprogramming.org/Bratko-Kopec_Test>`__"
+msgstr "`Bratko-Kopec Test <https://www.chessprogramming.org/Bratko-Kopec_Test>`__"
 
 #: ../../ant_baits.rst:314
 msgid ""
+"`Kurt & Rolf Chess Homepage of Kurt Utzinger "
+"<http://www.utzingerk.com/test.htm>`__"
+msgstr ""
+"`Kurt & Rolf Chess Homepage of Kurt Utzinger "
+"<http://www.utzingerk.com/test.htm>`__"
+
+#: ../../ant_baits.rst:316
+msgid "`PGN Mentor <https://www.pgnmentor.com/>`__"
+msgstr "`PGN Mentor <https://www.pgnmentor.com/>`__"
+
+#: ../../ant_baits.rst:317
+msgid ""
+"`Hart, Alex. (2011). Alpha Beta pruning on a Minimax tree in Python "
+"<https://gist.github.com/exallium/1446104/5109388cfc21578f555dcac0ba54da680326af7b>`__"
+msgstr ""
+"`Hart, Alex. (2011). Alpha Beta pruning on a Minimax tree in Python "
+"<https://gist.github.com/exallium/1446104/5109388cfc21578f555dcac0ba54da680326af7b>`__"
+
+#: ../../ant_baits.rst:319
+msgid "`PythonChessAi <https://github.com/AnthonyASanchez/python-chess-ai>`__"
+msgstr "`PythonChessAi <https://github.com/AnthonyASanchez/python-chess-ai>`__"
+
+#: ../../ant_baits.rst:320
+msgid "`easyAI <https://github.com/Zulko/easyAI>`__"
+msgstr "`easyAI <https://github.com/Zulko/easyAI>`__"
+
+#: ../../ant_baits.rst:321
+msgid ""
+"`Shrott, Ryan. (2017). Genetic Programming applied to AI Heuristic "
+"Optimization <https://towardsdatascience.com/genetic-programming-for-ai-"
+"heuristic-optimization-9d7fdb115ee1>`__"
+msgstr ""
+"`Shrott, Ryan. (2017). Genetic Programming applied to AI Heuristic "
+"Optimization <https://towardsdatascience.com/genetic-programming-for-ai-"
+"heuristic-optimization-9d7fdb115ee1>`__"
+
+#: ../../ant_baits.rst:323
+msgid "`Alpha-Beta Pruning <https://www.javatpoint.com/ai-alpha-beta-pruning>`__"
+msgstr "`Alpha-Beta Pruning <https://www.javatpoint.com/ai-alpha-beta-pruning>`__"
+
+#: ../../ant_baits.rst:325
+msgid ""
+"`Hartikka, Lauri. (2017). A step-by-step guide to building a simple chess"
+" AI <https://www.freecodecamp.org/news/simple-chess-ai-step-by-step-"
+"1d55a9266977/>`__"
+msgstr ""
+"`Hartikka, Lauri. (2017). A step-by-step guide to building a simple chess"
+" AI <https://www.freecodecamp.org/news/simple-chess-ai-step-by-step-"
+"1d55a9266977/>`__"
+
+#: ../../ant_baits.rst:327
+msgid ""
+"`Simplified Evaluation Function "
+"<https://www.chessprogramming.org/Simplified_Evaluation_Function>`__"
+msgstr ""
+"`Simplified Evaluation Function "
+"<https://www.chessprogramming.org/Simplified_Evaluation_Function>`__"
+
+#: ../../ant_baits.rst:329
+msgid ""
+"`Brynjulfsson, Erlingur. A Genetic Minimax Game-Playing Strategy "
+"<https://notendur.hi.is/benedikt/Courses/Erlingur.pdf>`__"
+msgstr ""
+"`Brynjulfsson, Erlingur. A Genetic Minimax Game-Playing Strategy "
+"<https://notendur.hi.is/benedikt/Courses/Erlingur.pdf>`__"
+
+#: ../../ant_baits.rst:331
+msgid ""
+"`Öberg, Viktor. “EVOLUTIONARY AI IN BOARD GAMES : An evaluation of the "
+"performance of an evolutionary algorithm in two perfect information board"
+" games with low branching factor.” (2015). <http://www.diva-"
+"portal.org/smash/get/diva2:823737/FULLTEXT01.pdf>`__"
+msgstr ""
+"`Öberg, Viktor. “EVOLUTIONARY AI IN BOARD GAMES : An evaluation of the "
+"performance of an evolutionary algorithm in two perfect information board"
+" games with low branching factor.” (2015). <http://www.diva-"
+"portal.org/smash/get/diva2:823737/FULLTEXT01.pdf>`__"
+
+#: ../../ant_baits.rst:333
+msgid ""
 "`Agapitos, Alexandros & Lucas, Simon. (2006). Learning Recursive "
 "Functions with Object Oriented Genetic Programming. 3905. 166-177. "
 "10.1007/11729976_15. "
@@ -866,7 +937,7 @@ msgstr ""
 "10.1007/11729976_15. "
 "<https://www.researchgate.net/publication/221009242_Learning_Recursive_Functions_with_Object_Oriented_Genetic_Programming>`__"
 
-#: ../../ant_baits.rst:316
+#: ../../ant_baits.rst:335
 msgid ""
 "`Yu, Tina and Christopher D. Clack. “Recursion , Lambda Abstractions and "
 "Genetic Programming.” . "
@@ -876,7 +947,7 @@ msgstr ""
 "Genetic Programming.” . "
 "<https://pdfs.semanticscholar.org/b0bc/b2e8c96c750c8cae70ad20c675023f314191.pdf>`__"
 
-#: ../../ant_baits.rst:318
+#: ../../ant_baits.rst:337
 msgid ""
 "`YouTube channel of David Beazley <https://www.youtube.com/channel"
 "/UCbNpPBMvCHr-TeJkkezog7Q>`__"

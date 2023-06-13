@@ -39,6 +39,7 @@ import pandas as pd
 from collections import deque
 # import sys
 # from concurrent.futures.process import ProcessPoolExecutor
+from multiprocessing import Lock
 
 
 # def progn(*args):
@@ -75,6 +76,7 @@ class ChessAntSimulator(object):
         self.shortcut = 0
         self.result = 0
         self.pruning = 0
+        self.lock = Lock()
 
     def _reset(self):
         self.previous_eaten = 0
@@ -112,7 +114,7 @@ class ChessAntSimulator(object):
 
     def selectNode_1(self):
         node = self.mcts_instance.selectNode_num(self.root, 1 / math.sqrt(1))
-        self._executeRound(node, 3)
+        self._executeRound(node, 1)
 
     def selectNode(self):
         node = self.mcts_instance.selectNode(self.root)
@@ -251,8 +253,9 @@ toolbox.register("population", tools.initRepeat, list, toolbox.individual)
 
 def evalArtificialAnt(individual):
     # Transform the tree expression to functionnal Python code
-    routine = gp.compile(individual, pset)
-    ant.run(routine)
+    with ant.lock:
+        routine = gp.compile(individual, pset)
+        ant.run(routine)
     return ant.eaten,
 
 toolbox.register("evaluate", evalArtificialAnt)
@@ -284,7 +287,7 @@ def main(fen=None, population=500, generation=15, dl=False, output_dir='outputs/
     print("\nBest individual is %s, %s" % (best_ind, best_ind.fitness.values))
 
     # return pop, hof, stats
-    return pop, hof, stats, move
+    return pop, hof, stats, move, move.uci()
 
 def run(fen=None, population=500, generation=15, dl=False, output_dir='outputs/'):
     if not fen:
@@ -301,7 +304,7 @@ def run(fen=None, population=500, generation=15, dl=False, output_dir='outputs/'
             board.push(move)
         else:
             print("Computers Turn:")
-            pop, hof, stats, move = main(board.fen(), population, generation, dl, output_dir)
+            pop, hof, stats, move, uci = main(board.fen(), population, generation, dl, output_dir)
             board.push(move)
         print("\n")
         print(board)
@@ -324,7 +327,7 @@ def selfPlay(fen=None, population=500, generation=15, dl=False, path="train-pgn"
         print(board)
         print("\n")
         while not board.is_game_over():
-            pop, hof, stats, move = main(board.fen(), population, generation, dl, output_dir)
+            pop, hof, stats, move, uci = main(board.fen(), population, generation, dl, output_dir)
             board.push(move)
             print("\n")
             print(board)
