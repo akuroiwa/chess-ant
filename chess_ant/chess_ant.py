@@ -76,6 +76,15 @@ class ChessAntSimulator(object):
         self.shortcut = 0
         self.result = 0
         self.pruning = 0
+        self.previous_first_move = None
+        self.same_first_move = False
+        # self.gives_check = False
+        # self.is_en_passant = False
+        # self.is_capture = False
+        # self.is_zeroing = False
+        # self.is_irreversible = False
+        # self.is_castling = False
+        self.operations_count = 0
         self.lock = Lock()
 
     def _reset(self):
@@ -88,6 +97,15 @@ class ChessAntSimulator(object):
         self.shortcut = 0
         self.result = 0
         self.pruning = 0
+        self.previous_first_move = None
+        self.same_first_move = False
+        # self.gives_check = False
+        # self.is_en_passant = False
+        # self.is_capture = False
+        # self.is_zeroing = False
+        # self.is_irreversible = False
+        # self.is_castling = False
+        self.operations_count = 0
 
     @property
     def get_prediction(self):
@@ -98,7 +116,7 @@ class ChessAntSimulator(object):
     def set_fen(self, fen):
         self.fen = fen
         self.initialState = ChessState(self.fen)
-        self.mcts_instance = AntMcts(iterationLimit=10)
+        self.mcts_instance = AntMcts(iterationLimit=1)
         # self.root = AntTreeNode(self.initialState, None)
         self.root = AntLionTreeNode(self.initialState, None)
 
@@ -154,6 +172,10 @@ class ChessAntSimulator(object):
         self._executeRound(node, sqrt_num)
 
     def _executeRound(self, node, sqrt_num):
+        # if not len(node.state.board.move_stack) == 0:
+        #     move = node.state.board.move_stack[0]
+        #     self.previous_first_move = move.uci()
+
         # reward = self.mcts_instance.rollout(node.state)
         reward = self.mcts_instance.mctsSolver(node)
         length = len(node.state.board.move_stack)
@@ -165,10 +187,22 @@ class ChessAntSimulator(object):
             2 * math.log(self.root.numVisits) / node.numVisits)
         self.improvement = 2 if self.eaten > self.previous_eaten else 1 if self.eaten == self.previous_eaten else 0
         self.previous_eaten = self.eaten
-        self.shortcut = 2 if length > self.previous_length else 1 if length == self.previous_length else 0
+        self.shortcut = 2 if length < self.previous_length else 1 if length == self.previous_length else 0
         self.previous_length = length
         self.result = 2 if node.state.getReward() == 1 else 1 if node.state.getReward() == -1 else 0
         self.pruning = 2 if self.eaten == float("inf") else 1 if self.eaten == float("-inf") else 0
+        move = node.state.board.move_stack[0]
+        first_move = move.uci()
+        self.same_first_move = True if self.previous_first_move == first_move else False
+        self.previous_first_move = first_move
+        # board = chess.Board(self.fen)
+        # self.gives_check = board.gives_check(move)
+        # self.is_en_passant = board.is_en_passant(move)
+        # self.is_capture = board.is_capture(move)
+        # self.is_zeroing = board.is_zeroing(move)
+        # self.is_irreversible = board.is_irreversible(move)
+        # self.is_castling = board.is_castling(move)
+        self.operations_count += 1
 
     def sense_improvement(self):
         return self.improvement
@@ -200,9 +234,59 @@ class ChessAntSimulator(object):
     def if_is_check(self, out1, out2):
         return partial(if_then_else, self.sense_is_check, out1, out2)
 
+    def sense_same_move(self):
+        return self.same_first_move
+
+    def if_same_move(self, out1, out2):
+        return partial(if_then_else, self.sense_same_move, out1, out2)
+
+    # def sense_gives_check(self):
+    #     return self.gives_check
+
+    # def if_gives_check(self, out1, out2):
+    #     return partial(if_then_else, self.sense_gives_check, out1, out2)
+
+    # def sense_is_en_passant(self):
+    #     return self.is_en_passant
+
+    # def if_is_en_passant(self, out1, out2):
+    #     return partial(if_then_else, self.sense_is_en_passant, out1, out2)
+
+    # def sense_is_capture(self):
+    #     return self.is_capture
+
+    # def if_is_capture(self, out1, out2):
+    #     return partial(if_then_else, self.sense_is_capture, out1, out2)
+
+    # def sense_is_zeroing(self):
+    #     return self.is_zeroing
+
+    # def if_is_zeroing(self, out1, out2):
+    #     return partial(if_then_else, self.sense_is_zeroing, out1, out2)
+
+    # def sense_is_irreversible(self):
+    #     return self.is_irreversible
+
+    # def if_is_irreversible(self, out1, out2):
+    #     return partial(if_then_else, self.sense_is_irreversible, out1, out2)
+
+    # def sense_is_castling(self):
+    #     return self.is_castling
+
+    # def if_is_castling(self, out1, out2):
+    #     return partial(if_then_else, self.sense_is_castling, out1, out2)
+
     def run(self,routine):
         self._reset()
-        routine()
+        # routine()
+
+        if self.mcts_instance.limitType == 'time':
+            timeLimit = time.time() + self.mcts_instance.timeLimit / 1000
+            while time.time() < timeLimit:
+                routine()
+        else:
+            while self.operations_count < self.mcts_instance.searchLimit:
+                routine()
 
 
 class AntMcts(AntLionMcts):
@@ -228,16 +312,29 @@ pset.addPrimitive(ant.if_shortcut, 3)
 pset.addPrimitive(ant.if_result, 3)
 pset.addPrimitive(ant.if_pruning, 3)
 pset.addPrimitive(ant.if_is_check, 2)
-pset.addTerminal(ant.selectNode_1)
-pset.addTerminal(ant.selectNode)
-pset.addTerminal(ant.selectNode_3)
-pset.addTerminal(ant.selectNode_4)
-pset.addTerminal(ant.selectNode_5)
-pset.addTerminal(ant.selectNode_6)
-pset.addTerminal(ant.selectNode_7)
-pset.addTerminal(ant.selectNode_8)
-pset.addTerminal(ant.selectNode_9)
-pset.addTerminal(ant.selectNodeEphemeralConstant)
+pset.addPrimitive(ant.if_same_move, 2)
+# pset.addPrimitive(ant.if_gives_check, 2)
+# pset.addPrimitive(ant.if_is_capture, 2)
+# pset.addPrimitive(ant.if_is_castling, 2)
+# pset.addPrimitive(ant.if_is_en_passant, 2)
+# pset.addPrimitive(ant.if_is_irreversible, 2)
+# pset.addPrimitive(ant.if_is_zeroing, 2)
+
+terminal_methods = [
+    ant.selectNode_1,
+    ant.selectNode,
+    ant.selectNode_3,
+    ant.selectNode_4,
+    ant.selectNode_5,
+    ant.selectNode_6,
+    ant.selectNode_7,
+    ant.selectNode_8,
+    ant.selectNode_9,
+    ant.selectNodeEphemeralConstant
+]
+
+for method in terminal_methods:
+    pset.addTerminal(method)
 
 creator.create("FitnessMax", base.Fitness, weights=(1.0,))
 creator.create("Individual", gp.PrimitiveTree, fitness=creator.FitnessMax)
@@ -286,8 +383,19 @@ def main(fen=None, population=500, generation=15, dl=False, output_dir='outputs/
     best_ind = tools.selBest(pop, 1)[0]
     print("\nBest individual is %s, %s" % (best_ind, best_ind.fitness.values))
 
+    result_dict = {
+        "population": pop,
+        "hall_of_fame": hof,
+        "statistics": stats,
+        "best_move": move,
+        "best_move_uci": move.uci(),
+        "best_individual": best_ind,
+        "best_individual_fitness": best_ind.fitness.values
+    }
+
     # return pop, hof, stats
-    return pop, hof, stats, move, move.uci()
+    # return pop, hof, stats, move, move.uci()
+    return result_dict
 
 def run(fen=None, population=500, generation=15, dl=False, output_dir='outputs/'):
     if not fen:
@@ -304,8 +412,10 @@ def run(fen=None, population=500, generation=15, dl=False, output_dir='outputs/'
             board.push(move)
         else:
             print("Computers Turn:")
-            pop, hof, stats, move, uci = main(board.fen(), population, generation, dl, output_dir)
-            board.push(move)
+            # pop, hof, stats, move, uci = main(board.fen(), population, generation, dl, output_dir)
+            result_dict = main(board.fen(), population, generation, dl, output_dir)
+            # board.push(move)
+            board.push(result_dict["best_move"])
         print("\n")
         print(board)
         n += 1
@@ -327,8 +437,10 @@ def selfPlay(fen=None, population=500, generation=15, dl=False, path="train-pgn"
         print(board)
         print("\n")
         while not board.is_game_over():
-            pop, hof, stats, move, uci = main(board.fen(), population, generation, dl, output_dir)
-            board.push(move)
+            # pop, hof, stats, move, uci = main(board.fen(), population, generation, dl, output_dir)
+            result_dict = main(board.fen(), population, generation, dl, output_dir)
+            # board.push(move)
+            board.push(result_dict["best_move"])
             print("\n")
             print(board)
             print("\n")

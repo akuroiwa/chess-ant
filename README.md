@@ -8,6 +8,8 @@ Simulator to solve chess problems with MCTS Solver and Genetic Programming.
 
 ## Documentation
 
+[![Documentation Status](https://readthedocs.org/projects/chess-ant/badge/?version=latest)](https://chess-ant.readthedocs.io/en/latest/?badge=latest)
+
 English:
 
 - [Online](https://chess-ant.readthedocs.io/en/latest/)

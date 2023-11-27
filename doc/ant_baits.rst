@@ -193,6 +193,21 @@ To revert to the original version that was set as top priority:
 
 Please note that as of December 2022, gnome-terminal does not start with Python 3.11 on Ubuntu 22.04.1 LTS.
 
+A more common method is to use :mod:`venv`:
+
+.. code-block:: bash
+
+   sudo apt install python3.11-venv
+   python3.11 -m venv ~/.venv3.11
+   source ~/.venv3.11/bin/activate
+   which pip3
+
+To finish:
+
+.. code-block:: bash
+
+   deactivate
+
 In :mod:`chess-classification` 0.0.5, you can load a local save.
 
 In order to shorten the training time, [#]_ the conventional model was changed to the checkpoint google/electra-small-discriminator [#]_ of the electra model.
