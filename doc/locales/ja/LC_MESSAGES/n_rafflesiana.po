@@ -1,0 +1,92 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, Akihiro Kuroiwa
+# This file is distributed under the same license as the Chess-Ant package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Chess-Ant \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-12-11 21:06+0900\n"
+"PO-Revision-Date: 2023-12-11 21:39+0900\n"
+"Last-Translator: Akihiro Kuroiwa <akuroiwa@env-reform.com>\n"
+"Language: ja\n"
+"Language-Team: ja <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.12.1\n"
+
+#: ../../n_rafflesiana.rst:2
+msgid "py-chessboardjs"
+msgstr "py-chessboardjs"
+
+#: ../../n_rafflesiana.rst:4
+msgid ""
+"Chess GUI using pywebview and chessboard.js. The main files are "
+":file:`start.py`, :file:`js/my-script.js` and :file:`index.html`."
+msgstr "pywebview と chessboard.js を利用したChess GUIです。主要ファイルは :file:`start.py`, :file:`js/my-script.js` と :file:`index.html` です。"
+
+#: ../../n_rafflesiana.rst:7
+msgid ""
+"Chess-Ant is currently too slow to function as a chess engine. To make "
+"matters worse, there is a glitch in the call to chess-ant. It is possible"
+" to experiment by loading pgn and having it solve the problem."
+msgstr "Chess-Ant は遅すぎてチェス・エンジンとして機能しません。更に、チェス・エンジンを呼び出す際の不具合もあります。実験目的として pgn ファイルを読み込み、chess problemを解かすことは出来ます。"
+
+#: ../../n_rafflesiana.rst:12
+msgid "Installation"
+msgstr "インストール方法"
+
+#: ../../n_rafflesiana.rst:14
+msgid ""
+"Please read the `pywebview <https://pywebview.flowrl.com/>`__ and "
+"`PyGObject <https://pygobject.readthedocs.io/en/latest/>`__ manuals, and "
+"install dependent packages before proceeding."
+msgstr "まず `pywebview <https://pywebview.flowrl.com/>`__ と `PyGObject <https://pygobject.readthedocs.io/en/latest/>`__ のマニュアルを読み、作業前に依存パッケージをインストールして下さい。"
+
+#: ../../n_rafflesiana.rst:18
+msgid "If you are Ubuntu user:"
+msgstr "If you are Ubuntu user:"
+
+#: ../../n_rafflesiana.rst:28
+msgid "If you want to install it on local repository:"
+msgstr "If you want to install it on local repository:"
+
+#: ../../n_rafflesiana.rst:35
+msgid "QT user:"
+msgstr "QT user:"
+
+#: ../../n_rafflesiana.rst:41
+msgid "CEF user:"
+msgstr "CEF user:"
+
+#: ../../n_rafflesiana.rst:47
+msgid "Install your favorite UCI engine:"
+msgstr "Install your favorite UCI engine:"
+
+#: ../../n_rafflesiana.rst:54
+msgid "Usage"
+msgstr "使用法"
+
+#: ../../n_rafflesiana.rst:69
+msgid "Related Links"
+msgstr "関連リンク"
+
+#: ../../n_rafflesiana.rst:71
+msgid "`pywebview <https://pywebview.flowrl.com/>`__"
+msgstr "`pywebview <https://pywebview.flowrl.com/>`__"
+
+#: ../../n_rafflesiana.rst:72
+msgid "`chessboard.js <https://chessboardjs.com/>`__"
+msgstr "`chessboard.js <https://chessboardjs.com/>`__"
+
+#: ../../n_rafflesiana.rst:73
+msgid "`chess.js <https://github.com/jhlywa/chess.js>`__"
+msgstr "`chess.js <https://github.com/jhlywa/chess.js>`__"
+
+#: ../../n_rafflesiana.rst:74
+msgid "`Bootstrap <https://getbootstrap.com/>`__"
+msgstr "`Bootstrap <https://getbootstrap.com/>`__"
+

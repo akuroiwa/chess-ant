@@ -12,8 +12,10 @@ Welcome to Chess-Ant's documentation!
 
    anteater
    ant_baits
+   n_rafflesiana
    o_unilateralis
    o_camponoti_balzani
+   polyergus
 
 
 Indices and tables

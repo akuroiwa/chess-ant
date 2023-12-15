@@ -351,3 +351,4 @@ Bibliography
    <https://pdfs.semanticscholar.org/b0bc/b2e8c96c750c8cae70ad20c675023f314191.pdf>`__
 -  `YouTube channel of David
    Beazley <https://www.youtube.com/channel/UCbNpPBMvCHr-TeJkkezog7Q>`__
+-  `Welcome to AntWiki <https://www.antwiki.org/wiki/Welcome_to_AntWiki>`__

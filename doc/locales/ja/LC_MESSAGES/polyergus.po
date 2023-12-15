@@ -1,0 +1,101 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, Akihiro Kuroiwa
+# This file is distributed under the same license as the Chess-Ant package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Chess-Ant \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-12-11 21:06+0900\n"
+"PO-Revision-Date: 2023-12-11 21:25+0900\n"
+"Last-Translator: Akihiro Kuroiwa <akuroiwa@env-reform.com>\n"
+"Language: ja\n"
+"Language-Team: ja <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.12.1\n"
+
+#: ../../polyergus.rst:2
+msgid "Chem-Ant Project - Co-Founding Members Wanted"
+msgstr "Chem-Antプロジェクト - 創業メンバー募集"
+
+#: ../../polyergus.rst:6
+msgid "Overview:"
+msgstr "概要:"
+
+#: ../../polyergus.rst:8
+msgid ""
+"The Chem-Ant Project is actively seeking co-founding members to join in "
+"the pursuit of innovative approaches to drug candidate exploration. "
+"Currently, the project is in search of individuals to join as co-"
+"founders. This project involves simulations utilizing rdkit, deap's "
+"genetic programming, and an MCTS solver. The company has not yet been "
+"established, and at present, I am the sole project leader."
+msgstr "Chem-Antプロジェクトでは、治療薬候補の探索に革新的なアプローチを追求しています。現在、プロジェクトは創業メンバーを募集しています。これは、rdkitとdeapのgenetic programming、そしてMCTS solverを組み合わせたシミュレーションのプロジェクトで、まだ会社は設立されていません。現在はプロジェクトリーダーである私一人です。"
+
+#: ../../polyergus.rst:11
+msgid "Open Positions:"
+msgstr "募集ポジション:"
+
+#: ../../polyergus.rst:13
+msgid "Software Developers"
+msgstr "ソフトウェア開発者"
+
+#: ../../polyergus.rst:14
+msgid "Data Scientists"
+msgstr "データサイエンティスト"
+
+#: ../../polyergus.rst:15
+msgid "Cheminformatics Experts"
+msgstr "化学情報学者"
+
+#: ../../polyergus.rst:16
+msgid "Marketing Specialist"
+msgstr "マーケティング担当"
+
+#: ../../polyergus.rst:17
+msgid "Others interested in the project"
+msgstr "その他、プロジェクトに興味をお持ちの方"
+
+#: ../../polyergus.rst:20
+msgid "Desired Skills:"
+msgstr "求めるスキル:"
+
+#: ../../polyergus.rst:22
+msgid "Knowledge in Cheminformatics, Molecular Biology, or related fields"
+msgstr "Cheminformatics、Molecular Biology、または関連する分野の知識"
+
+#: ../../polyergus.rst:23
+msgid "Programming skills (Python, etc.)"
+msgstr "プログラミングスキル（Python等）"
+
+#: ../../polyergus.rst:24
+msgid "Teamwork and communication abilities"
+msgstr "チームワークとコミュニケーション能力"
+
+#: ../../polyergus.rst:27
+msgid "How to Apply:"
+msgstr "応募方法:"
+
+#: ../../polyergus.rst:29
+msgid ""
+"If you are interested, please reach out to the email address listed in "
+"the git log. Additionally, providing a brief introduction and your skill "
+"set would be appreciated."
+msgstr "ご興味をお持ちいただけましたら、git logにあるメールアドレスにご連絡ください。また、自己紹介やスキルセットを添えていただけると幸いです。"
+
+#: ../../polyergus.rst:32
+msgid "Note:"
+msgstr "注意:"
+
+#: ../../polyergus.rst:34
+msgid ""
+"Chem-Ant has not been formally established and is currently progressing "
+"as a project. This is a pioneering initiative towards future company "
+"formation, welcoming individuals who want to grow together and venture "
+"into the forefront of novel drug development."
+msgstr "Chem-Antはまだ設立されておらず、現在はプロジェクトとして進行中です。これは将来の企業設立に向けた先駆的なプロジェクトであり、共に成長し、新たな治療薬開発のフロンティアに挑戦したい方を歓迎します。"
+

@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Chess-Ant \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-10 19:57+0900\n"
-"PO-Revision-Date: 2023-10-10 20:06+0900\n"
+"POT-Creation-Date: 2023-12-11 21:06+0900\n"
+"PO-Revision-Date: 2023-12-11 21:11+0900\n"
 "Last-Translator: Akihiro Kuroiwa <akuroiwa@env-reform.com>\n"
 "Language: ja\n"
 "Language-Team: Japanese\n"
@@ -16,7 +16,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.11.0\n"
+"Generated-By: Babel 2.12.1\n"
 
 #: ../../ant_baits.rst:3
 msgid "Chess-Ant Article"
@@ -967,4 +967,8 @@ msgid ""
 msgstr ""
 "`YouTube channel of David Beazley <https://www.youtube.com/channel"
 "/UCbNpPBMvCHr-TeJkkezog7Q>`__"
+
+#: ../../ant_baits.rst:354
+msgid "`Welcome to AntWiki <https://www.antwiki.org/wiki/Welcome_to_AntWiki>`__"
+msgstr "`Welcome to AntWiki <https://www.antwiki.org/wiki/Welcome_to_AntWiki>`__"
 

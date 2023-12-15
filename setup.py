@@ -10,8 +10,8 @@ setup(
     # # PyPI url
     # download_url='',
     license='GNU/GPLv3+',
-    author='Akihiro Kuroiwa',
-    author_email='akuroiwa@env-reform.com',
+    author='Akihiro Kuroiwa, ChatGPT of OpenAI',
+    author_email='akuroiwa@env-reform.com, ',
     description='Simulator to solve chess problems with MCTS Solver and Genetic Programming.',
     # long_description="\n%s" % open('README.md').read(),
     long_description=open("README.md", "r").read(),
