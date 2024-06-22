@@ -56,6 +56,33 @@ Or:
 -  `chem-classification <https://github.com/akuroiwa/chem-classification>`__
 -  `mcts-solver <https://github.com/akuroiwa/mcts-solver>`__
 
+.. note::
+
+   The new package :mod:`rdkit` supports Python versions 3.8 through 3.12, whereas :mod:`rdkit-pypi` only supports Python versions 3.7 through 3.11.
+
+:mod:`Chem-ant` depends on :mod:`global-chem-extensions`, but both depend on :mod:`rdkit-pypi`. :mod:`Chem-ant` version 0.1.0 will depend on :mod:`rdkit`, but :mod:`global-chem-extensions` will support :mod:`rdkit` in v2.0. Therefore, if you want to install :mod:`chem-ant` on Python 3.12, you must follow these steps:
+
+1. Get the git repository of global-chem
+2. Manually edit :file:`global-chem/global_chem_extensions/requirements.txt`
+3. Build and install it
+
+.. code-block:: bash
+
+   git clone git@github.com:akuroiwa/global-chem.git
+   cd global_chem_extensions/
+
+After editing the file :file:`requirements.txt`:
+
+.. code-block:: bash
+
+   sed -i 's/rdkit-pypi/rdkit/g' requirements.txt
+   pip install .
+
+.. seealso::
+
+   - `Global-Chem Pull Request #309 <https://github.com/Global-Chem/global-chem/pull/309>`_
+   - `Global-Chem requirements.txt <https://github.com/Global-Chem/global-chem/blob/development/global_chem_extensions/requirements.txt>`_
+
 
 General Usage
 =============
@@ -82,6 +109,15 @@ If you just want to output target-like molecules from the smiles list without ru
 
    similarity-genMols --help
    similarity-genMols -t "CC1(C2C1C(N(C2)C(=O)C(C(C)(C)C)NC(=O)C(F)(F)F)C(=O)NC(CC3CCNC3=O)C#N)C" -m "CC1=CC=CC=C1C(C)C" "Cc1ccccc1CC(C#N)NC1CCNC1=O" -f "gen2.csv"
+
+
+The StopIteration problem has been fixed since :mod:`chem-ant` 0.1.0, so the :command:`similarity-ant` command will run without stopping. I plan to continue improving this bug.
+
+In addition, a new :command:`--GlobalChem` option has been added. This gets smiles from the :mod:`global-chem` database as the material for fragments.
+
+.. code-block:: bash
+
+   similarity-ant -n20 -g10 -b 1 -p train_smiles -e1 -c electrophilic_warheads_for_kinases
 
 
 Chem-Classification

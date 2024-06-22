@@ -84,6 +84,7 @@ class ChessAntSimulator(object):
         # self.is_zeroing = False
         # self.is_irreversible = False
         # self.is_castling = False
+        self.currentPlayer = 1
         self.operations_count = 0
         self.lock = Lock()
 
@@ -105,6 +106,7 @@ class ChessAntSimulator(object):
         # self.is_zeroing = False
         # self.is_irreversible = False
         # self.is_castling = False
+        self.currentPlayer = 1
         self.operations_count = 0
 
     @property
@@ -202,6 +204,7 @@ class ChessAntSimulator(object):
         # self.is_zeroing = board.is_zeroing(move)
         # self.is_irreversible = board.is_irreversible(move)
         # self.is_castling = board.is_castling(move)
+        self.currentPlayer = node.state.getCurrentPlayer()
         self.operations_count += 1
 
     def sense_improvement(self):
@@ -276,6 +279,15 @@ class ChessAntSimulator(object):
     # def if_is_castling(self, out1, out2):
     #     return partial(if_then_else, self.sense_is_castling, out1, out2)
 
+    def sense_currentPlayer(self):
+        if self.currentPlayer == 1:
+            return True
+        else:
+            return False
+
+    def if_currentPlayer(self, out1, out2):
+        return partial(if_then_else, self.sense_currentPlayer, out1, out2)
+
     def run(self,routine):
         self._reset()
         # routine()
@@ -319,6 +331,7 @@ pset.addPrimitive(ant.if_same_move, 2)
 # pset.addPrimitive(ant.if_is_en_passant, 2)
 # pset.addPrimitive(ant.if_is_irreversible, 2)
 # pset.addPrimitive(ant.if_is_zeroing, 2)
+pset.addPrimitive(ant.if_currentPlayer, 2)
 
 terminal_methods = [
     ant.selectNode_1,
