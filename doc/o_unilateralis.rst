@@ -68,7 +68,7 @@ Or:
 
 .. code-block:: bash
 
-   git clone git@github.com:akuroiwa/global-chem.git
+   git clone https://github.com/Global-Chem/global-chem.git
    cd global_chem_extensions/
 
 After editing the file :file:`requirements.txt`:
