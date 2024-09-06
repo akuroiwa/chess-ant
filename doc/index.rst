@@ -15,6 +15,7 @@ Welcome to Chess-Ant's documentation!
    n_rafflesiana
    o_unilateralis
    o_camponoti_balzani
+   wasabi
    polyergus
 
 
