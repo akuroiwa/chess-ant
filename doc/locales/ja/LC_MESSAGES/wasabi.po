@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: Chess-Ant \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-09-05 21:54+0900\n"
-"PO-Revision-Date: 2024-09-06 19:43+0900\n"
+"PO-Revision-Date: 2024-09-06 20:06+0900\n"
 "Last-Translator: Akihiro Kuroiwa <akuroiwa@env-reform.com>\n"
 "Language: ja\n"
 "Language-Team: ja <LL@li.org>\n"
@@ -76,27 +76,20 @@ msgstr "**input_file** (必須): 入力となるPDBまたはmmCIF形式のファ
 msgid ""
 "**-o OUTPUT, -–output OUTPUT** (optional): Specifies the name of the "
 "output configuration file. The default is ``config.txt``."
-msgstr ""
-"**-o OUTPUT, -–output OUTPUT** (オプション): "
-"出力される設定ファイルの名前を指定します。デフォルトは``config.txt``です。"
+msgstr "**-o OUTPUT, -–output OUTPUT** (オプション): 出力される設定ファイルの名前を指定します。デフォルトは ``config.txt`` です。"
 
 #: ../../wasabi.rst:32
 msgid ""
 "**-l LIGAND, –-ligand LIGAND** (optional): Specifies the name of the "
 "ligand file. The default is ``ligand.pdbqt``."
-msgstr ""
-"**-l LIGAND, –-ligand LIGAND** (オプション): "
-"リガンドファイルの名前を指定します。デフォルトは``ligand.pdbqt``です。"
+msgstr "**-l LIGAND, –-ligand LIGAND** (オプション): リガンドファイルの名前を指定します。デフォルトは ``ligand.pdbqt`` です。"
 
 #: ../../wasabi.rst:34
 msgid ""
 "**-r RESIDUES, –-residues RESIDUES** (optional): Specifies the residue "
 "numbers for setting the docking box. Use a hyphen (``-``) for ranges and "
 "commas (``,``) for multiple residues (e.g., ``100-105,110,115-120``)."
-msgstr ""
-"**-r RESIDUES, –-residues RESIDUES** (オプション): "
-"ドッキングボックスを設定する残基番号を指定します。範囲はハイフン（-）で、複数指定はカンマ（,）で区切ります（例: "
-"`100-105,110,115-120`）。"
+msgstr "**-r RESIDUES, –-residues RESIDUES** (オプション): ドッキングボックスを設定する残基番号を指定します。範囲はハイフン（``-``）で、複数指定はカンマ（``,``）で区切ります（例: ``100-105,110,115-120``）。"
 
 #: ../../wasabi.rst:37
 msgid ""
@@ -168,9 +161,7 @@ msgid ""
 "``similarity-mcts``. The script creates fragments based on specified "
 "residue numbers and outputs these fragments or molecules generated from "
 "them in SMILES format to a CSV file."
-msgstr ""
-"``prepare_experiment.py``は、指定されたPDB IDに基づいて実験の準備を行い、AutoDock "
-"Vina用の設定ファイル（``config.txt``）、フラグメントファイル（``fragments.csv``）、および``config.ini``を生成するスクリプトです。このスクリプトは、特定の残基からフラグメントを抽出し、それに基づくシミュレーション実験の準備を自動化します。"
+msgstr "``prepare_experiment.py`` は、指定されたPDB IDに基づいて実験の準備を行い、AutoDock Vina用の設定ファイル（``config.txt``）、フラグメントファイル（``fragments.csv``）、および ``config.ini`` を生成するスクリプトです。このスクリプトは、特定の残基からフラグメントを抽出し、それに基づくシミュレーション実験の準備を自動化します。"
 
 #: ../../wasabi.rst:112
 msgid ""
@@ -183,17 +174,13 @@ msgid ""
 "**-f {pdb,cif}, –-format {pdb,cif}** (optional): Specifies the input file"
 " format. You can choose between ``pdb`` and ``cif``. The default is "
 "``pdb``."
-msgstr ""
-"**-f {pdb,cif}, –-format {pdb,cif}** (オプション): 入力ファイルの形式を指定します。``pdb`` または"
-" ``cif`` のいずれかを選択できます。デフォルトは``pdb``です。"
+msgstr "**-f {pdb,cif}, –-format {pdb,cif}** (オプション): 入力ファイルの形式を指定します。``pdb`` または ``cif`` のいずれかを選択できます。デフォルトは ``pdb`` です。"
 
 #: ../../wasabi.rst:116
 msgid ""
 "**-o OUTPUT, –-output OUTPUT** (optional): Specifies the name of the "
 "output directory. The default is ``test-{pdb_id}``."
-msgstr ""
-"**-o OUTPUT, –-output OUTPUT** (オプション): "
-"出力ディレクトリの名前を指定します。デフォルトは``test-{pdb_id}``です。"
+msgstr "**-o OUTPUT, –-output OUTPUT** (オプション): 出力ディレクトリの名前を指定します。デフォルトは ``test-{pdb_id}`` です。"
 
 #: ../../wasabi.rst:118
 msgid ""
@@ -208,9 +195,7 @@ msgstr ""
 msgid ""
 "**-n NUM_SMILES, –-num_smiles NUM_SMILES** (optional): Specifies the "
 "number of SMILES to generate. The default is ``10``."
-msgstr ""
-"**-n NUM_SMILES, –-num_smiles NUM_SMILES** (オプション): "
-"出力するSMILESの数を指定します。デフォルトは``10``です。"
+msgstr "**-n NUM_SMILES, –-num_smiles NUM_SMILES** (オプション): 出力するSMILESの数を指定します。デフォルトは ``10`` です。"
 
 #: ../../wasabi.rst:123
 msgid ""
@@ -245,22 +230,20 @@ msgid ""
 "under the ``DEFAULT`` section, while experiment-specific options are "
 "listed under each respective section. The configuration file can be "
 "edited with a text editor."
-msgstr ""
-"**config.ini**: `similarity-ant`や`similarity-"
-"mcts`の実験設定を含むINI形式のファイル。このファイルには、共通のオプションを`DEFAULT`セクションに記述し、実験ごとのオプションをそれぞれのセクションに記載します。設定ファイルはテキストエディタで編集可能です。"
+msgstr "**config.ini**: ``similarity-ant`` や ``similarity-mcts`` の実験設定を含むINI形式のファイル。このファイルには、共通のオプションを ``DEFAULT`` セクションに記述し、実験ごとのオプションをそれぞれのセクションに記載します。設定ファイルはテキストエディタで編集可能です。"
 
 #: ../../wasabi.rst:149
 msgid ""
 "In ``config.ini``, do not use single or double quotes. If multiple values"
 " are required, separate them with spaces."
-msgstr "``config.ini``では、シングルクォートやダブルクォートで囲まないようにしてください。文字列が複数ある場合はスペースで区切ります。"
+msgstr "``config.ini`` では、シングルクォートやダブルクォートで囲まないようにしてください。文字列が複数ある場合はスペースで区切ります。"
 
 #: ../../wasabi.rst:151
 msgid ""
 "Boolean, integer, or string values are automatically identified by "
 "``run_experiment.py``, but boolean options must be explicitly set with "
 "values like ``Yes``."
-msgstr "bool、int、strの識別は``run_experiment.py``が自動で行いますが、boolオプションは``Yes``などの明示的な値で指定する必要があります。"
+msgstr "bool、int、strの識別は ``run_experiment.py`` が自動で行いますが、boolオプションは ``Yes`` などの明示的な値で指定する必要があります。"
 
 #: ../../wasabi.rst:154
 msgid "Options not specified in ``config.ini`` will be ignored."
@@ -271,7 +254,7 @@ msgid ""
 "When using ``select_ligands.py`` to create a ligand file, it is "
 "preferable to use the SMILES of generated molecules rather than fragment "
 "SMILES, as the latter may cause issues."
-msgstr "フラグメントのSMILESを``select_ligands.py``で使用すると不具合が生じる可能性があるため、分子から生成されたSMILESを``fragments.csv``に出力することが望ましいです。"
+msgstr "フラグメントのSMILESを ``select_ligands.py`` で使用すると不具合が生じる可能性があるため、分子から生成されたSMILESを ``fragments.csv`` に出力することが望ましいです。"
 
 #: ../../wasabi.rst:160
 msgid "``run_experiment.py`` Script Manual"
@@ -284,33 +267,28 @@ msgid ""
 "experiment. The script outputs the generated molecules’ SMILES to a CSV "
 "file, which can then be used with ``select_ligands.py`` to create a "
 "ligand file."
-msgstr ""
-"``run_experiment.py``は、``config.ini``ファイルから設定を読み込み、``similarity-ant``または"
-"``similarity-"
-"mcts``の実験を実行するスクリプトです。実験結果として生成された分子のSMILESをCSVファイルに出力し、``select_ligands.py``を使用してリガンドファイルを作成するために利用できます。"
+msgstr "``run_experiment.py`` は、 ``config.ini`` ファイルから設定を読み込み、 ``similarity-ant`` または ``similarity-mcts`` の実験を実行するスクリプトです。実験結果として生成された分子のSMILESをCSVファイルに出力し、 ``select_ligands.py`` を使用してリガンドファイルを作成するために利用できます。"
 
 #: ../../wasabi.rst:187
 msgid ""
 "**config_file** (required): Specifies the ``config.ini`` file containing "
 "the experiment settings."
-msgstr "**config_file** (必須): 実験の設定が記述された``config.ini``ファイルを指定します。"
+msgstr "**config_file** (必須): 実験の設定が記述された ``config.ini`` ファイルを指定します。"
 
 #: ../../wasabi.rst:189
 msgid "**-a, –ant** (optional): Executes the ``similarity-ant`` experiment."
-msgstr "**-a, --ant** (オプション): ``similarity-ant``実験を実行します。"
+msgstr "**-a, --ant** (オプション): ``similarity-ant`` 実験を実行します。"
 
 #: ../../wasabi.rst:190
 msgid "**-m, –mcts** (optional): Executes the ``similarity-mcts`` experiment."
-msgstr "**-m, --mcts** (オプション): ``similarity-mcts``実験を実行します。"
+msgstr "**-m, --mcts** (オプション): ``similarity-mcts`` 実験を実行します。"
 
 #: ../../wasabi.rst:198
 msgid ""
 "**generated_smiles.csv**: A CSV file containing the SMILES of the "
 "generated molecules from the experiment. This file can be used with "
 "``select_ligands.py`` to create a ligand file."
-msgstr ""
-"**generated_smiles.csv**: "
-"実験の結果として生成された分子のSMILESが含まれるCSVファイルです。このファイルは、後で``select_ligands.py``に指定してリガンドファイルの作成に使用できます。"
+msgstr "**generated_smiles.csv**: 実験の結果として生成された分子のSMILESが含まれるCSVファイルです。このファイルは、後で ``select_ligands.py`` に指定してリガンドファイルの作成に使用できます。"
 
 #: ../../wasabi.rst:207
 msgid ""
@@ -318,15 +296,13 @@ msgid ""
 "ant`` or ``similarity-mcts``. ``run_experiment.py`` automatically "
 "identifies the necessary options and executes the experiment based on the"
 " provided settings."
-msgstr ""
-"``config.ini``ファイルには、``similarity-ant``または``similarity-"
-"mcts``の設定が含まれている必要があります。実験に必要なオプションは``run_experiment.py``が自動で識別し、設定に基づいて実行されます。"
+msgstr "``config.ini`` ファイルには、 ``similarity-ant`` または ``similarity-mcts`` の設定が含まれている必要があります。実験に必要なオプションは ``run_experiment.py`` が自動で識別し、設定に基づいて実行されます。"
 
 #: ../../wasabi.rst:211
 msgid ""
 "The resulting SMILES in the CSV file can be used with "
 "``select_ligands.py`` for ligand file creation."
-msgstr "実験結果のSMILESはCSV形式で出力され、``select_ligands.py``を使用してリガンドファイルの作成に利用できます。"
+msgstr "実験結果のSMILESはCSV形式で出力され、 ``select_ligands.py`` を使用してリガンドファイルの作成に利用できます。"
 
 #: ../../wasabi.rst:215
 msgid "``select_ligands.py`` Script Manual"
@@ -336,7 +312,7 @@ msgstr "``select_ligands.py`` Script Manual"
 msgid ""
 "``select_ligands.py`` is a Python script that selects top ligands from a "
 "CSV file and converts them to PDBQT format."
-msgstr "``select_ligands.py``は、CSVファイルから上位のリガンドを選択し、PDBQTフォーマットに変換するPythonスクリプトです。"
+msgstr "``select_ligands.py`` は、CSVファイルから上位のリガンドを選択し、PDBQTフォーマットに変換するPythonスクリプトです。"
 
 #: ../../wasabi.rst:234
 msgid "``csv_file``: Input CSV file containing generated SMILES (required)"
