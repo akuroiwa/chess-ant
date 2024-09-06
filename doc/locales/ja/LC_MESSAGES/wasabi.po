@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: Chess-Ant \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-09-05 21:54+0900\n"
-"PO-Revision-Date: 2024-09-06 20:06+0900\n"
+"PO-Revision-Date: 2024-09-06 20:16+0900\n"
 "Last-Translator: Akihiro Kuroiwa <akuroiwa@env-reform.com>\n"
 "Language: ja\n"
 "Language-Team: ja <LL@li.org>\n"
@@ -52,9 +52,7 @@ msgid ""
 "configuration file (``config.txt``) from a specified PDB or mmCIF "
 "structure file. This script allows you to set a docking box focused on "
 "specific residues."
-msgstr ""
-"``create_vina_config.py``は、指定されたPDBまたはmmCIF形式の構造ファイルからAutoDock "
-"Vina用の設定ファイル（``config.txt``）を生成するスクリプトです。このスクリプトを使用することで、特定の残基を対象にしたドッキングボックスを設定できます。"
+msgstr "``create_vina_config.py`` は、指定されたPDBまたはmmCIF形式の構造ファイルからAutoDock Vina用の設定ファイル（``config.txt``）を生成するスクリプトです。このスクリプトを使用することで、特定の残基を対象にしたドッキングボックスを設定できます。"
 
 #: ../../wasabi.rst:19 ../../wasabi.rst:101 ../../wasabi.rst:176
 #: ../../wasabi.rst:223
@@ -140,7 +138,7 @@ msgid ""
 "The ``config.txt`` file can be edited with a text editor, which is useful"
 " for fine-tuning the docking box size, position, and calculation "
 "settings."
-msgstr "``config.txt``はテキストエディタで編集可能です。ドッキングボックスのサイズや位置、計算設定の微調整を行う際に便利です。"
+msgstr "``config.txt`` はテキストエディタで編集可能です。ドッキングボックスのサイズや位置、計算設定の微調整を行う際に便利です。"
 
 #: ../../wasabi.rst:79
 msgid ""
@@ -247,7 +245,7 @@ msgstr "bool、int、strの識別は ``run_experiment.py`` が自動で行いま
 
 #: ../../wasabi.rst:154
 msgid "Options not specified in ``config.ini`` will be ignored."
-msgstr "``config.ini``に記載されていないオプションは無視されます。"
+msgstr "``config.ini`` に記載されていないオプションは無視されます。"
 
 #: ../../wasabi.rst:155
 msgid ""
